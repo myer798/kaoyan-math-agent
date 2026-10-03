@@ -1,0 +1,625 @@
+[
+  {
+    "image": "exam_2022_p01.png",
+    "year": 2022,
+    "kind": "exam",
+    "page": 1,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题1987-2025\\2022年考研数学（一）真题.pdf"
+  },
+  {
+    "image": "exam_2022_p02.png",
+    "year": 2022,
+    "kind": "exam",
+    "page": 2,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题1987-2025\\2022年考研数学（一）真题.pdf"
+  },
+  {
+    "image": "exam_2022_p03.png",
+    "year": 2022,
+    "kind": "exam",
+    "page": 3,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题1987-2025\\2022年考研数学（一）真题.pdf"
+  },
+  {
+    "image": "exam_2022_p04.png",
+    "year": 2022,
+    "kind": "exam",
+    "page": 4,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题1987-2025\\2022年考研数学（一）真题.pdf"
+  },
+  {
+    "image": "sol_2022_p01.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 1,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "sol_2022_p02.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 2,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "sol_2022_p03.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 3,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "sol_2022_p04.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 4,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "sol_2022_p05.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 5,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "sol_2022_p06.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 6,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "sol_2022_p07.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 7,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "sol_2022_p08.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 8,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "sol_2022_p09.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 9,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "sol_2022_p10.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 10,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "sol_2022_p11.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 11,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "sol_2022_p12.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 12,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "sol_2022_p13.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 13,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "sol_2022_p14.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 14,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "sol_2022_p15.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 15,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "sol_2022_p16.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 16,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "sol_2022_p17.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 17,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "sol_2022_p18.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 18,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "sol_2022_p19.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 19,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "sol_2022_p20.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 20,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "sol_2022_p21.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 21,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "sol_2022_p22.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 22,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "sol_2022_p23.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 23,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "sol_2022_p24.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 24,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "sol_2022_p25.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 25,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "sol_2022_p26.png",
+    "year": 2022,
+    "kind": "sol",
+    "page": 26,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2022数学一解析.pdf"
+  },
+  {
+    "image": "exam_2023_p01.png",
+    "year": 2023,
+    "kind": "exam",
+    "page": 1,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题1987-2025\\2023年考研数学（一）真题.pdf"
+  },
+  {
+    "image": "exam_2023_p02.png",
+    "year": 2023,
+    "kind": "exam",
+    "page": 2,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题1987-2025\\2023年考研数学（一）真题.pdf"
+  },
+  {
+    "image": "exam_2023_p03.png",
+    "year": 2023,
+    "kind": "exam",
+    "page": 3,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题1987-2025\\2023年考研数学（一）真题.pdf"
+  },
+  {
+    "image": "exam_2023_p04.png",
+    "year": 2023,
+    "kind": "exam",
+    "page": 4,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题1987-2025\\2023年考研数学（一）真题.pdf"
+  },
+  {
+    "image": "sol_2023_p01.png",
+    "year": 2023,
+    "kind": "sol",
+    "page": 1,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2023数学一解析.pdf"
+  },
+  {
+    "image": "sol_2023_p02.png",
+    "year": 2023,
+    "kind": "sol",
+    "page": 2,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2023数学一解析.pdf"
+  },
+  {
+    "image": "sol_2023_p03.png",
+    "year": 2023,
+    "kind": "sol",
+    "page": 3,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2023数学一解析.pdf"
+  },
+  {
+    "image": "sol_2023_p04.png",
+    "year": 2023,
+    "kind": "sol",
+    "page": 4,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2023数学一解析.pdf"
+  },
+  {
+    "image": "sol_2023_p05.png",
+    "year": 2023,
+    "kind": "sol",
+    "page": 5,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2023数学一解析.pdf"
+  },
+  {
+    "image": "sol_2023_p06.png",
+    "year": 2023,
+    "kind": "sol",
+    "page": 6,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2023数学一解析.pdf"
+  },
+  {
+    "image": "sol_2023_p07.png",
+    "year": 2023,
+    "kind": "sol",
+    "page": 7,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2023数学一解析.pdf"
+  },
+  {
+    "image": "sol_2023_p08.png",
+    "year": 2023,
+    "kind": "sol",
+    "page": 8,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2023数学一解析.pdf"
+  },
+  {
+    "image": "sol_2023_p09.png",
+    "year": 2023,
+    "kind": "sol",
+    "page": 9,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2023数学一解析.pdf"
+  },
+  {
+    "image": "sol_2023_p10.png",
+    "year": 2023,
+    "kind": "sol",
+    "page": 10,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2023数学一解析.pdf"
+  },
+  {
+    "image": "sol_2023_p11.png",
+    "year": 2023,
+    "kind": "sol",
+    "page": 11,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2023数学一解析.pdf"
+  },
+  {
+    "image": "exam_2024_p01.png",
+    "year": 2024,
+    "kind": "exam",
+    "page": 1,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题1987-2025\\2024年考研数学（一）真题.pdf"
+  },
+  {
+    "image": "exam_2024_p02.png",
+    "year": 2024,
+    "kind": "exam",
+    "page": 2,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题1987-2025\\2024年考研数学（一）真题.pdf"
+  },
+  {
+    "image": "exam_2024_p03.png",
+    "year": 2024,
+    "kind": "exam",
+    "page": 3,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题1987-2025\\2024年考研数学（一）真题.pdf"
+  },
+  {
+    "image": "exam_2024_p04.png",
+    "year": 2024,
+    "kind": "exam",
+    "page": 4,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题1987-2025\\2024年考研数学（一）真题.pdf"
+  },
+  {
+    "image": "sol_2024_p01.png",
+    "year": 2024,
+    "kind": "sol",
+    "page": 1,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2024数学一解析.pdf"
+  },
+  {
+    "image": "sol_2024_p02.png",
+    "year": 2024,
+    "kind": "sol",
+    "page": 2,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2024数学一解析.pdf"
+  },
+  {
+    "image": "sol_2024_p03.png",
+    "year": 2024,
+    "kind": "sol",
+    "page": 3,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2024数学一解析.pdf"
+  },
+  {
+    "image": "sol_2024_p04.png",
+    "year": 2024,
+    "kind": "sol",
+    "page": 4,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2024数学一解析.pdf"
+  },
+  {
+    "image": "sol_2024_p05.png",
+    "year": 2024,
+    "kind": "sol",
+    "page": 5,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2024数学一解析.pdf"
+  },
+  {
+    "image": "sol_2024_p06.png",
+    "year": 2024,
+    "kind": "sol",
+    "page": 6,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2024数学一解析.pdf"
+  },
+  {
+    "image": "sol_2024_p07.png",
+    "year": 2024,
+    "kind": "sol",
+    "page": 7,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2024数学一解析.pdf"
+  },
+  {
+    "image": "sol_2024_p08.png",
+    "year": 2024,
+    "kind": "sol",
+    "page": 8,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2024数学一解析.pdf"
+  },
+  {
+    "image": "exam_2025_p01.png",
+    "year": 2025,
+    "kind": "exam",
+    "page": 1,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题1987-2025\\2025考研数学（一）真题.pdf"
+  },
+  {
+    "image": "exam_2025_p02.png",
+    "year": 2025,
+    "kind": "exam",
+    "page": 2,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题1987-2025\\2025考研数学（一）真题.pdf"
+  },
+  {
+    "image": "exam_2025_p03.png",
+    "year": 2025,
+    "kind": "exam",
+    "page": 3,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题1987-2025\\2025考研数学（一）真题.pdf"
+  },
+  {
+    "image": "exam_2025_p04.png",
+    "year": 2025,
+    "kind": "exam",
+    "page": 4,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题1987-2025\\2025考研数学（一）真题.pdf"
+  },
+  {
+    "image": "sol_2025_p01.png",
+    "year": 2025,
+    "kind": "sol",
+    "page": 1,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2025数学一解析.pdf"
+  },
+  {
+    "image": "sol_2025_p02.png",
+    "year": 2025,
+    "kind": "sol",
+    "page": 2,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2025数学一解析.pdf"
+  },
+  {
+    "image": "sol_2025_p03.png",
+    "year": 2025,
+    "kind": "sol",
+    "page": 3,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2025数学一解析.pdf"
+  },
+  {
+    "image": "sol_2025_p04.png",
+    "year": 2025,
+    "kind": "sol",
+    "page": 4,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2025数学一解析.pdf"
+  },
+  {
+    "image": "sol_2025_p05.png",
+    "year": 2025,
+    "kind": "sol",
+    "page": 5,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2025数学一解析.pdf"
+  },
+  {
+    "image": "sol_2025_p06.png",
+    "year": 2025,
+    "kind": "sol",
+    "page": 6,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2025数学一解析.pdf"
+  },
+  {
+    "image": "sol_2025_p07.png",
+    "year": 2025,
+    "kind": "sol",
+    "page": 7,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2025数学一解析.pdf"
+  },
+  {
+    "image": "sol_2025_p08.png",
+    "year": 2025,
+    "kind": "sol",
+    "page": 8,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2025数学一解析.pdf"
+  },
+  {
+    "image": "sol_2025_p09.png",
+    "year": 2025,
+    "kind": "sol",
+    "page": 9,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2025数学一解析.pdf"
+  },
+  {
+    "image": "sol_2025_p10.png",
+    "year": 2025,
+    "kind": "sol",
+    "page": 10,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2025数学一解析.pdf"
+  },
+  {
+    "image": "sol_2025_p11.png",
+    "year": 2025,
+    "kind": "sol",
+    "page": 11,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2025数学一解析.pdf"
+  },
+  {
+    "image": "exam_2026_p01.png",
+    "year": 2026,
+    "kind": "exam",
+    "page": 1,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题1987-2025\\2026考研数学（一）真题.pdf"
+  },
+  {
+    "image": "exam_2026_p02.png",
+    "year": 2026,
+    "kind": "exam",
+    "page": 2,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题1987-2025\\2026考研数学（一）真题.pdf"
+  },
+  {
+    "image": "exam_2026_p03.png",
+    "year": 2026,
+    "kind": "exam",
+    "page": 3,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题1987-2025\\2026考研数学（一）真题.pdf"
+  },
+  {
+    "image": "exam_2026_p04.png",
+    "year": 2026,
+    "kind": "exam",
+    "page": 4,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题1987-2025\\2026考研数学（一）真题.pdf"
+  },
+  {
+    "image": "exam_2026_p05.png",
+    "year": 2026,
+    "kind": "exam",
+    "page": 5,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题1987-2025\\2026考研数学（一）真题.pdf"
+  },
+  {
+    "image": "sol_2026_p01.png",
+    "year": 2026,
+    "kind": "sol",
+    "page": 1,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2026数学一解析.pdf"
+  },
+  {
+    "image": "sol_2026_p02.png",
+    "year": 2026,
+    "kind": "sol",
+    "page": 2,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2026数学一解析.pdf"
+  },
+  {
+    "image": "sol_2026_p03.png",
+    "year": 2026,
+    "kind": "sol",
+    "page": 3,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2026数学一解析.pdf"
+  },
+  {
+    "image": "sol_2026_p04.png",
+    "year": 2026,
+    "kind": "sol",
+    "page": 4,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2026数学一解析.pdf"
+  },
+  {
+    "image": "sol_2026_p05.png",
+    "year": 2026,
+    "kind": "sol",
+    "page": 5,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2026数学一解析.pdf"
+  },
+  {
+    "image": "sol_2026_p06.png",
+    "year": 2026,
+    "kind": "sol",
+    "page": 6,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2026数学一解析.pdf"
+  },
+  {
+    "image": "sol_2026_p07.png",
+    "year": 2026,
+    "kind": "sol",
+    "page": 7,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2026数学一解析.pdf"
+  },
+  {
+    "image": "sol_2026_p08.png",
+    "year": 2026,
+    "kind": "sol",
+    "page": 8,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2026数学一解析.pdf"
+  },
+  {
+    "image": "sol_2026_p09.png",
+    "year": 2026,
+    "kind": "sol",
+    "page": 9,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2026数学一解析.pdf"
+  },
+  {
+    "image": "sol_2026_p10.png",
+    "year": 2026,
+    "kind": "sol",
+    "page": 10,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2026数学一解析.pdf"
+  },
+  {
+    "image": "sol_2026_p11.png",
+    "year": 2026,
+    "kind": "sol",
+    "page": 11,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2026数学一解析.pdf"
+  },
+  {
+    "image": "sol_2026_p12.png",
+    "year": 2026,
+    "kind": "sol",
+    "page": 12,
+    "source_pdf": "e:\\BaiduNetdiskDownload\\数学一真题详解1987-2025\\2026数学一解析.pdf"
+  }
+]

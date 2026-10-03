@@ -1,0 +1,1699 @@
+[
+  {
+    "year": 2022,
+    "qtype": "选择题",
+    "qno": "1",
+    "content": "设 $\\lim\\limits_{x \\to 1} \\dfrac{f(x)}{\\ln x} = 1$，则（　　）\n\n(A) $f(1) = 0$．  \n(B) $\\lim\\limits_{x \\to 1} f(x) = 0$．  \n(C) $f'(1) = 1$．  \n(D) $\\lim\\limits_{x \\to 1} f'(x) = 1$．",
+    "answer": "B",
+    "analysis": "本题主要考查极限与导数的概念。\n\n本题中关于 $f(x)$ 的条件相当有限，仅有 $\\lim\\limits_{x \\to 1} \\dfrac{f(x)}{\\ln x} = 1$ 这一个条件，而由这个条件仅能保证 $f(x)$ 在 $x = 1$ 的某去心邻域内有定义，且极限存在，但不能保证 $f(x)$ 在 $x = 1$ 处的连续性，更不能保证 $f(x)$ 在 $x = 1$ 处的可导性。\n\n当 $x \\to 1$ 时，$\\lim\\limits_{x \\to 1} \\ln x = 0$，而 $\\lim\\limits_{x \\to 1} \\dfrac{f(x)}{\\ln x} = 1$，故分子 $f(x)$ 满足 $\\lim\\limits_{x \\to 1} f(x) = 0$。应选 B。\n\n下面说明选项 A、C、D 不正确。\n\n对选项 A、C，可以举函数 $f(x)$ 在 $x = 1$ 处不连续，从而也不可导的例子。\n\n对选项 D，若 $f(x)$ 在 $x = 1$ 的某去心邻域内可导，且 $\\lim\\limits_{x \\to 1} f'(x)$ 存在，则由洛必达法则，\n\n$$\n\\lim_{x \\to 1} \\frac{f(x)}{\\ln x} \\xrightarrow{\\text{洛必达}} \\lim_{x \\to 1} \\frac{f'(x)}{\\dfrac{1}{x}} = \\lim_{x \\to 1} f'(x).\n$$\n\n于是，$\\lim\\limits_{x \\to 1} f'(x) = \\lim\\limits_{x \\to 1} \\dfrac{f(x)}{\\ln x} = 1$。因此，要举出选项 D 的反例，需考虑 $f(x)$ 在 $x = 1$ 的某去心邻域内不可导或者 $\\lim\\limits_{x \\to 1} f'(x)$ 不存在的例子。\n\n考虑\n$$\nf(x) =\n\\begin{cases}\nx - 1 + 2(x - 1)^2 \\sin \\dfrac{1}{x - 1}, & x \\ne 1, \\\\\n1, & x = 1,\n\\end{cases}\n$$\n则 $\\lim\\limits_{x \\to 1} f(x) = 0$，但 $f(1) = 1$，$f(x)$ 在 $x = 1$ 处不连续，也就不可导。\n\n当 $x \\ne 1$ 时，$f'(x) = 1 + 4(x - 1)\\sin \\dfrac{1}{x - 1} - 2\\cos \\dfrac{1}{x - 1}$。不难发现，$x = 1$ 是 $f'(x)$ 的振荡间断点，$\\lim\\limits_{x \\to 1} f'(x)$ 不存在。\n（法一）不妨设 $b > a$。在区间 $[a,b]$ 上，使用 $f(x)$ 在点 $\\dfrac{a+b}{2}$ 处的二阶泰勒公式。\n\n$$f(x) = f\\left(\\dfrac{a+b}{2}\\right) + f'\\left(\\dfrac{a+b}{2}\\right)\\left(x - \\dfrac{a+b}{2}\\right) + \\dfrac{1}{2}f''(\\xi)\\left(x - \\dfrac{a+b}{2}\\right)^2, \\tag{1}$$\n\n其中 $\\xi$ 介于 $x$ 与 $\\dfrac{a+b}{2}$ 之间。\n\n将（1）式代入 $\\displaystyle\\int_a^b f(x)\\,\\mathrm{d}x$，可得\n\n$$\\begin{aligned}\n\\int_a^b f(x)\\,\\mathrm{d}x &= \\int_a^b \\left[f\\left(\\dfrac{a+b}{2}\\right) + f'\\left(\\dfrac{a+b}{2}\\right)\\left(x - \\dfrac{a+b}{2}\\right) + \\dfrac{1}{2}f''(\\xi)\\left(x - \\dfrac{a+b}{2}\\right)^2\\right]\\mathrm{d}x \\\\\n&= f\\left(\\dfrac{a+b}{2}\\right)(b-a) - f'\\left(\\dfrac{a+b}{2}\\right)\\int_a^b \\left(x - \\dfrac{a+b}{2}\\right)\\mathrm{d}x \\\\\n&\\quad + \\dfrac{1}{2}f''(\\xi)\\int_a^b \\left(x - \\dfrac{a+b}{2}\\right)^2\\mathrm{d}x.\n\\end{aligned}$$\n\n注意到\n\n$$\\int_a^b \\left(x - \\dfrac{a+b}{2}\\right)\\mathrm{d}x = \\left.\\dfrac{x^2}{2}\\right|_a^b - \\dfrac{(a+b)(b-a)}{2} = \\dfrac{b^2 - a^2}{2} - \\dfrac{b^2 - a^2}{2} = 0,$$\n\n故\n\n$$\\int_a^b f(x)\\,\\mathrm{d}x = f\\left(\\dfrac{a+b}{2}\\right)(b-a) + \\dfrac{1}{2}f''(\\xi)\\int_a^b \\left(x - \\dfrac{a+b}{2}\\right)^2\\mathrm{d}x.$$\n\n结合 $f''(x) \\geqslant 0$ 可得 $\\displaystyle\\int_a^b f(x)\\,\\mathrm{d}x \\geqslant f\\left(\\dfrac{a+b}{2}\\right)(b-a)$，即 $f\\left(\\dfrac{a+b}{2}\\right) \\leqslant \\dfrac{1}{b-a}\\displaystyle\\int_a^b f(x)\\,\\mathrm{d}x$。\n\n（法二）不妨设 $b > a$。$f\\left(\\dfrac{a+b}{2}\\right) \\leqslant \\dfrac{1}{b-a}\\displaystyle\\int_a^b f(x)\\,\\mathrm{d}x$ 等价于 $f\\left(\\dfrac{a+b}{2}\\right)(b-a) - \\displaystyle\\int_a^b f(x)\\,\\mathrm{d}x \\leqslant 0$。\n\n令 $F(x) = \\displaystyle\\int_a^x f(t)\\,\\mathrm{d}t - f\\left(\\dfrac{a+x}{2}\\right)(x-a), x \\in [a,b]$，则 $F(a) = 0$，且\n\n$$\\begin{aligned}\nF'(x) &= f(x) - f\\left(\\dfrac{a+x}{2}\\right) - f'\\left(\\dfrac{a+x}{2}\\right)\\dfrac{x-a}{2} \\quad \\text{拉格朗日} \\\\\n&\\quad \\text{中值定理} \\quad f'(\\xi)\\dfrac{x-a}{2} - f'\\left(\\dfrac{a+x}{2}\\right)\\dfrac{x-a}{2} \\\\\n&= \\left[f'(\\xi) - f'\\left(\\dfrac{a+x}{2}\\right)\\right]\\dfrac{x-a}{2},\n\\end{aligned}$$\n\n其中 $\\xi \\in \\left(\\dfrac{a+x}{2}, x\\right)$。\n\n由于 $f''(x) \\geqslant 0$，故 $f'(x)$ 单调不减，从而 $f'(\\xi) \\geqslant f'\\left(\\dfrac{a+x}{2}\\right)$，即 $f'(\\xi) - f'\\left(\\dfrac{a+x}{2}\\right) \\geqslant 0$。于是，对 $x \\in (a,b)$，$F'(x) \\geqslant 0$，$F(x)$ 在 $[a,b]$ 上单调不减。\n又因为 $F(a) = 0$，所以 $F(b) \\geqslant F(a) = 0$，即 $\\int_a^b f(x)\\,\\mathrm{d}x \\geqslant f\\left(\\frac{a + b}{2}\\right)(b - a)$。\n\n下面证明充分性，即证明，若对任意不同的实数 $a, b$，都有 $f\\left(\\frac{a + b}{2}\\right) \\leqslant \\frac{1}{b - a}\\int_a^b f(x)\\,\\mathrm{d}x$ 成立，则 $f''(x) \\geqslant 0$。\n\n假设存在 $x_0$，使得 $f''(x_0) < 0$，由二阶导数连续可得 $\\lim\\limits_{x \\to x_0} f''(x) = f''(x_0) < 0$，结合极限的局部保号性可知，存在 $\\delta > 0$，在区间 $(x_0 - \\delta, x_0 + \\delta)$ 内，均有 $f''(x) < 0$。从而取 $[a_0, b_0] \\subset (x_0 - \\delta, x_0 + \\delta)$，可得在 $[a_0, b_0]$ 上，均有 $f''(x) < 0$。\n\n在区间 $[a_0, b_0]$ 上重复必要性中的做法。\n\n$$\n\\int_{a_0}^{b_0} f(x)\\,\\mathrm{d}x = \\int_{a_0}^{b_0} \\left[f\\left(\\frac{a_0 + b_0}{2}\\right) + f'\\left(\\frac{a_0 + b_0}{2}\\right)\\left(x - \\frac{a_0 + b_0}{2}\\right) + \\frac{1}{2}f''(\\xi)\\left(x - \\frac{a_0 + b_0}{2}\\right)^2\\right]\\mathrm{d}x\n$$\n\n$$\n= f\\left(\\frac{a_0 + b_0}{2}\\right)(b_0 - a_0) - f'\\left(\\frac{a_0 + b_0}{2}\\right)\\int_{a_0}^{b_0} \\left(x - \\frac{a_0 + b_0}{2}\\right)\\mathrm{d}x\n$$\n\n$$\n+ \\frac{1}{2}f''(\\xi)\\int_{a_0}^{b_0} \\left(x - \\frac{a_0 + b_0}{2}\\right)^2\\mathrm{d}x,\n$$\n\n其中 $\\xi$ 介于 $x$ 与 $\\frac{a_0 + b_0}{2}$ 之间。\n\n于是，\n\n$$\n\\int_{a_0}^{b_0} f(x)\\,\\mathrm{d}x = f\\left(\\frac{a_0 + b_0}{2}\\right)(b_0 - a_0) + \\frac{1}{2}f''(\\xi)\\int_{a_0}^{b_0} \\left(x - \\frac{a_0 + b_0}{2}\\right)^2\\mathrm{d}x.\n$$\n\n结合 $f''(x) < 0$ 可得 $\\int_{a_0}^{b_0} f(x)\\,\\mathrm{d}x < f\\left(\\frac{a_0 + b_0}{2}\\right)(b_0 - a_0)$，即 $f\\left(\\frac{a_0 + b_0}{2}\\right) > \\frac{1}{b_0 - a_0}\\int_{a_0}^{b_0} f(x)\\,\\mathrm{d}x$。这与前提矛盾。\n\n因此，假设不正确。$f''(x)$ 在 $(-\\infty, +\\infty)$ 上恒非负。\n\n综上所述，$f''(x) \\geqslant 0$ 的充分必要条件是对任意不同的实数 $a, b$，都有 $f\\left(\\frac{a + b}{2}\\right) \\leqslant \\frac{1}{b - a}\\int_a^b f(x)\\,\\mathrm{d}x$ 成立。\n似然函数\n\n$$\nL(\\theta) =\n\\begin{cases}\n\\dfrac{1}{2^m \\theta^{m+n}} e^{-\\dfrac{\\sum\\limits_{i=1}^n x_i}{\\theta} - \\dfrac{\\sum\\limits_{j=1}^m y_j}{2\\theta}}, & x_i > 0, y_j > 0, i = 1,2,\\cdots,n, j = 1,2,\\cdots,m, \\\\\n0, & \\text{其他}.\n\\end{cases}\n$$\n\n当 $x_i > 0, y_j > 0, i = 1,2,\\cdots,n, j = 1,2,\\cdots,m$ 时，取对数得\n\n$$\n\\ln L(\\theta) = -m\\ln 2 - (m+n)\\ln\\theta - \\dfrac{\\sum\\limits_{i=1}^n x_i}{\\theta} - \\dfrac{\\sum\\limits_{j=1}^m y_j}{2\\theta}.\n$$\n\n令 $\\dfrac{\\mathrm{d}[\\ln L(\\theta)]}{\\mathrm{d}\\theta} = 0$，即 $-\\dfrac{m+n}{\\theta} + \\dfrac{\\sum\\limits_{i=1}^n x_i}{\\theta^2} + \\dfrac{\\sum\\limits_{j=1}^m y_j}{2\\theta^2} = 0$，解得 $\\theta = \\dfrac{2\\sum\\limits_{i=1}^n x_i + \\sum\\limits_{j=1}^m y_j}{2(m+n)}$。\n\n因此，$\\theta$ 的最大似然估计量 $\\hat{\\theta} = \\dfrac{2\\sum\\limits_{i=1}^n X_i + \\sum\\limits_{j=1}^m Y_j}{2(m+n)}$。\n\n下面计算 $D(\\hat{\\theta})$。\n\n$$\n\\begin{aligned}\nD(\\hat{\\theta}) &= D\\left[ \\dfrac{2\\sum\\limits_{i=1}^n X_i + \\sum\\limits_{j=1}^m Y_j}{2(m+n)} \\right] = \\dfrac{1}{(m+n)^2} D\\left( \\sum\\limits_{i=1}^n X_i \\right) + \\dfrac{1}{4(m+n)^2} D\\left( \\sum\\limits_{j=1}^m Y_j \\right) \\\\\n&= \\dfrac{1}{(m+n)^2} \\sum\\limits_{i=1}^n D(X_i) + \\dfrac{1}{4(m+n)^2} \\sum\\limits_{j=1}^m D(Y_j) = \\dfrac{nD(X)}{(m+n)^2} + \\dfrac{mD(Y)}{4(m+n)^2} \\\\\n&= \\dfrac{n\\theta^2}{(m+n)^2} + \\dfrac{m \\cdot 4\\theta^2}{4(m+n)^2} = \\dfrac{\\theta^2}{m+n}.\n\\end{aligned}\n$$\n\n或者，注意到 $\\hat{\\theta} = \\dfrac{2\\sum\\limits_{i=1}^n X_i + \\sum\\limits_{j=1}^m Y_j}{2(m+n)} = \\dfrac{2n\\overline{X} + m\\overline{Y}}{2(m+n)}$，利用 $D(\\overline{X}) = \\dfrac{D(X)}{n}, D(\\overline{Y}) = \\dfrac{D(Y)}{m}$ 可得，\n\n$$\n\\begin{aligned}\nD(\\hat{\\theta}) &= D\\left[ \\dfrac{2n\\overline{X} + m\\overline{Y}}{2(m+n)} \\right] = \\dfrac{n^2 D(\\overline{X})}{(m+n)^2} + \\dfrac{m^2 D(\\overline{Y})}{4(m+n)^2} = \\dfrac{n^2}{(m+n)^2} \\cdot \\dfrac{D(X)}{n} + \\dfrac{m^2}{4(m+n)^2} \\cdot \\dfrac{D(Y)}{m} \\\\\n&= \\dfrac{n\\theta^2}{(m+n)^2} + \\dfrac{m \\cdot 4\\theta^2}{4(m+n)^2} = \\dfrac{\\theta^2}{m+n}.\n\\end{aligned}\n$$",
+    "topics": [
+      "方差计算",
+      "积分不等式",
+      "拉格朗日中值定理",
+      "导数",
+      "充分必要条件",
+      "洛必达法则",
+      "连续性",
+      "单调性",
+      "二阶导数",
+      "凸函数",
+      "对数似然函数",
+      "指数分布",
+      "最大似然估计",
+      "导数定义",
+      "泰勒公式",
+      "等价无穷小",
+      "极限"
+    ]
+  },
+  {
+    "year": 2022,
+    "qtype": "选择题",
+    "qno": "2",
+    "content": "设 $f(u)$ 可导，$z = xyf\\left(\\dfrac{y}{x}\\right)$，若 $x \\dfrac{\\partial z}{\\partial x} + y \\dfrac{\\partial z}{\\partial y} = y^2(\\ln y - \\ln x)$，则（　　）\n\n(A) $f(1) = \\dfrac{1}{2}$，$f'(1) = 0$．  \n(B) $f(1) = 0$，$f'(1) = \\dfrac{1}{2}$．  \n(C) $f(1) = \\dfrac{1}{2}$，$f'(1) = 1$．  \n(D) $f(1) = 0$，$f'(1) = 1$．",
+    "answer": "B",
+    "analysis": "本题主要考查偏导数的计算。\n\n本题中的 $f(x)$ 表达式未知，$z(x, y)$ 是与 $f(u)$ 有关的复合函数，故可以先通过计算 $\\frac{\\partial z}{\\partial x}$ 和 $\\frac{\\partial z}{\\partial y}$ 并代入已知等式得到 $f(u)$ 的表达式，再计算 $f(1)$，$f'(1)$。\n\n解 分别求 $\\frac{\\partial z}{\\partial x}$ 和 $\\frac{\\partial z}{\\partial y}$。利用链式法则，\n\n$$\n\\frac{\\partial z}{\\partial x} = yf\\left(\\frac{y}{x}\\right) + xyf'\\left(\\frac{y}{x}\\right) \\cdot \\left(-\\frac{y}{x^2}\\right) = yf\\left(\\frac{y}{x}\\right) - \\frac{y^2}{x}f'\\left(\\frac{y}{x}\\right),\n$$\n\n$$\n\\frac{\\partial z}{\\partial y} = xf\\left(\\frac{y}{x}\\right) + xyf'\\left(\\frac{y}{x}\\right) \\cdot \\frac{1}{x} = xf\\left(\\frac{y}{x}\\right) + yf'\\left(\\frac{y}{x}\\right).\n$$\n\n于是，$x\\frac{\\partial z}{\\partial x} + y\\frac{\\partial z}{\\partial y} = 2xyf\\left(\\frac{y}{x}\\right)$。\n\n与 $x\\frac{\\partial z}{\\partial x} + y\\frac{\\partial z}{\\partial y} = y^2(\\ln y - \\ln x) = y^2\\ln\\frac{y}{x}$ 比较可得，$f\\left(\\frac{y}{x}\\right) = \\frac{y}{2x}\\ln\\frac{y}{x}$。从而，$f(u) = \\frac{1}{2}u\\ln u$，$f'(u) = \\frac{1}{2}(\\ln u + 1)$。\n\n因此，$f(1) = 0$，$f'(1) = \\frac{1}{2}$。应选 B。\n答案 D。",
+    "topics": [
+      "齐次函数",
+      "偏导数",
+      "定积分",
+      "微分方程",
+      "链式法则",
+      "函数值符号",
+      "复合函数",
+      "二阶可导",
+      "复合函数求导"
+    ]
+  },
+  {
+    "year": 2022,
+    "qtype": "选择题",
+    "qno": "3",
+    "content": "设数列 $\\{x_n\\}$ 满足 $-\\dfrac{\\pi}{2} \\leqslant x_n \\leqslant \\dfrac{\\pi}{2}$，则（　　）\n\n(A) 若 $\\lim\\limits_{n \\to \\infty} \\cos(\\sin x_n)$ 存在，则 $\\lim\\limits_{n \\to \\infty} x_n$ 存在．  \n(B) 若 $\\lim\\limits_{n \\to \\infty} \\sin(\\cos x_n)$ 存在，则 $\\lim\\limits_{n \\to \\infty} x_n$ 存在．  \n(C) 若 $\\lim\\limits_{n \\to \\infty} \\cos(\\sin x_n)$ 存在，则 $\\lim\\limits_{n \\to \\infty} \\sin x_n$ 存在，但 $\\lim\\limits_{n \\to \\infty} x_n$ 不一定存在．  \n(D) 若 $\\lim\\limits_{n \\to \\infty} \\sin(\\cos x_n)$ 存在，则 $\\lim\\limits_{n \\to \\infty} \\cos x_n$ 存在，但 $\\lim\\limits_{n \\to \\infty} x_n$ 不一定存在．",
+    "answer": "D",
+    "analysis": "本题主要考查数列极限与函数极限的关系。\n\n题目中出现的 $\\sin(\\cos x)$ 与 $\\cos(\\sin x)$ 均为复合函数，要将 $\\lim\\limits_{n \\to \\infty} \\sin(\\cos x_n)$ 与 $\\lim\\limits_{n \\to \\infty} \\cos(\\sin x_n)$ 内层的数列取出来，可以考虑在外层再复合上外层函数的反函数（如果存在的话）。\n\n解 若 $\\lim\\limits_{n \\to \\infty} \\sin(\\cos x_n)$ 存在，则将其记为 $a$。由于 $\\sin x$ 在 $\\left[-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right]$ 上存在反函数 $\\arcsin x$，故\n\n$$\n\\lim_{n \\to \\infty} \\cos x_n = \\lim_{n \\to \\infty} \\arcsin(\\sin(\\cos x_n)) = \\arcsin\\left(\\lim_{n \\to \\infty} \\sin(\\cos x_n)\\right) = \\arcsin a.\n$$\n\n但是 $\\lim\\limits_{n \\to \\infty} \\cos x_n$ 存在并不能保证 $\\lim\\limits_{n \\to \\infty} x_n$ 存在。例如取 $x_n = (-1)^n \\frac{\\pi}{2}$，则 $\\lim\\limits_{n \\to \\infty} \\cos x_n = 0$，但 $\\lim\\limits_{n \\to \\infty} x_n$ 不存在。选项 B 错误，选项 D 正确。应选 D。\n\n由于 $\\cos x$ 在 $\\left[-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right]$ 上并不单调，故由 $\\lim\\limits_{n \\to \\infty} \\cos(\\sin x_n)$ 存在并不能保证 $\\lim\\limits_{n \\to \\infty} \\sin x_n$ 存在。同样取 $x_n = (-1)^n \\frac{\\pi}{2}$，则 $\\lim\\limits_{n \\to \\infty} \\cos(\\sin x_n) = \\cos 1$，但 $\\lim\\limits_{n \\to \\infty} \\sin x_n$ 和 $\\lim\\limits_{n \\to \\infty} x_n$ 均不存在。选项 A、C 不正确。",
+    "topics": [
+      "复合函数",
+      "反函数",
+      "数列极限",
+      "单调性"
+    ]
+  },
+  {
+    "year": 2022,
+    "qtype": "选择题",
+    "qno": "4",
+    "content": "若 $I_1 = \\displaystyle\\int_0^1 \\dfrac{x}{2(1 + \\cos x)}\\,\\mathrm{d}x$，$I_2 = \\displaystyle\\int_0^1 \\dfrac{\\ln(1 + x)}{1 + \\cos x}\\,\\mathrm{d}x$，$I_3 = \\displaystyle\\int_0^1 \\dfrac{2x}{1 + \\sin x}\\,\\mathrm{d}x$，则（　　）\n\n(A) $I_1 < I_2 < I_3$．  \n(B) $I_2 < I_1 < I_3$．  \n(C) $I_1 < I_3 < I_2$．  \n(D) $I_3 < I_2 < I_1$．",
+    "answer": "A",
+    "analysis": "本题主要考查定积分比较大小。三个定积分的积分区间相同，故只需比较被积函数的大小。通过观察可发现，要比较 $I_1$ 与 $I_2$ 的大小，只需比较 $\\frac{x}{2}$ 与 $\\ln(1 + x)$ 的大小。令 $f(x) = \\ln(1 + x) - \\frac{x}{2}$，则 $f(0) = 0$，$f'(x) = \\frac{1}{1 + x} - \\frac{1}{2}$。当 $x \\in (0,1)$ 时，$f'(x) > 0$，$f(x)$ 单调增加，从而 $f(x) > f(0) = 0$，即 $\\ln(1 + x) > \\frac{x}{2}$，$\\frac{\\ln(1 + x)}{1 + \\cos x} > \\frac{x}{2(1 + \\cos x)}$。因此，$I_2 > I_1$。此外，同样的方法不难证明在 $(0,1)$ 内，$\\ln(1 + x) < x$。另一方面，由于在 $(0,1)$ 内，$0 < \\sin x, \\cos x < 1$，$1 < 1 + \\sin x < 2$，故 $I_3$ 的被积函数 $\\frac{2x}{1 + \\sin x} > x$。结合 $\\ln(1 + x) < x$ 可得，$\\frac{\\ln(1 + x)}{1 + \\cos x} < \\frac{x}{1 + \\cos x} < x$。于是，$\\frac{2x}{1 + \\sin x} > x > \\frac{\\ln(1 + x)}{1 + \\cos x}$。因此，$I_3 > I_2$。综上所述，应选 A。",
+    "topics": [
+      "三角函数",
+      "积分不等式",
+      "定积分",
+      "不等式",
+      "定积分比较",
+      "函数单调性"
+    ]
+  },
+  {
+    "year": 2022,
+    "qtype": "选择题",
+    "qno": "5",
+    "content": "下列 4 个条件中，3 阶矩阵 $A$ 可相似对角化的一个充分非必要条件是（　　）\n\n(A) $A$ 有 3 个不同的特征值．  \n(B) $A$ 有 3 个线性无关的特征向量．  \n(C) $A$ 有 3 个两两线性无关的特征向量．  \n(D) $A$ 的属于不同特征值的特征向量相互正交．",
+    "answer": "A",
+    "analysis": "本题主要考查矩阵可相似对角化的条件。要找的充分非必要条件应满足由该条件可推出3阶矩阵 $A$ 可相似对角化，但由3阶矩阵 $A$ 可相似对角化却推不出该条件。\n\nn 阶矩阵 $A$ 与对角矩阵相似的判定条件：\n充分条件：$A$ 有 $n$ 个不同的特征值；$A$ 为实对称矩阵。\n充分必要条件：$A$ 有 $n$ 个线性无关的特征向量；$A$ 的每个特征值对应的线性无关的特征向量的个数等于该特征值的重数。\n\n请注意，条件“$A$ 有 $n$ 个不同的特征值”与“$A$ 为实对称矩阵”均能推出“$A$ 有 $n$ 个线性无关的特征向量”和“$A$ 的每个特征值对应的线性无关的特征向量的个数等于该特征值的重数”，但它们之间并没有相互蕴含的关系。\n\n解 依次分析四个选项。\n\n选项 A 是充分非必要条件。若矩阵 $A$ 具有 3 个不同的特征值，则该矩阵有 3 个线性无关的特征向量，从而能够相似对角化。但是矩阵 $A$ 能相似对角化并不意味着 $A$ 一定有 3 个不同的特征值。例如 3 阶单位矩阵 $E$，该矩阵自身即为对角矩阵，但仅有一个三重特征值 1，没有不同的特征值。应选 A。\n\n选项 B 是充分必要条件。\n\n选项 C 是必要非充分条件。若 $A$ 能相似对角化，则 $A$ 必然有 3 个线性无关的特征向量，从而有 3 个两两线性无关的特征向量。但反之并不成立，因为 3 个向量两两线性无关并不意味着 3 个向量线性无关。要举选项 C 不充分的例子，可以找到一个具有 3 重特征值，但却只有两个线性无关的特征向量的 3 阶矩阵。取 $A = \\begin{pmatrix} 0 & 0 & 1 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{pmatrix}$，则 0 是 $A$ 的 3 重特征值，$\\xi_1 = \\begin{pmatrix} 1 \\\\ 0 \\\\ 0 \\end{pmatrix}$ 和 $\\xi_2 = \\begin{pmatrix} 0 \\\\ 1 \\\\ 0 \\end{pmatrix}$ 是 $A$ 的属于特征值 0 的两个线性无关的特征向量。取 $\\xi_3 = \\begin{pmatrix} 1 \\\\ 1 \\\\ 0 \\end{pmatrix}$，则 $\\xi_3$ 也是 $A$ 的属于特征值 0 的一个特征向量，$\\xi_1, \\xi_2, \\xi_3$ 两两线性无关，但是 $\\xi_1, \\xi_2, \\xi_3$ 线性相关，$A$ 也不能相似对角化。\n\n选项 D 既不是充分条件，也不是必要条件。下面说明选项 D 的不必要性。取 $\\xi_1 = \\begin{pmatrix} 1 \\\\ 0 \\\\ 0 \\end{pmatrix}, \\xi_2 = \\begin{pmatrix} 1 \\\\ 1 \\\\ 0 \\end{pmatrix}, \\xi_3 = \\begin{pmatrix} 1 \\\\ 0 \\\\ 1 \\end{pmatrix}$，则 $\\xi_1, \\xi_2, \\xi_3$ 两两不正交。令 $P = (\\xi_1, \\xi_2, \\xi_3), A = ...$",
+    "topics": [
+      "矩阵相似对角化",
+      "线性无关",
+      "特征值",
+      "特征向量",
+      "相似对角化"
+    ]
+  },
+  {
+    "year": 2022,
+    "qtype": "选择题",
+    "qno": "6",
+    "content": "设 $A, B$ 为 $n$ 阶矩阵，$E$ 为 $n$ 阶单位矩阵，若方程组 $Ax = 0$ 与 $Bx = 0$ 同解，则（　　）\n\n(A) $\\begin{pmatrix} A & O \\\\ E & B \\end{pmatrix} y = 0$ 只有零解．  \n(B) $\\begin{pmatrix} E & A \\\\ O & AB \\end{pmatrix} y = 0$ 只有零解．\n\n(C) $\\begin{pmatrix} A & B \\\\ O & B \\end{pmatrix} y = 0$ 与 $\\begin{pmatrix} B & A \\\\ O & A \\end{pmatrix} y = 0$ 同解.\n\n(D) $\\begin{pmatrix} AB & B \\\\ O & A \\end{pmatrix} y = 0$ 与 $\\begin{pmatrix} BA & A \\\\ O & B \\end{pmatrix} y = 0$ 同解.",
+    "answer": "C",
+    "analysis": "",
+    "topics": [
+      "同解",
+      "线性方程组",
+      "分块矩阵"
+    ]
+  },
+  {
+    "year": 2022,
+    "qtype": "选择题",
+    "qno": "7",
+    "content": "设 $\\alpha_1 = (\\lambda, 1, 1)^\\top$, $\\alpha_2 = (1, \\lambda, 1)^\\top$, $\\alpha_3 = (1, 1, \\lambda)^\\top$, $\\alpha_4 = (1, \\lambda, \\lambda^2)^\\top$, 若 $\\alpha_1, \\alpha_2, \\alpha_3$ 与 $\\alpha_1, \\alpha_2, \\alpha_4$ 等价，则 $\\lambda$ 的取值范围是（　　）\n\n(A) $\\{0, 1\\}$.\n\n(B) $\\{\\lambda \\mid \\lambda \\in \\mathbb{R}, \\lambda \\ne -2\\}$.\n\n(C) $\\{\\lambda \\mid \\lambda \\in \\mathbb{R}, \\lambda \\ne -1, \\lambda \\ne -2\\}$.\n\n(D) $\\{\\lambda \\mid \\lambda \\in \\mathbb{R}, \\lambda \\ne -1\\}$.",
+    "answer": "C",
+    "analysis": "本题主要考查向量组的等价问题。两个向量组等价当且仅当它们可以互相线性表示，这等价于它们生成的子空间相同，也等价于它们的秩相等且一个向量组可由另一个线性表示。\n\n设矩阵 $A = (\\alpha_1, \\alpha_2, \\alpha_3)$，$B = (\\alpha_1, \\alpha_2, \\alpha_4)$。向量组 $\\alpha_1, \\alpha_2, \\alpha_3$ 与 $\\alpha_1, \\alpha_2, \\alpha_4$ 等价，意味着 $\\alpha_4$ 可由 $\\alpha_1, \\alpha_2, \\alpha_3$ 线性表示，且 $\\alpha_3$ 可由 $\\alpha_1, \\alpha_2, \\alpha_4$ 线性表示。\n\n首先计算行列式 $|A|$：\n$$\n|A| = \\begin{vmatrix} \\lambda & 1 & 1 \\\\ 1 & \\lambda & 1 \\\\ 1 & 1 & \\lambda \\end{vmatrix} = (\\lambda + 2)(\\lambda - 1)^2.\n$$\n当 $\\lambda \\ne -2$ 且 $\\lambda \\ne 1$ 时，$A$ 可逆，$\\alpha_1, \\alpha_2, \\alpha_3$ 线性无关，构成 $\\mathbb{R}^3$ 的一组基，因此任何三维向量（包括 $\\alpha_4$）都可由它们线性表示。同时，$\\alpha_3$ 也可由 $\\alpha_1, \\alpha_2, \\alpha_4$ 线性表示吗？这需要 $\\alpha_1, \\alpha_2, \\alpha_4$ 也线性无关。计算行列式 $|B|$：\n$$\n|B| = \\begin{vmatrix} \\lambda & 1 & 1 \\\\ 1 & \\lambda & \\lambda \\\\ 1 & 1 & \\lambda^2 \\end{vmatrix} = (\\lambda - 1)^2(\\lambda^2 + 2\\lambda + 2).\n$$\n$\\lambda^2 + 2\\lambda + 2 = (\\lambda + 1)^2 + 1 > 0$，所以 $|B| = 0$ 当且仅当 $\\lambda = 1$。因此当 $\\lambda \\ne 1$ 且 $\\lambda \\ne -2$ 时，$B$ 也可逆，两个向量组都线性无关，秩都为 3，且互相可表示，故等价。\n\n但还需考虑 $\\lambda = 1$ 的情况。当 $\\lambda = 1$ 时，$\\alpha_1 = \\alpha_2 = \\alpha_3 = (1,1,1)^\\top$，$\\alpha_4 = (1,1,1)^\\top$，两个向量组都只含一个线性无关向量，秩都为 1，且显然等价。所以 $\\lambda = 1$ 也满足条件。\n\n然而，选项中没有包含 $\\lambda = 1$ 的集合，因此需要重新审视。实际上，当 $\\lambda = 1$ 时，两个向量组都是 $\\{(1,1,1)^\\top\\}$ 的倍数，确实等价。但选项 C 是 $\\lambda \\ne -1, \\lambda \\ne -2$，包含了 $\\lambda = 1$，所以 C 是正确的。\n\n再检查 $\\lambda = -1$ 时：$\\alpha_1 = (-1,1,1)^\\top$，$\\alpha_2 = (1,-1,1)^\\top$，$\\alpha_3 = (1,1,-1)^\\top$，$\\alpha_4 = (1,-1,1)^\\top$。此时 $\\alpha_4 = \\alpha_2$，所以 $\\alpha_1, \\alpha_2, \\alpha_4$ 的秩为 2（因为 $\\alpha_1, \\alpha_2$ 线性无关），而 $\\alpha_1, \\alpha_2, \\alpha_3$ 的秩为 3（行列式 $|A| = (-1+2)(-1-1)^2 = 1 \\cdot 4 = 4 \\ne 0$），秩不同，故不等价。所以 $\\lambda \\ne -1$。\n\n当 $\\lambda = -2$ 时：$\\alpha_1 = (-2,1,1)^\\top$，$\\alpha_2 = (1,-2,1)^\\top$，$\\alpha_3 = (1,1,-2)^\\top$，$\\alpha_4 = (1,-2,4)^\\top$。此时 $|A| = 0$，$\\alpha_1, \\alpha_2, \\alpha_3$ 线性相关，秩小于 3。计算 $|B|$：$\\lambda = -2$ 时，$|B| = (-2-1)^2((-2)^2 + 2(-2) + 2) = 9 \\cdot (4 - 4 + 2) = 18 \\ne 0$，所以 $\\alpha_1, \\alpha_2, \\alpha_4$ 线性无关，秩为 3。秩不同，故不等价。所以 $\\lambda \\ne -2$。\n\n综上，$\\lambda$ 的取值范围是 $\\lambda \\ne -1$ 且 $\\lambda \\ne -2$，即选项 C。\n\n应选 C。",
+    "topics": [
+      "向量组等价",
+      "线性相关",
+      "行列式"
+    ]
+  },
+  {
+    "year": 2022,
+    "qtype": "选择题",
+    "qno": "8",
+    "content": "设随机变量 $X$ 服从区间 $(0, 3)$ 上的均匀分布，随机变量 $Y$ 服从参数为 2 的泊松分布，且 $X$ 与 $Y$ 的协方差为 $-1$，则 $D(2X - Y + 1) =$ （　　）\n\n(A) 1.  \n(B) 5.  \n(C) 9.  \n(D) 12.",
+    "answer": "C",
+    "analysis": "本题主要考查方差的性质及常见分布的数字特征。\n\n若随机变量 $X$ 服从区间 $(a,b)$ 上的均匀分布，则 $D(X) = \\dfrac{(a - b)^2}{12}$。\n\n若随机变量 $X$ 服从参数为 $\\lambda$ 的泊松分布，则 $D(X) = \\lambda$。\n\n解：由于 $X$ 服从区间 $(0,3)$ 上的均匀分布，故 $X$ 的方差 $D(X) = \\dfrac{(3 - 0)^2}{12} = \\dfrac{3}{4}$。又由于 $Y$ 服从参数为 2 的泊松分布，故 $Y$ 的方差 $D(Y) = 2$。\n\n由方差的性质，\n\n$$\n\\begin{aligned}\nD(2X - Y + 1) &= D(2X - Y) = D(2X) + D(Y) - 2\\mathrm{Cov}(2X,Y) \\\\\n&= 4D(X) + D(Y) - 4\\mathrm{Cov}(X,Y) = 4 \\times \\dfrac{3}{4} + 2 - 4 \\times (-1) = 9.\n\\end{aligned}\n$$\n\n因此，应选 C.",
+    "topics": [
+      "均匀分布",
+      "方差",
+      "协方差",
+      "泊松分布"
+    ]
+  },
+  {
+    "year": 2022,
+    "qtype": "选择题",
+    "qno": "9",
+    "content": "设随机变量 $X_1, X_2, \\cdots, X_n$ 独立同分布，且 $X_1$ 的 4 阶矩存在，$E(X_1^k) = \\mu_k$ ($k = 1, 2, 3, 4$)，则根据切比雪夫不等式，对任意 $\\varepsilon > 0$，都有\n$$\nP\\left\\{ \\left| \\frac{1}{n} \\sum_{i=1}^n X_i^2 - \\mu_2 \\right| \\geqslant \\varepsilon \\right\\} \\leqslant \\quad \\text{（　　）}\n$$\n\n(A) $\\dfrac{\\mu_4 - \\mu_2^2}{n\\varepsilon^2}$.  \n(B) $\\dfrac{\\mu_4 - \\mu_2^2}{\\sqrt{n}\\varepsilon^2}$.  \n(C) $\\dfrac{\\mu_2 - \\mu_1^2}{n\\varepsilon^2}$.  \n(D) $\\dfrac{\\mu_2 - \\mu_1^2}{\\sqrt{n}\\varepsilon^2}$.",
+    "answer": "A",
+    "analysis": "本题主要考查切比雪夫不等式。\n\n**切比雪夫不等式** 设随机变量 $X$ 具有数学期望 $E(X) = \\mu$，方差 $D(X) = \\sigma^2$，则对于任意正数 $\\varepsilon$，不等式\n$$\nP\\left\\{|X - \\mu| \\geqslant \\varepsilon\\right\\} \\leqslant \\dfrac{\\sigma^2}{\\varepsilon^2}\n$$\n成立。\n\n本题所考虑的随机变量为 $\\dfrac{1}{n}\\sum\\limits_{i=1}^n X_i^2$。若要根据切比雪夫不等式估计所给概率，则应先说明该随机变量的期望与方差均存在，即先计算 $E\\left(\\dfrac{1}{n}\\sum\\limits_{i=1}^n X_i^2\\right)$ 和 $D\\left(\\dfrac{1}{n}\\sum\\limits_{i=1}^n X_i^2\\right)$。\n\n根据期望的性质，\n$$\nE\\left(\\dfrac{1}{n}\\sum_{i=1}^n X_i^2\\right) = \\dfrac{1}{n}E\\left(\\sum_{i=1}^n X_i^2\\right) = \\dfrac{1}{n}\\sum_{i=1}^n E(X_i^2) \\xlongequal{E(X_i^2)=\\mu_2} \\dfrac{1}{n} \\cdot n\\mu_2 = \\mu_2.\n$$\n\n根据切比雪夫不等式，对任意 $\\varepsilon > 0$，\n$$\nP\\left\\{\\left|\\dfrac{1}{n}\\sum_{i=1}^n X_i^2 - \\mu_2\\right| \\geqslant \\varepsilon\\right\\} \\leqslant \\dfrac{D\\left(\\dfrac{1}{n}\\sum\\limits_{i=1}^n X_i^2\\right)}{\\varepsilon^2}. \\tag{1}\n$$",
+    "topics": [
+      "数学期望",
+      "切比雪夫不等式",
+      "方差",
+      "独立同分布",
+      "矩"
+    ]
+  },
+  {
+    "year": 2022,
+    "qtype": "选择题",
+    "qno": "10",
+    "content": "设随机变量 $X \\sim N(0, 1)$，若在 $X = x$ 的条件下，随机变量 $Y \\sim N(x, 1)$，则 $X$ 与 $Y$ 的相关系数为（　　）\n\n(A) $\\dfrac{1}{4}$.  \n(B) $\\dfrac{1}{2}$.  \n(C) $\\dfrac{\\sqrt{3}}{3}$.  \n(D) $\\dfrac{\\sqrt{2}}{2}$.",
+    "answer": "D",
+    "analysis": "本题主要考查条件分布及二维正态分布的概率密度函数。由条件分布可知，在 $X=x$ 的条件下，$Y\\sim N(x,1)$，因此 $E(Y|X)=X$，$D(Y|X)=1$。于是 $E(Y)=E[E(Y|X)]=E(X)=0$，$E(XY)=E[XE(Y|X)]=E(X^2)=1$。又 $D(Y)=E[D(Y|X)]+D[E(Y|X)]=1+D(X)=2$，所以 $\\mathrm{Cov}(X,Y)=E(XY)-E(X)E(Y)=1$，相关系数 $\\rho=\\dfrac{\\mathrm{Cov}(X,Y)}{\\sqrt{D(X)}\\sqrt{D(Y)}}=\\dfrac{1}{1\\cdot\\sqrt{2}}=\\dfrac{\\sqrt{2}}{2}$。因此选 D。\n$$E(XY) = \\int_{-\\infty}^{+\\infty} \\int_{-\\infty}^{+\\infty} xyf(x,y)\\,\\mathrm{d}x\\,\\mathrm{d}y = \\int_{-\\infty}^{+\\infty} x \\frac{1}{\\sqrt{2\\pi}} \\mathrm{e}^{-\\frac{x^2}{2}} \\mathrm{d}x \\int_{-\\infty}^{+\\infty} y \\frac{1}{\\sqrt{2\\pi}} \\mathrm{e}^{-\\frac{(y-x)^2}{2}} \\mathrm{d}y$$ $$= \\int_{-\\infty}^{+\\infty} x \\frac{1}{\\sqrt{2\\pi}} \\mathrm{e}^{-\\frac{x^2}{2}} \\mathrm{d}x \\left[ \\int_{-\\infty}^{+\\infty} \\frac{1}{\\sqrt{2\\pi}} (y - x) \\mathrm{e}^{-\\frac{(y-x)^2}{2}} \\mathrm{d}y + x \\int_{-\\infty}^{+\\infty} \\frac{1}{\\sqrt{2\\pi}} \\mathrm{e}^{-\\frac{(y-x)^2}{2}} \\mathrm{d}(y - x) \\right]$$ $$= \\int_{-\\infty}^{+\\infty} x \\frac{1}{\\sqrt{2\\pi}} \\mathrm{e}^{-\\frac{x^2}{2}} (0 + x) \\,\\mathrm{d}x = \\int_{-\\infty}^{+\\infty} x^2 \\frac{1}{\\sqrt{2\\pi}} \\mathrm{e}^{-\\frac{x^2}{2}} \\mathrm{d}x.$$ 又因为 $\\int_{-\\infty}^{+\\infty} x^2 \\frac{1}{\\sqrt{2\\pi}} \\mathrm{e}^{-\\frac{x^2}{2}} \\mathrm{d}x = E(X^2)$，而 $X \\sim N(0,1)$，所以 $E(X^2) = D(X) + [E(X)]^2 = 1$。从而，$E(XY) = 1$。又由法一可得 $Y \\sim N(0,2)$，故 $E(Y) = 0, D(Y) = 2$。因此，$$\\rho_{XY} = \\frac{\\operatorname{Cov}(X,Y)}{\\sqrt{D(X)} \\sqrt{D(Y)}} = \\frac{E(XY) - E(X)E(Y)}{\\sqrt{D(X)} \\sqrt{D(Y)}} = \\frac{1 - 0}{\\sqrt{2}} = \\frac{\\sqrt{2}}{2}.$$ 注：① 实际上，观察 $f(x,y)$ 的形式，可直接整理写成二维正态分布的概率密度的形式。$$f(x,y) = \\frac{1}{2\\pi \\cdot 1 \\cdot \\sqrt{2} \\cdot \\sqrt{1 - \\left(\\frac{\\sqrt{2}}{2}\\right)^2}} \\mathrm{e}^{-\\frac{1}{2\\left[1 - \\left(\\frac{\\sqrt{2}}{2}\\right)^2\\right]} \\left[ \\frac{(x-0)^2}{1^2} + \\frac{\\sqrt{2}}{2} \\frac{(x-0)(y-0)}{1 \\cdot \\sqrt{2}} + \\frac{(y-0)^2}{(\\sqrt{2})^2} \\right]}.$$ ② 反常积分 $\\int_{-\\infty}^{+\\infty} \\frac{1}{\\sqrt{2\\pi}} (y - x) \\mathrm{e}^{-\\frac{(y-x)^2}{2}} \\mathrm{d}y$ 的被积函数是奇函数，而 $\\int_0^{+\\infty} (y - x) \\mathrm{e}^{-\\frac{(y-x)^2}{2}} \\mathrm{d}y$ 收敛，故 $\\int_{-\\infty}^{+\\infty} \\frac{1}{\\sqrt{2\\pi}} (y - x) \\mathrm{e}^{-\\frac{(y-x)^2}{2}} \\mathrm{d}y = 0$。",
+    "topics": [
+      "相关系数",
+      "数学期望",
+      "期望",
+      "方差",
+      "正态分布",
+      "条件分布",
+      "二维正态分布"
+    ]
+  },
+  {
+    "year": 2022,
+    "qtype": "填空题",
+    "qno": "11",
+    "content": "函数 $f(x, y) = x^2 + 2y^2$ 在点 $(0, 1)$ 处的最大方向导数为 ________.",
+    "answer": "4",
+    "analysis": "本题主要考查方向导数与梯度的关系。由于函数在一点处的各方向导数中，沿着梯度方向的方向导数最大，且最大值为梯度的模，故求一点处方向导数的最大值等价于求该点处梯度的模。解：由于 $\\operatorname{grad} f(x,y) = (2x, 4y)$，故 $f(x,y)$ 在点 $(0,1)$ 处的梯度为 $(0,4)$。又因为函数在一点处的最大方向导数等于该点处的梯度的模，所以 $f(x,y)$ 在点 $(0,1)$ 处的最大方向导数为 4。拓展：若函数 $f(x,y,z)$ 在点 $(x_0,y_0,z_0)$ 处可微分，$\\boldsymbol{e}_l = (\\cos\\alpha, \\cos\\beta, \\cos\\gamma)$ 是与方向 $l$ 同向的单位向量，则 $$\\left. \\frac{\\partial f}{\\partial l} \\right|_{(x_0,y_0,z_0)} = \\operatorname{grad} f(x_0,y_0,z_0) \\cdot \\boldsymbol{e}_l = |\\operatorname{grad} f(x_0,y_0,z_0)| \\cos\\theta.$$ 这里 $\\theta$ 为向量 $\\operatorname{grad} f(x_0,y_0,z_0)$ 与向量 $\\boldsymbol{e}_l$ 的夹角。",
+    "topics": [
+      "方向导数",
+      "梯度"
+    ]
+  },
+  {
+    "year": 2022,
+    "qtype": "填空题",
+    "qno": "12",
+    "content": "$\\displaystyle \\int_1^{e^2} \\frac{\\ln x}{\\sqrt{x}} \\, dx = $ ________.",
+    "answer": "4",
+    "analysis": "本题主要考查定积分的计算。被积函数中含有根式 $\\sqrt{x}$，故可以考虑根式代换。或者，注意到本题中的被积函数为对数函数与幂函数的乘积，故可以采用分部积分法。\n\n（法一）利用根式代换。令 $t = \\sqrt{x}$，则 $x = t^2$，$\\mathrm{d}x = 2t\\,\\mathrm{d}t$。\n$$\\int_1^{e^2} \\frac{\\ln x}{\\sqrt{x}} \\,\\mathrm{d}x = \\int_1^e \\frac{2\\ln t}{t} \\cdot 2t\\,\\mathrm{d}t = 4\\int_1^e \\ln t\\,\\mathrm{d}t = 4\\left(t\\ln t\\Big|_1^e - \\int_1^e t \\cdot \\frac{1}{t}\\,\\mathrm{d}t\\right) = 4\\left[e - (e - 1)\\right] = 4.$$\n\n（法二）利用分部积分法。\n$$\\int_1^{e^2} \\frac{\\ln x}{\\sqrt{x}} \\,\\mathrm{d}x = 2\\int_1^{e^2} \\ln x\\,\\mathrm{d}(\\sqrt{x}) = 2\\left(\\sqrt{x}\\ln x\\Big|_1^{e^2} - \\int_1^{e^2} \\sqrt{x} \\cdot \\frac{1}{x}\\,\\mathrm{d}x\\right) = 2\\left(2e - \\int_1^{e^2} \\frac{1}{\\sqrt{x}}\\,\\mathrm{d}x\\right) = 4e - 4\\sqrt{x}\\Big|_1^{e^2} = 4e - (4e - 4) = 4.$$",
+    "topics": [
+      "定积分",
+      "分部积分法",
+      "根式代换"
+    ]
+  },
+  {
+    "year": 2022,
+    "qtype": "填空题",
+    "qno": "13",
+    "content": "当 $x \\geqslant 0, y \\geqslant 0$ 时，$x^2 + y^2 \\leqslant k e^{x+y}$ 恒成立，则 $k$ 的取值范围是 ________.",
+    "answer": "$[4e^{-2}, +\\infty)$",
+    "analysis": "本题主要考查二元函数的最值。假设函数 $f(x,y)$ 在 $D$ 上连续，在 $D$ 内可微，并且只有有限个驻点，那么此时我们可以依照如下步骤来讨论 $f(x,y)$ 的最值：① 求出函数在区域内部的所有驻点处的取值。② 求出函数在区域边界上的最大值与最小值（通常为有约束条件的极值问题，即条件极值问题）。③ 比较①和②中所得函数值，其中最大者为函数 $f(x,y)$ 在区域 $D$ 上的最大值，最小者为函数 $f(x,y)$ 在区域 $D$ 上的最小值。\n不等式 $x^2 + y^2 \\leqslant k\\mathrm{e}^{x+y}$ 等价于 $(x^2 + y^2)\\mathrm{e}^{-(x+y)} \\leqslant k$。记 $f(x,y) = (x^2 + y^2)\\mathrm{e}^{-(x+y)}$, $D = \\{(x,y) \\mid x \\geqslant 0, y \\geqslant 0\\}$。计算 $f(x,y)$ 在 $D$ 内的驻点。$f'_x(x,y) = (2x - x^2 - y^2)\\mathrm{e}^{-(x+y)}$，$f'_y(x,y) = (2y - x^2 - y^2)\\mathrm{e}^{-(x+y)}$。解方程组 $\\begin{cases} 2x - x^2 - y^2 = 0, \\\\ 2y - x^2 - y^2 = 0, \\end{cases}$ 得 $x = y$，代入得 $2x - 2x^2 = 0$，从而 $x = 0$ 或 $x = 1$。驻点为 $(0,0)$ 和 $(1,1)$。舍去 $(0,0)$，$(1,1)$ 为唯一驻点，$f(1,1) = 2\\mathrm{e}^{-2}$。计算边界 $x = 0$ 与 $y = 0$ 上的最大值。当 $x = 0$ 时，$f(0,y) = y^2\\mathrm{e}^{-y}$，$f'_1(y) = (2y - y^2)\\mathrm{e}^{-y}$，得 $y = 0$ 或 $y = 2$，$f(0,2) = 4\\mathrm{e}^{-2}$ 为最大值。同理 $f(2,0) = 4\\mathrm{e}^{-2}$。比较得 $f(0,2) = f(2,0) = 4\\mathrm{e}^{-2}$ 为区域 $D$ 上的最大值。因此 $k$ 的取值范围为 $[4\\mathrm{e}^{-2}, +\\infty)$。",
+    "topics": [
+      "驻点",
+      "二元函数最值",
+      "条件极值",
+      "多元函数最值",
+      "指数函数",
+      "边界最值",
+      "不等式恒成立"
+    ]
+  },
+  {
+    "year": 2022,
+    "qtype": "填空题",
+    "qno": "14",
+    "content": "已知级数 $\\displaystyle \\sum_{n=1}^\\infty \\frac{n!}{n^n} e^{-nx}$ 的收敛域为 $(a, +\\infty)$，则 $a = $ ________.",
+    "answer": "$-1$",
+    "analysis": "令 $u_n = \\dfrac{n!}{n^n}\\mathrm{e}^{-nx}$，则原级数为 $\\sum\\limits_{n=1}^\\infty u_n$。$\\lim_{n \\to \\infty} \\left| \\frac{u_{n+1}}{u_n} \\right| = \\lim_{n \\to \\infty} \\frac{(n+1)!}{(n+1)^{n+1}} \\cdot \\frac{n^n}{n!} \\mathrm{e}^{-x} = \\mathrm{e}^{-x} \\lim_{n \\to \\infty} \\frac{n^n}{(n+1)^n} = \\mathrm{e}^{-x} \\lim_{n \\to \\infty} \\frac{1}{\\left(1 + \\frac{1}{n}\\right)^n} = \\mathrm{e}^{-1-x}$。由比值审敛法可知，当 $\\mathrm{e}^{-1-x} < 1$ 时，$\\sum\\limits_{n=1}^\\infty u_n$ 收敛；当 $\\mathrm{e}^{-1-x} > 1$ 时，$\\sum\\limits_{n=1}^\\infty u_n$ 发散。由于指数函数单调增加，故 $\\mathrm{e}^{-1-x} < 1$ 等价于 $-1 - x < 0$，即 $x > -1$。因此，当 $x > -1$ 时，函数项级数 $\\sum\\limits_{n=1}^\\infty \\dfrac{n!}{n^n}\\mathrm{e}^{-nx}$ 收敛。",
+    "topics": [
+      "函数项级数",
+      "幂级数",
+      "收敛域",
+      "比值审敛法",
+      "比值判别法"
+    ]
+  },
+  {
+    "year": 2022,
+    "qtype": "填空题",
+    "qno": "15",
+    "content": "已知矩阵 $A$ 和 $E - A$ 可逆，其中 $E$ 为单位矩阵，若矩阵 $B$ 满足 $[E - (E - A)^{-1}]B = A$，则 $B - A = $ ________.",
+    "answer": "$-E$",
+    "analysis": "本题主要考查矩阵运算。已知等式中，$E - (E - A)^{-1}$ 是比较复杂的因式，故可以考虑先对其进行转化。在 $[E - (E - A)^{-1}] B = A$ 两端同时左乘 $E - A$，可得 $[E - A - (E - A)(E - A)^{-1}] B = (E - A) A$。展开整理，可得 $-AB = A - A^2$。由于 $A$ 可逆，故上式两端同时左乘 $A^{-1}$ 可得 $-B = E - A$，即 $B - A = -E$。",
+    "topics": [
+      "矩阵运算",
+      "逆矩阵",
+      "矩阵方程"
+    ]
+  },
+  {
+    "year": 2022,
+    "qtype": "填空题",
+    "qno": "16",
+    "content": "设 $A, B, C$ 为随机事件，且 $A$ 与 $B$ 互不相容，$A$ 与 $C$ 互不相容，$B$ 与 $C$ 相互独立，$P(A) = P(B) = P(C) = \\dfrac{1}{3}$，则 $P(B \\cup C \\mid A \\cup B \\cup C) = $ ________.",
+    "answer": "$\\dfrac{5}{8}$",
+    "analysis": "本题主要考查概率的基本计算公式。三个事件的和事件概率公式：$P(A \\cup B \\cup C) = P(A) + P(B) + P(C) - P(AB) - P(BC) - P(AC) + P(ABC)$。由于 $A, B$ 互不相容，$A, C$ 互不相容，$B, C$ 相互独立，故 $P(AB) = 0$，$P(AC) = 0$，$P(BC) = P(B)P(C) = \\dfrac{1}{9}$，$P(ABC) = 0$。由条件概率公式，$P(B \\cup C \\mid A \\cup B \\cup C) = \\dfrac{P[(B \\cup C) \\cap (A \\cup B \\cup C)]}{P(A \\cup B \\cup C)} = \\dfrac{P(B \\cup C)}{P(A \\cup B \\cup C)} = \\dfrac{P(B) + P(C) - P(BC)}{P(A) + P(B) + P(C) - P(AB) - P(BC) - P(AC) + P(ABC)} = \\dfrac{\\dfrac{1}{3} + \\dfrac{1}{3} - \\dfrac{1}{9}}{\\dfrac{1}{3} + \\dfrac{1}{3} + \\dfrac{1}{3} - \\dfrac{1}{9}} = \\dfrac{5}{8}$。",
+    "topics": [
+      "条件概率",
+      "互不相容",
+      "事件独立性",
+      "相互独立",
+      "概率论"
+    ]
+  },
+  {
+    "year": 2022,
+    "qtype": "解答题",
+    "qno": "17",
+    "content": "（本题满分 10 分）  \n设函数 $ y(x) $ 是微分方程 $ y' + \\dfrac{1}{2\\sqrt{x}}y = 2 + \\sqrt{x} $ 的满足条件 $ y(1) = 3 $ 的解，求曲线 $ y = y(x) $ 的渐近线。",
+    "answer": "",
+    "analysis": "本题主要考查微分方程求解与渐近线的计算。本题中的方程为一阶非齐次线性微分方程，根据求解公式计算解即可。根据求解公式，$y = e^{-\\int \\frac{1}{2\\sqrt{x}}\\,\\mathrm{d}x} \\left[ \\int (2 + \\sqrt{x}) e^{\\int \\frac{1}{2\\sqrt{x}}\\,\\mathrm{d}x} \\,\\mathrm{d}x + C_0 \\right] = e^{-\\sqrt{x}} \\left[ \\int (2 + \\sqrt{x}) e^{\\sqrt{x}} \\,\\mathrm{d}x + C_0 \\right]$。下面计算 $\\int (2 + \\sqrt{x}) e^{\\sqrt{x}} \\,\\mathrm{d}x$。令 $u = \\sqrt{x}$，则 $x = u^2$，$\\mathrm{d}x = 2u\\,\\mathrm{d}u$。",
+    "topics": [
+      "微分方程",
+      "渐近线",
+      "通解",
+      "一阶线性微分方程"
+    ]
+  },
+  {
+    "year": 2022,
+    "qtype": "解答题",
+    "qno": "18",
+    "content": "（本题满分 12 分）  \n已知平面区域 $ D = \\left\\{ (x,y) \\mid y - 2 \\leqslant x \\leqslant \\sqrt{4 - y^2},\\, 0 \\leqslant y \\leqslant 2 \\right\\} $，计算  \n$$\nI = \\iint_D \\frac{(x - y)^2}{x^2 + y^2} \\,\\mathrm{d}x\\mathrm{d}y.\n$$",
+    "answer": "",
+    "analysis": "本题主要考查二重积分的计算。根据积分区域以及被积函数的特点，可以考虑在极坐标系下计算。在极坐标系下计算。由 $D$ 的表达式可知，$D$ 是由直线 $y = x + 2$，圆 $x^2 + y^2 = 4$ 以及 $x$ 轴围成的部分。直线 $y = x + 2$ 在极坐标系下的表示为 $r = \\dfrac{2}{\\sin \\theta - \\cos \\theta}$，圆 $x^2 + y^2 = 4$ 在极坐标系下的表示为 $r = 2$。将 $D$ 分为两部分 $D_1$ 和 $D_2$。$D_1 = \\left\\{ (r, \\theta) \\,\\middle|\\, 0 \\leqslant r \\leqslant 2,\\, 0 \\leqslant \\theta \\leqslant \\frac{\\pi}{2} \\right\\},$ $D_2 = \\left\\{ (r, \\theta) \\,\\middle|\\, 0 \\leqslant r \\leqslant \\frac{2}{\\sin \\theta - \\cos \\theta},\\, \\frac{\\pi}{2} \\leqslant \\theta \\leqslant \\pi \\right\\}.$ 因此，",
+    "topics": [
+      "区域变换",
+      "积分区域",
+      "二重积分",
+      "极坐标"
+    ]
+  },
+  {
+    "year": 2022,
+    "qtype": "解答题",
+    "qno": "19",
+    "content": "（本题满分 12 分）  \n已知曲线 $ L $ 是曲面 $ \\Sigma: 4x^2 + y^2 + z^2 = 1,\\, x \\geqslant 0,\\, y \\geqslant 0,\\, z \\geqslant 0 $ 的边界，曲面 $ \\Sigma $ 方向朝上，曲线 $ L $ 的方向和曲面 $ \\Sigma $ 的方向符合右手法则，计算  \n$$\nI = \\oint_L (y z^2 - \\cos z)\\,\\mathrm{d}x + 2x z^2\\,\\mathrm{d}y + (2xyz + x\\sin z)\\,\\mathrm{d}z.\n$$",
+    "answer": "0",
+    "analysis": "（法一）根据右手法则，曲线 $L$ 应取逆时针方向。\n\n如图(a) 所示，记 $L_1, L_2, L_3$ 分别为 $L$ 在 $xOy$ 面，$yOz$ 面，$zOx$ 面的部分。\n\n在 $L_1$ 上，$z = 0$, $\\int_{L_1} \\mathrm{d}z = 0$. 起点为 $\\left(\\frac{1}{2}, 0, 0\\right)$, 终点为 $(0, 1, 0)$.\n\n在 $L_2$ 上，$x = 0$, $\\int_{L_2} \\mathrm{d}x = 0$. 起点为 $(0, 1, 0)$, 终点为 $(0, 0, 1)$.\n\n在 $L_3$ 上，$y = 0$, $\\int_{L_3} \\mathrm{d}y = 0$. 起点为 $(0, 0, 1)$, 终点为 $\\left(\\frac{1}{2}, 0, 0\\right)$.\n\n因此，\n\n$$\nI = \\oint_L (y^2 - \\cos z)\\,\\mathrm{d}x + 2xz^2\\,\\mathrm{d}y + (2xyz + x\\sin z)\\,\\mathrm{d}z\n$$\n\n$$\n= \\int_{L_1} (-\\cos 0)\\,\\mathrm{d}x + 0 + \\int_{L_3} (-\\cos z)\\,\\mathrm{d}x + x\\sin z\\,\\mathrm{d}z\n$$\n\n$$\n= (-1) \\times \\left(0 - \\frac{1}{2}\\right) + \\int_{L_3} \\mathrm{d}(-x\\cos z) = \\frac{1}{2} + \\left.(-x\\cos z)\\right|_{(0,0,1)}^{(\\frac{1}{2},0,0)}\n$$\n\n$$\n= \\frac{1}{2} - \\frac{1}{2} = 0.\n$$",
+    "topics": [
+      "曲面积分",
+      "右手法则",
+      "空间曲线积分",
+      "曲线积分",
+      "斯托克斯公式"
+    ]
+  },
+  {
+    "year": 2022,
+    "qtype": "证明题",
+    "qno": "20",
+    "content": "(本题满分 12 分)\n\n设函数 $f(x)$ 在 $(-\\infty, +\\infty)$ 上有二阶连续导数，证明：$f''(x) \\geqslant 0$ 的充分必要条件是对任意不同的实数 $a, b$，都有\n$$\nf\\left(\\frac{a+b}{2}\\right) \\leqslant \\frac{1}{b-a} \\int_a^b f(x)\\,\\mathrm{d}x\n$$\n成立。",
+    "answer": "",
+    "analysis": "本题综合考查了一元微积分中的重要概念，包括连续性、凹凸性等．\n\n必要性的证明要求由 $f(x)$ 是 $(-\\infty, +\\infty)$ 上的凹函数推导出函数 $f(x)$ 在任一区间 $(a,b)$ 中点处的取值不超过其在区间 $[a,b]$ 上的平均值，这一点通过几何直观是比较容易发现的．要说明这一点，可以考虑使用 $f(x)$ 在点 $\\frac{a+b}{2}$ 处的二阶泰勒公式，也可以考虑利用变限积分构造函数不等式．\n\n在得到必要性的证明之后，充分性的证明可以考虑使用反证法．因为若假设存在 $x_0$ 使得 $f''(x_0) < 0$，则由二阶导数的连续性可得存在包含 $x_0$ 的一个小区间 $[a_0,b_0]$，在该小区间上",
+    "topics": [
+      "积分不等式",
+      "二阶导数",
+      "凸函数",
+      "凹凸性",
+      "反证法",
+      "泰勒公式"
+    ]
+  },
+  {
+    "year": 2022,
+    "qtype": "解答题",
+    "qno": "21",
+    "content": "(本题满分 12 分)\n\n设二次型 $f(x_1, x_2, x_3) = \\sum_{i=1}^{3} \\sum_{j=1}^{3} ijx_i x_j$。\n\n（Ⅰ）写出 $f(x_1, x_2, x_3)$ 对应的矩阵；\n\n（Ⅱ）求正交变换 $\\boldsymbol{x} = \\boldsymbol{Q}\\boldsymbol{y}$ 将 $f(x_1, x_2, x_3)$ 化为标准形；\n\n（Ⅲ）求 $f(x_1, x_2, x_3) = 0$ 的解。",
+    "answer": "",
+    "analysis": "分析 本题主要考查二次型的标准形及其应用。 写出二次型对应的矩阵 $\\boldsymbol{A}$ 后，可以通过计算特征值与特征向量，并将特征向量单位正交化得到正交变换对应的正交矩阵 $\\boldsymbol{Q}$。 第（Ⅲ）问求 $f(x_1, x_2, x_3) = 0$ 的解，可以根据第（Ⅱ）问所得标准形求解，也可以直接对二次型配方化标准形求解。 解 （Ⅰ）根据二次型 $f$ 的表达式，其对应的对称矩阵 $\\boldsymbol{A}$ 的 $(i,j)$ 元 $a_{ij} = ij\\ (i,j = 1,2,3)$。 因此，$\\boldsymbol{A} = \\begin{pmatrix} 1 & 2 & 3 \\\\ 2 & 4 & 6 \\\\ 3 & 6 & 9 \\end{pmatrix}$。 （Ⅱ）由第（Ⅰ）问可知，$\\boldsymbol{A}$ 是一个秩为 1，且迹为 14 的实对称矩阵。由于实对称矩阵必能相似对角化，且相似的矩阵具有相同的秩与迹，故 $\\boldsymbol{A}$ 相似于对角矩阵 $\\begin{pmatrix} 14 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{pmatrix}$。$\\boldsymbol{A}$ 的特征值为 $14, 0, 0$。 下面分别计算 $\\boldsymbol{A}$ 的属于特征值 0 和 14 的特征向量。 考虑 $(\\boldsymbol{0E} - \\boldsymbol{A})\\boldsymbol{x} = \\boldsymbol{0}$。 $$ -\\boldsymbol{A} = \\begin{pmatrix} -1 & -2 & -3 \\\\ -2 & -4 & -6 \\\\ -3 & -6 & -9 \\end{pmatrix} \\to \\begin{pmatrix} 1 & 2 & 3 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\end{pmatrix}. $$ 于是，$-\\boldsymbol{A}\\boldsymbol{x} = \\boldsymbol{0}$ 等价于方程组 $x_1 + 2x_2 + 3x_3 = 0$。分别令 $\\begin{pmatrix} x_2 \\\\ x_3 \\end{pmatrix} = \\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}, \\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}$，可得 $\\boldsymbol{\\xi}_2 = \\begin{pmatrix} -2 \\\\ 1 \\\\ 0 \\end{pmatrix}, \\boldsymbol{\\xi}_3 = \\begin{pmatrix} -3 \\\\ 0 \\\\ 1 \\end{pmatrix}$。 由 $\\boldsymbol{\\xi}_2, \\boldsymbol{\\xi}_3$ 满足的方程也可知，$\\boldsymbol{\\xi}_2, \\boldsymbol{\\xi}_3$ 均与向量 $\\begin{pmatrix} 1 \\\\ 2 \\\\ 3 \\end{pmatrix}$ 正交。并且，在三维向量空间中，$k\\begin{pmatrix} 1 \\\\ 2 \\\\ 3 \\end{pmatrix}$（$k$ 为任意非零常数）代表与 $\\boldsymbol{\\xi}_2, \\boldsymbol{\\xi}_3$ 均正交的唯一方向。由于实对称矩阵属于不同特征值的特征向量相互正交，故向量 $\\boldsymbol{\\xi}_1 = \\begin{pmatrix} 1 \\\\ 2 \\\\ 3 \\end{pmatrix}$ 即矩阵 $\\boldsymbol{A}$ 的属于特征值 14 的一个特征向量。 将 $\\boldsymbol{\\xi}_1, \\boldsymbol{\\xi}_2, \\boldsymbol{\\xi}_3$ 单位正交化。实际上，由于 $\\boldsymbol{\\xi}_1$ 与 $\\boldsymbol{\\xi}_2, \\boldsymbol{\\xi}_3$ 均正交，故正交化的过程只需将 $\\boldsymbol{\\xi}_2, \\boldsymbol{\\xi}_3$ 正交化。",
+    "topics": [
+      "矩阵表示",
+      "二次型",
+      "标准形",
+      "正交变换",
+      "特征值",
+      "特征向量"
+    ]
+  },
+  {
+    "year": 2022,
+    "qtype": "解答题",
+    "qno": "22",
+    "content": "(本题满分 12 分)\n\n设 $X_1, X_2, \\cdots, X_n$ 为来自均值为 $\\theta$ 的指数分布总体的简单随机样本，$Y_1, Y_2, \\cdots, Y_m$ 为来自均值为 $2\\theta$ 的指数分布总体的简单随机样本，且两样本相互独立，其中 $\\theta (\\theta > 0)$ 是未知参数。利用样本 $X_1, X_2, \\cdots, X_n, Y_1, Y_2, \\cdots, Y_m$，求 $\\theta$ 的最大似然估计量 $\\hat{\\theta}$，并求 $D(\\hat{\\theta})$。",
+    "answer": "",
+    "analysis": "【分析】本题主要考查最大似然估计法及指数分布的性质。\n\n**指数分布** 若连续型随机变量 $X$ 的概率密度为\n$$\nf(x) = \n\\begin{cases}\n\\lambda e^{-\\lambda x}, & x > 0, \\\\\n0, & \\text{其他},\n\\end{cases}\n$$\n其中 $\\lambda > 0$ 为常数，则称 $X$ 服从参数为 $\\lambda$ 的指数分布。\n\n若 $X$ 服从参数为 $\\lambda$ 的指数分布，则 $E(X) = \\frac{1}{\\lambda}, D(X) = \\frac{1}{\\lambda^2}$。\n\n本题中的样本 $X_1, X_2, \\cdots, X_n, Y_1, Y_2, \\cdots, Y_m$ 有两种不同的概率密度，需先根据 $X_i (i = 1, 2, \\cdots, n)$ 和 $Y_j (j = 1, 2, \\cdots, m)$ 的数学期望写出它们相应的概率密度函数，再写出似然函数，从而求得 $\\theta$ 的最大似然估计量。\n\n【解】$X_1, X_2, \\cdots, X_n$ 是来自总体 $X$ 的简单随机样本。由于 $E(X) = \\theta$，故 $X$ 服从参数为 $\\frac{1}{\\theta}$ 的指数分布。于是，$X$ 的概率密度函数为\n$$\nf_X(x) = \n\\begin{cases}\n\\frac{1}{\\theta} e^{-\\frac{x}{\\theta}}, & x > 0, \\\\\n0, & x \\leq 0.\n\\end{cases}\n$$\n\n$Y_1, Y_2, \\cdots, Y_m$ 是来自总体 $Y$ 的简单随机样本。由于 $E(Y) = 2\\theta$，故 $Y$ 服从参数为 $\\frac{1}{2\\theta}$ 的指数分布。于是，$Y$ 的概率密度函数为\n$$\nf_Y(y) = \n\\begin{cases}\n\\frac{1}{2\\theta} e^{-\\frac{y}{2\\theta}}, & y > 0, \\\\\n0, & y \\leq 0.\n\\end{cases}\n$$",
+    "topics": [
+      "最大似然估计",
+      "指数分布",
+      "方差"
+    ]
+  },
+  {
+    "year": 2022,
+    "qtype": "选择题",
+    "qno": "?",
+    "content": "设随机变量 $X \\sim N(0,1)$，在 $X=x$ 的条件下，$Y \\sim N(x,1)$，则 $X$ 与 $Y$ 的相关系数 $\\rho_{XY}$ 为（ ）\nA. $0$\nB. $\\frac{1}{2}$\nC. $\\frac{\\sqrt{3}}{2}$\nD. $\\frac{\\sqrt{2}}{2}$",
+    "answer": "D",
+    "analysis": "（法一）由于 $X \\sim N(0,1)$，故 $X$ 的概率密度函数为\n$$f_X(x) = \\frac{1}{\\sqrt{2\\pi}} \\mathrm{e}^{-\\frac{x^2}{2}}.$$\n由于在 $X = x$ 的条件下，$Y \\sim N(x,1)$，故在 $X = x$ 的条件下，$Y$ 的条件概率密度为\n$$f_{Y|X}(y \\mid x) = \\frac{1}{\\sqrt{2\\pi}} \\mathrm{e}^{-\\frac{(y-x)^2}{2}}.$$\n于是，二维随机变量 $(X,Y)$ 的联合概率密度为\n$$f(x,y) = f_X(x)f_{Y|X}(y \\mid x) = \\frac{1}{\\sqrt{2\\pi}} \\mathrm{e}^{-\\frac{x^2}{2}} \\cdot \\frac{1}{\\sqrt{2\\pi}} \\mathrm{e}^{-\\frac{(y-x)^2}{2}} = \\frac{1}{2\\pi} \\mathrm{e}^{-x^2 + xy - \\frac{y^2}{2}}.$$\n计算 $Y$ 的边缘概率密度 $f_Y(y)$。对 $y \\in (-\\infty, +\\infty)$，\n$$f_Y(y) = \\int_{-\\infty}^{+\\infty} f(x,y)\\,\\mathrm{d}x = \\int_{-\\infty}^{+\\infty} \\frac{1}{2\\pi} \\mathrm{e}^{-x^2 + xy - \\frac{y^2}{2}}\\,\\mathrm{d}x = \\frac{1}{2\\sqrt{\\pi}} \\mathrm{e}^{-\\frac{y^2}{4}} \\int_{-\\infty}^{+\\infty} \\frac{1}{\\sqrt{2\\pi} \\cdot \\frac{\\sqrt{2}}{2}} \\mathrm{e}^{-(x - \\frac{y}{2})^2}\\,\\mathrm{d}x$$\n$$= \\frac{1}{2\\sqrt{\\pi}} \\mathrm{e}^{-\\frac{y^2}{4}} = \\frac{1}{\\sqrt{2\\pi} \\cdot \\sqrt{2}} \\mathrm{e}^{-\\frac{y^2}{2(\\sqrt{2})^2}}.$$\n于是，$(X,Y)$ 关于 $Y$ 的边缘分布是正态分布 $N(0,2)$。\n结合 $f(x,y)$ 与二维正态分布的概率密度的形式，取 $\\mu_1 = 0, \\mu_2 = 0, \\sigma_1 = 1, \\sigma_2 = \\sqrt{2}$，\n$$\\frac{1}{2\\pi} \\mathrm{e}^{-x^2 + xy - \\frac{y^2}{2}} = \\frac{1}{2\\pi \\cdot 1 \\cdot \\sqrt{2} \\cdot \\sqrt{2}} \\cdot \\mathrm{e}^{-\\frac{1}{2(1-\\rho^2)} \\left[ \\frac{(x-0)^2}{1^2} - 2\\rho \\frac{(x-0)(y-0)}{1 \\cdot \\sqrt{2}} + \\frac{(y-0)^2}{(\\sqrt{2})^2} \\right]}.$$\n因此，取 $\\rho = \\frac{\\sqrt{2}}{2}$，则 $(X,Y)$ 服从二维正态分布 $N\\left(0,0;1,2;\\frac{\\sqrt{2}}{2}\\right)$。\n由二维正态分布的概率密度的参数的含义可知，$\\rho_{XY} = \\frac{\\sqrt{2}}{2}$，应选 D。\n（法二）计算 $\\rho_{XY}$。先计算 $E(XY)$。由法一可得 $f(x,y) = \\frac{1}{2\\pi} \\mathrm{e}^{-x^2 + xy - \\frac{y^2}{2}}$。于是，",
+    "topics": [
+      "二维正态分布",
+      "条件概率密度",
+      "相关系数",
+      "边缘概率密度"
+    ]
+  },
+  {
+    "year": 2023,
+    "qtype": "选择题",
+    "qno": "1",
+    "content": "曲线 $ y = x \\ln\\left(e + \\dfrac{1}{x - 1}\\right) $ 的斜渐近线方程为（　　）\n\n　　A. $ y = x + e $　　　　　B. $ y = x + \\dfrac{1}{e} $　　　　　C. $ y = x $　　　　　D. $ y = x - \\dfrac{1}{e} $",
+    "answer": "(B)",
+    "analysis": "由于  \n$$\nk = \\lim_{x \\to \\infty} \\frac{y}{x} = \\lim_{x \\to \\infty} \\frac{x \\ln \\left( e + \\frac{1}{x - 1} \\right)}{x} = \\lim_{x \\to \\infty} \\ln \\left( e + \\frac{1}{x - 1} \\right) = 1\n$$  \n$$\nb = \\lim_{x \\to \\infty} (y - x) = \\lim_{x \\to \\infty} \\left[ x \\ln \\left( e + \\frac{1}{x - 1} \\right) - x \\right]\n$$  \n$$\n= \\lim_{x \\to \\infty} x \\left[ \\ln \\left( e + \\frac{1}{x - 1} \\right) - 1 \\right] = \\lim_{x \\to \\infty} x \\left[ \\ln \\left( e + \\frac{1}{x - 1} \\right) - \\ln e \\right]\n$$  \n$$\n= \\lim_{x \\to \\infty} x \\ln \\left[ 1 + \\frac{1}{e(x - 1)} \\right] = \\lim_{x \\to \\infty} \\frac{x}{e(x - 1)} = \\frac{1}{e}.\n$$  \n则斜渐近线方程为：$ y = x + \\frac{1}{e} $，故选 (B).  \n□",
+    "topics": [
+      "斜渐近线",
+      "对数函数",
+      "极限"
+    ]
+  },
+  {
+    "year": 2023,
+    "qtype": "选择题",
+    "qno": "2",
+    "content": "若微分方程 $ y'' + ay' + by = 0 $ 的解在 $ (-\\infty, +\\infty) $ 上有界，则（　　）\n\n　　A. $ a < 0, b > 0 $　　　　　B. $ a > 0, b > 0 $　　　　　C. $ a = 0, b > 0 $　　　　　D. $ a = 0, b < 0 $",
+    "answer": "(C)",
+    "analysis": "若 $ r^2 + a r + b = 0 $ 有实根，则通解为：$ C_1 e^{r_1 x} + C_2 e^{r_2 x} $ 或 $ (C_1 + C_2 x) e^{r_1 x} $，此时，$ r \\ne 0 $ 时，$ e^{r x} $ 必无界，$ r = 0 $ 时，$ x e^{r x} $ 必无界，则 $ r^2 + a r + b = 0 $ 必有虚根，即 $ r_{1,2} = \\alpha \\pm \\beta i $，则通解为：$ e^{\\alpha x} (C_1 \\cos \\beta x + C_2 \\sin \\beta x) $，要使其有界，则 $ \\alpha = 0 $，即 $ a = 0 $，则 $ b > 0 $，故选 (C).  \n□",
+    "topics": [
+      "二阶常系数线性微分方程",
+      "有界性",
+      "特征方程",
+      "常系数线性微分方程"
+    ]
+  },
+  {
+    "year": 2023,
+    "qtype": "选择题",
+    "qno": "3",
+    "content": "设函数 $ y = f(x) $ 由\n$$\n\\begin{cases}\nx = 2t + |t|, \\\\\ny = |t| \\sin t\n\\end{cases}\n$$\n确定，则（　　）\n\n　　A. $ f(x) $ 连续，$ f'(0) $ 不存在。  \n　　B. $ f'(0) $ 存在，$ f'(x) $ 在 $ x = 0 $ 处不连续。  \n　　C. $ f'(x) $ 连续，$ f''(0) $ 不存在。  \n　　D. $ f''(0) $ 存在，$ f'(x) $ 在 $ x = 0 $ 处不连续。",
+    "answer": "(C)",
+    "analysis": "当 $ t > 0 $ 时，$ x > 0 $，此时  \n$$\n\\begin{cases}\nx = 3t \\\\\ny = t \\sin t\n\\end{cases}, \\quad \\frac{dy}{dx} = \\frac{\\sin t + t \\cos t}{3};\n$$  \n当 $ t < 0 $ 时，$ x < 0 $，此时  \n$$\n\\begin{cases}\nx = t \\\\\ny = -t \\sin t\n\\end{cases}, \\quad \\frac{dy}{dx} = -\\frac{\\sin t + t \\cos t}{1};\n$$  \n当 $ t = 0 $ 时，$ x = 0 $，  \n$$\nf'(0) = \\lim_{x \\to 0} \\frac{f(x) - f(0)}{x} = \\lim_{t \\to 0} \\frac{|t| \\sin t}{2t + |t|} = 0,\n$$  \n由于 $ f'(0) = \\lim_{x \\to 0^+} f'(x) = \\lim_{x \\to 0^-} f'(x) = 0 $，所以 $ f'(0) $ 在 $ x = 0 $ 处连续，所以 $ f'(0) $ 连续。而：  \n$$\nf'_+(0) = \\lim_{x \\to 0^+} \\frac{f'(x) - f'(0)}{x} = \\lim_{t \\to 0^+} \\frac{\\sin t + t \\cos t}{9t} = \\frac{2}{9},\n$$  \n$$\nf'_-(0) = \\lim_{x \\to 0^-} \\frac{f'(x) - f'(0)}{x} = \\lim_{t \\to 0^-} \\left( -\\frac{\\sin t + t \\cos t}{t} \\right) = -2.\n$$",
+    "topics": [
+      "导数连续性",
+      "连续性",
+      "分段函数",
+      "参数方程求导",
+      "导数定义"
+    ]
+  },
+  {
+    "year": 2023,
+    "qtype": "选择题",
+    "qno": "4",
+    "content": "已知 $ a_n < b_n (n = 1, 2, \\cdots) $，若级数 $ \\sum\\limits_{n=1}^{\\infty} a_n $ 与 $ \\sum\\limits_{n=1}^{\\infty} b_n $ 均收敛，则 “$ \\sum\\limits_{n=1}^{\\infty} a_n $ 绝对收敛” 是 “$ \\sum\\limits_{n=1}^{\\infty} b_n $ 绝对收敛” 的（　　）\n\n　　A. 充分必要条件。  \n　　B. 充分不必要条件。  \n　　C. 必要不充分条件。  \n　　D. 既不充分也不必要条件。",
+    "answer": "(A)",
+    "analysis": "因为 $a_n < b_n$，所以 $b_n - a_n > 0$，又级数 $\\sum_{n=1}^{\\infty} a_n$、$\\sum_{n=1}^{\\infty} b_n$ 都收敛，故级数 $\\sum_{n=1}^{\\infty} b_n - a_n$ 绝对收敛，\n若级数 $\\sum_{n=1}^{\\infty} a_n$ 绝对收敛，则级数\n$$\n\\sum_{n=1}^{\\infty} |b_n| = \\sum_{n=1}^{\\infty} |(b_n - a_n) + a_n| \\leq \\sum_{n=1}^{\\infty} |b_n - a_n| + \\sum_{n=1}^{\\infty} |a_n|\n$$\n而 $\\sum_{n=1}^{\\infty} |b_n - a_n| + \\sum_{n=1}^{\\infty} |a_n|$ 收敛，故 $\\sum_{n=1}^{\\infty} |b_n|$ 收敛，从而 $\\sum_{n=1}^{\\infty} b_n$ 绝对收敛．\n若级数 $\\sum_{n=1}^{\\infty} b_n$ 绝对收敛，则级数\n$$\n\\sum_{n=1}^{\\infty} |a_n| = \\sum_{n=1}^{\\infty} |(a_n - b_n) + b_n| \\leq \\sum_{n=1}^{\\infty} |b_n - a_n| + \\sum_{n=1}^{\\infty} |b_n|\n$$\n而 $\\sum_{n=1}^{\\infty} |b_n - a_n| + \\sum_{n=1}^{\\infty} |b_n|$ 收敛，故 $\\sum_{n=1}^{\\infty} |a_n|$ 收敛，从而 $\\sum_{n=1}^{\\infty} a_n$ 绝对收敛，故选 (A).",
+    "topics": [
+      "比较判别法",
+      "充分必要条件",
+      "级数收敛",
+      "绝对收敛"
+    ]
+  },
+  {
+    "year": 2023,
+    "qtype": "选择题",
+    "qno": "5",
+    "content": "已知 $ n $ 阶矩阵 $ A, B, C $ 满足 $ ABC = O $，$ E $ 为 $ n $ 阶单位矩阵。记矩阵\n$$\n\\begin{bmatrix}\nO & A \\\\\nBC & E\n\\end{bmatrix},\n\\begin{bmatrix}\nAB & C \\\\\nO & E\n\\end{bmatrix},\n\\begin{bmatrix}\nE & AB \\\\\nAB & O\n\\end{bmatrix}\n$$\n的秩分别为 $ r_1, r_2, r_3 $，则（　　）\n\n　　A. $ r_1 \\leq r_2 \\leq r_3 $　　　　　B. $ r_1 \\leq r_3 \\leq r_2 $　　　　　C. $ r_3 \\leq r_2 \\leq r_1 $　　　　　D. $ r_2 \\leq r_1 \\leq r_3 $",
+    "answer": "(B)",
+    "analysis": "做初等行变换\n$$\n\\begin{pmatrix}\nO & A \\\\\nBC & E\n\\end{pmatrix}\n\\to\n\\begin{pmatrix}\n0 - ABC & A - AE \\\\\nBC & E\n\\end{pmatrix}\n\\to\n\\begin{pmatrix}\n0 & 0 \\\\\nBC & E\n\\end{pmatrix}\n\\to\n\\begin{pmatrix}\n0 & 0 \\\\\n0 & E\n\\end{pmatrix}\n$$\n$$\n\\begin{pmatrix}\nAB & C \\\\\n0 & E\n\\end{pmatrix}\n\\to\n\\begin{pmatrix}\nAB - 0 & C - CE \\\\\n0 & E\n\\end{pmatrix}\n\\to\n\\begin{pmatrix}\nAB & 0 \\\\\n0 & E\n\\end{pmatrix}\n$$\n$$\n\\begin{pmatrix}\nE & AB \\\\\nAB & 0\n\\end{pmatrix}\n\\to\n\\begin{pmatrix}\nE & AB \\\\\nAB - AB & 0 - ABAB\n\\end{pmatrix}\n\\to\n\\begin{pmatrix}\nE & AB \\\\\n0 & -ABAB\n\\end{pmatrix}\n\\to\n\\begin{pmatrix}\nE & 0 \\\\\n0 & -ABAB\n\\end{pmatrix}\n$$",
+    "topics": [
+      "分块矩阵",
+      "初等变换",
+      "矩阵乘法",
+      "矩阵的秩"
+    ]
+  },
+  {
+    "year": 2023,
+    "qtype": "选择题",
+    "qno": "6",
+    "content": "下列矩阵中不能相似于对角矩阵的是（　　）\n\nA. $\\begin{pmatrix} 1 & 1 & a \\\\ 0 & 2 & 2 \\\\ 0 & 0 & 3 \\end{pmatrix}$．  \nB. $\\begin{pmatrix} 1 & 1 & a \\\\ 1 & 2 & 0 \\\\ a & 0 & 3 \\end{pmatrix}$  \nC. $\\begin{pmatrix} 1 & 1 & a \\\\ 0 & 2 & 0 \\\\ 0 & 0 & 2 \\end{pmatrix}$  \nD. $\\begin{pmatrix} 1 & 1 & a \\\\ 0 & 2 & 2 \\\\ 0 & 0 & 2 \\end{pmatrix}$",
+    "answer": "(D)",
+    "analysis": "矩阵 $A = \\begin{pmatrix} 1 & 1 & a \\\\ 0 & 2 & 2 \\\\ 0 & 0 & 3 \\end{pmatrix}$ 有三个不同的特征值 $1, 2, 3$, 所以可以相似对角化；矩阵 $B = \\begin{pmatrix} 1 & 1 & a \\\\ 1 & 2 & 0 \\\\ a & 0 & 3 \\end{pmatrix}$ 为实对称矩阵，所以可以相似对角化；矩阵 $C = \\begin{pmatrix} 1 & 1 & a \\\\ 0 & 2 & 0 \\\\ 0 & 0 & 2 \\end{pmatrix}$ 的特征值为 $1, 2, 2$, 而 $r(2E - C) = 1$, 即特征值 $2$ 有两个线性无关的特征向量，所以可以相似对角化；矩阵 $D = \\begin{pmatrix} 1 & 1 & a \\\\ 0 & 2 & 2 \\\\ 0 & 0 & 2 \\end{pmatrix}$ 的特征值为 $1, 2, 2$, 而 $r(2E - D) = 2$, 所以特征值 $2$ 只有一个线性无关的特征向量，故不可以相似对角化，故选 (D).",
+    "topics": [
+      "矩阵相似对角化",
+      "矩阵的秩",
+      "重根",
+      "特征值",
+      "特征向量",
+      "相似对角化"
+    ]
+  },
+  {
+    "year": 2023,
+    "qtype": "选择题",
+    "qno": "7",
+    "content": "已知向量 $\\alpha_1 = \\begin{pmatrix} 1 \\\\ 2 \\\\ 3 \\end{pmatrix}, \\alpha_2 = \\begin{pmatrix} 2 \\\\ 1 \\\\ 1 \\end{pmatrix},\\ \\beta_1 = \\begin{pmatrix} 2 \\\\ 5 \\\\ 9 \\end{pmatrix},\\ \\beta_2 = \\begin{pmatrix} 1 \\\\ 0 \\\\ 1 \\end{pmatrix}$，若 $\\gamma$ 既可由 $\\alpha_1, \\alpha_2$ 线性表示，也可由 $\\beta_1, \\beta_2$ 线性表示，则 $\\gamma =$（　）\n\nA. $k\\begin{pmatrix} 3 \\\\ 3 \\\\ 4 \\end{pmatrix}, k \\in \\mathbb{R}$．  \nB. $k\\begin{pmatrix} 3 \\\\ 5 \\\\ 10 \\end{pmatrix}, k \\in \\mathbb{R}$  \nC. $k\\begin{pmatrix} -1 \\\\ 1 \\\\ 2 \\end{pmatrix}, k \\in \\mathbb{R}$  \nD. $k\\begin{pmatrix} 1 \\\\ 5 \\\\ 8 \\end{pmatrix}, k \\in \\mathbb{R}$",
+    "answer": "(D)",
+    "analysis": "存在 $k_1, k_2, k_3, k_4$, 使得 $\\gamma = k_1\\alpha_1 + k_2\\alpha_2 = k_3\\beta_1 + k_4\\beta_2$, 从而 $k_1\\alpha_1 + k_2\\alpha_2 - k_3\\beta_1 - k_4\\beta_2 = 0$.\n$$\n\\begin{pmatrix} 1 & 2 & 2 & 1 \\\\ 2 & 1 & 5 & 0 \\\\ 3 & 1 & 9 & 1 \\end{pmatrix} \\to \\begin{pmatrix} 1 & 0 & 0 & 3 \\\\ 0 & 1 & 0 & -1 \\\\ 0 & 0 & 1 & 1 \\end{pmatrix}\n$$",
+    "topics": [
+      "向量组等价",
+      "向量线性表示",
+      "线性表示",
+      "向量组",
+      "线性方程组"
+    ]
+  },
+  {
+    "year": 2023,
+    "qtype": "选择题",
+    "qno": "8",
+    "content": "设随机变量 $X$ 服从参数为 1 的泊松分布，则 $E(|X - EX|) =$（　）\n\nA. $\\dfrac{1}{e}$．  \nB. $\\dfrac{1}{2}$．  \nC. $\\dfrac{2}{e}$．  \nD. $1$．",
+    "answer": "(C) $ \\frac{2}{e} $",
+    "analysis": "因为随机变量 $ X $ 服从参数为 1 的泊松分布，所以 $ EX = 1 $，及 $ Z = X - 1 $，则：\n\n$$\nP\\{Z = n\\} =\n\\begin{cases}\nP\\{X = n + 1\\}, & n = 0, 2, 3, \\ldots \\\\\nP\\{X = 0\\} + P\\{X = 2\\}, & n = 1\n\\end{cases}\n$$\n\n$$\n=\n\\begin{cases}\n\\dfrac{e^{-1}}{(n + 1)!}, & n = 0, 2, 3, \\ldots \\\\\n\\dfrac{3}{2}e^{-1}, & n = 1\n\\end{cases}\n$$\n\n所以有：\n\n$$\nE(Z) = 1 \\cdot \\frac{3}{2}e^{-1} + \\sum_{n=2}^{\\infty} \\frac{n e^{-1}}{(n + 1)!} = \\frac{3}{2}e^{-1} + e^{-1} \\sum_{n=2}^{\\infty} \\frac{n + 1 - 1}{(n + 1)!}\n$$\n\n$$\n= \\frac{3}{2}e^{-1} + e^{-1} \\sum_{n=2}^{\\infty} \\left( \\frac{1}{n!} - \\frac{1}{(n + 1)!} \\right) = \\frac{3}{2}e^{-1} + \\frac{1}{2}e^{-1} = 2e^{-1}.\n$$",
+    "topics": [
+      "数学期望",
+      "随机变量函数的期望",
+      "泊松分布"
+    ]
+  },
+  {
+    "year": 2023,
+    "qtype": "选择题",
+    "qno": "9",
+    "content": "$X_1, X_2, \\cdots, X_n$ 为来自总体的 $N(\\mu_1, \\sigma^2)$ 的简单随机样本，$Y_1, Y_2, \\cdots Y_n$ 为来自总体的 $N(\\mu_2, 2\\sigma^2)$ 的简单随机样本，且两样本相互独立，记\n$$\n\\bar{X} = \\frac{1}{n}\\sum_{i=1}^{n}X_i, \\bar{Y} = \\frac{1}{m}\\sum_{i=1}^{m}Y_i, S_1^2 = \\frac{1}{n-1}\\sum_{i=1}^{n}(X_i - \\bar{X})^2, S_2^2 = \\frac{1}{m-1}\\sum_{i=1}^{m}(Y_i - \\bar{Y})^2\n$$\n则（　）\n\nA. $\\dfrac{S_1^2}{S_2^2} \\sim F(n, m)$．  \nB. $\\dfrac{S_1^2}{S_2^2} \\sim F(n-1, m-1)$．  \nC. $\\dfrac{2S_1^2}{S_2^2} \\sim F(n, m)$．  \nD. $\\dfrac{2S_1^2}{S_2^2} \\sim F(n-1, m-1)$．",
+    "answer": "(D) $ \\dfrac{2S_1^2}{S_2^2} \\sim F(n - 1, m - 1) $",
+    "analysis": "因为 $ \\dfrac{(n - 1)S_1^2}{\\sigma^2} \\sim \\chi^2(n - 1) $，$ \\dfrac{(m - 1)S_2^2}{2\\sigma^2} \\sim \\chi^2(m - 1) $，且 $ S_1^2 $ 与 $ S_2^2 $ 相互独立，则有：\n\n$$\n\\frac{\\dfrac{(n - 1)S_1^2}{\\sigma^2}}{n - 1} \\div \\frac{\\dfrac{(m - 1)S_2^2}{2\\sigma^2}}{m - 1} = \\frac{2S_1^2}{S_2^2} \\sim F(n - 1, m - 1)\n$$\n\n故选 (D).",
+    "topics": [
+      "F分布",
+      "抽样分布",
+      "正态总体",
+      "样本方差",
+      "卡方分布"
+    ]
+  },
+  {
+    "year": 2023,
+    "qtype": "选择题",
+    "qno": "10",
+    "content": "设 $X_1, X_2$ 为来自总体 $(\\mu, \\sigma^2)$ 的简单随机样本，其中 $\\sigma (\\sigma > 0)$ 是未知参数，若 $\\hat{\\sigma} = a|X_1 - X_2|$ 为 $\\sigma$ 的无偏估计，则 $a =$（　）\n\nA. $\\dfrac{\\sqrt{\\pi}}{2}$  \nB. $\\dfrac{\\sqrt{2\\pi}}{2}$  \nC. $\\sqrt{\\pi}$  \nD. $\\sqrt{2\\pi}$",
+    "answer": "",
+    "analysis": "",
+    "topics": [
+      "无偏估计",
+      "正态分布",
+      "数学期望",
+      "样本"
+    ]
+  },
+  {
+    "year": 2023,
+    "qtype": "填空题",
+    "qno": "11",
+    "content": "当 $x \\to 0$ 时，函数 $f(x) = ax + bx^2 + \\ln(1 + x)$ 与 $g(x) = e^{x^2} - \\cos x$ 是等价无穷小，则 $ab =$ ______",
+    "answer": "",
+    "analysis": "",
+    "topics": [
+      "等价无穷小",
+      "泰勒展开",
+      "极限"
+    ]
+  },
+  {
+    "year": 2023,
+    "qtype": "填空题",
+    "qno": "12",
+    "content": "曲面 $z = x + 2y + \\ln(1 + x^2 + y^2)$ 在点 $(0, 0, 0)$ 处的切平面方程为 ______．",
+    "answer": "",
+    "analysis": "",
+    "topics": [
+      "切平面方程",
+      "偏导数",
+      "曲面"
+    ]
+  },
+  {
+    "year": 2023,
+    "qtype": "填空题",
+    "qno": "13",
+    "content": "设 $f(x)$ 是周期为 2 的周期函数，且 $f(x) = 1 - x, x \\in [0, 1]$．若 $f(x) = \\dfrac{a_0}{2} + \\sum_{n=1}^{\\infty} a_n \\cos n\\pi x$，则\n$$\n\\sum_{n=1}^{\\infty} a_{2n} = \\text{______}．\n$$",
+    "answer": "",
+    "analysis": "",
+    "topics": [
+      "傅里叶级数",
+      "余弦级数",
+      "周期函数"
+    ]
+  },
+  {
+    "year": 2023,
+    "qtype": "填空题",
+    "qno": "14",
+    "content": "设连续函数 $f(x)$ 满足：$f(x+2)-f(x)=x, \\int_0^2 f(x)\\mathrm{d}x=0$，则 $\\int_1^3 f(x)\\mathrm{d}x=$ ______",
+    "answer": "$\\frac{1}{2}$",
+    "analysis": "由 $f(x+2) - f(x) = x$ 得：$\\int_0^1 f(x+2)\\mathrm{d}x - \\int_0^1 f(x)\\mathrm{d}x = \\int_0^1 x\\mathrm{d}x$, 又\n$$\n\\int_0^1 f(x+2)\\mathrm{d}x \\xrightarrow{x+2=u} \\int_2^3 f(u)\\mathrm{d}u = \\int_2^3 f(x)\\mathrm{d}x, \\int_0^1 x\\mathrm{d}x = \\frac{1}{2}\n$$\n所以有：\n$$\n\\int_2^3 f(x)\\mathrm{d}x - \\int_0^1 f(x)\\mathrm{d}x = \\int_1^3 f(x)\\mathrm{d}x - \\int_1^2 f(x)\\mathrm{d}x - \\int_0^1 f(x)\\mathrm{d}x = \\int_1^3 f(x)\\mathrm{d}x - \\int_0^2 f(x)\\mathrm{d}x = \\frac{1}{2}\n$$\n又 $\\int_0^2 f(x)\\mathrm{d}x = 0$, 所以 $\\int_1^3 f(x)\\mathrm{d}x = \\frac{1}{2}$.",
+    "topics": [
+      "定积分",
+      "换元积分",
+      "函数方程"
+    ]
+  },
+  {
+    "year": 2023,
+    "qtype": "填空题",
+    "qno": "15",
+    "content": "已知向量 $\\alpha_1 = \\begin{pmatrix} 1 \\\\ 0 \\\\ 1 \\\\ 1 \\end{pmatrix}, \\alpha_2 = \\begin{pmatrix} -1 \\\\ -1 \\\\ 0 \\\\ 1 \\end{pmatrix}, \\alpha_3 = \\begin{pmatrix} 0 \\\\ 1 \\\\ -1 \\\\ 1 \\end{pmatrix}, \\beta = \\begin{pmatrix} 1 \\\\ 1 \\\\ 1 \\\\ -1 \\end{pmatrix}, \\gamma = k_1\\alpha_1 + k_2\\alpha_2 + k_3\\alpha_3$。若 $\\gamma^\\top\\alpha_i = \\beta^\\top\\alpha_i (i=1,2,3)$，则 $k_1^2 + k_2^2 + k_3^2 =$ ______。",
+    "answer": "$\\frac{11}{9}$",
+    "analysis": "注意到：$\\alpha_i^T\\alpha_i = 3 (i = 1,2,3), \\alpha_1^T\\alpha_2 = \\alpha_1^T\\alpha_3 = \\alpha_2^T\\alpha_3 = 0$, 于是有：\n$$\n\\gamma^T\\alpha_i = (k_1\\alpha_1 + k_2\\alpha_2 + k_3\\alpha_3)^T\\alpha_i = k_1\\alpha_1^T\\alpha_i + k_2\\alpha_2^T\\alpha_i + k_3\\alpha_3^T\\alpha_i = k_i\\alpha_i^T\\alpha_i = 3k_i (i = 1,2,3),\n$$\n则有：\n$$\n3k_1 = \\beta^T\\alpha_1 = 1,\\ 3k_2 = \\beta^T\\alpha_2 = -3,\\ 3k_3 = \\beta^T\\alpha_3 = -1,\n$$\n从而有：$k_1 = \\frac{1}{3},\\ k_2 = -1,\\ k_3 = -\\frac{1}{3}$, 故：$k_1^2 + k_2^2 + k_3^2 = \\frac{11}{9}$.",
+    "topics": [
+      "向量",
+      "矩阵运算",
+      "内积",
+      "线性方程组",
+      "向量内积",
+      "线性组合"
+    ]
+  },
+  {
+    "year": 2023,
+    "qtype": "填空题",
+    "qno": "16",
+    "content": "设随机变量 $X$ 与 $Y$ 相互独立，且 $X \\sim B\\left(1,\\frac{1}{3}\\right), Y \\sim B\\left(2,\\frac{1}{2}\\right)$，则 $P\\{X=Y\\}$．______",
+    "answer": "$\\frac{1}{3}$",
+    "analysis": "$$\n\\begin{aligned}\nP\\{X = Y\\} &= P\\{X = 0, Y = 0\\} + P\\{X = 1, Y = 1\\} \\\\\n&= P\\{X = 0\\}P\\{Y = 0\\} + P\\{X = 1\\}P\\{Y = 1\\} \\\\\n&= \\frac{2}{3} \\cdot \\frac{1}{4} + \\frac{1}{3} \\cdot \\frac{1}{4} = \\frac{1}{3}.\n\\end{aligned}\n$$",
+    "topics": [
+      "概率",
+      "二项分布",
+      "独立性",
+      "概率计算"
+    ]
+  },
+  {
+    "year": 2023,
+    "qtype": "解答题",
+    "qno": "17",
+    "content": "设曲线 $y=y(x)(x>0)$ 经过点 $(1,2)$，该曲线上任一点 $P(x,y)$ 到 $y$ 轴的距离等于该点处的切线在 $y$ 轴上的截距．\n\n(1) 求 $y(x)$；\n\n(2) 求函数 $f(x) = \\int_1^x y(t)\\mathrm{d}t$ 在 $(0,+\\infty)$ 上的最大值．",
+    "answer": "(1) $ y(x) = x(2 - \\ln x) $；(2) 最大值为 $ \\frac{1}{4}e^4 - \\frac{5}{4} $",
+    "analysis": "(1) 曲线上任一点 $ P(x,y) $ 处的切线方程为 $ Y = y'(x)(X - x) + y $，在 $ y $ 轴截距为 $ y(x) - x y'(x) $，点 $ P(x,y) $ 到 $ y $ 轴的距离为 $ x $，即 $ y(x) - x y'(x) = x $，为一阶齐次微分方程，化简得 $ y'(x) - \\frac{1}{x}y(x) = -x $，故：\n\n$$\ny(x) = e^{\\int \\frac{1}{x}\\,\\mathrm{d}x} \\left( \\int -e^{-\\int \\frac{1}{x}\\,\\mathrm{d}x} \\,\\mathrm{d}x + C \\right) = x \\left( \\int -\\frac{1}{x}\\,\\mathrm{d}x + C \\right) = x(C - \\ln x)\n$$\n\n又曲线 $ y = y(x) $ 经过点 $ (1,2) $，所以有 $ C = 2 $，故 $ y(x) = x(2 - \\ln x) $。\n\n(2) 令 $ f'(x) = y(x) = 0 $，解得：$ x = e^2 $，当 $ 0 < x < e^2 $ 时，$ f'(x) > 0 $，$ f(x) $ 单调递增；当 $ x > e^2 $ 时，$ f'(x) < 0 $，$ f(x) $ 单调递减，故当 $ x = e^2 $ 时，函数 $ f(x) $ 取得最大，最大值为：\n\n$$\nf(e^2) = \\int_1^{e^2} t(2 - \\ln t)\\,\\mathrm{d}t = \\frac{1}{4}e^4 - \\frac{5}{4}.\n$$",
+    "topics": [
+      "切线",
+      "最大值",
+      "定积分",
+      "积分",
+      "微分方程",
+      "切线截距",
+      "最值"
+    ]
+  },
+  {
+    "year": 2023,
+    "qtype": "解答题",
+    "qno": "18",
+    "content": "求函数 $f(x,y) = (y-x^2)(y-x^3)$ 的极值．",
+    "answer": "极小值 $ f\\left( \\dfrac{2}{3}, \\dfrac{10}{27} \\right) = -\\dfrac{4}{729} $",
+    "analysis": "由 $ f(x,y) = (y - x^2)(y - x^3) $ 知：\n$$\n\\begin{cases}\nf_x'(x,y) = x(5x^3 - 3xy - 2y) \\\\\nf_y'(x,y) = 2y - x^3 - x^2\n\\end{cases}\n$$\n，令 $ f_x(x,y) = f_y(x,y) = 0 $，解得\n$$\n\\begin{cases}\nx = 0 \\\\\ny = 0\n\\end{cases},\n\\quad\n\\begin{cases}\nx = 1 \\\\\ny = 1\n\\end{cases},\n\\quad\n\\begin{cases}\nx = \\dfrac{2}{3} \\\\\ny = \\dfrac{10}{27}\n\\end{cases}\n$$\n\n求二阶偏导有：\n$$\n\\begin{cases}\nf_{xx}''(x,y) = -6xy - 2y + 20x^3 \\\\\nf_{xy}''(x,y) = -3x^2 - 2x \\\\\nf_{yy}''(x,y) = 2\n\\end{cases}\n$$\n\n对于点 $ (0,0) $，$ A = 0, B = 0, C = 2, AC - B^2 = 0 $，当 $ 0 < x < 1 $ 时，在 $ x^3 < y < x^2 $ 内，$ f(x,y) < 0 $，在 $ y > x^2 $ 内，$ f(x,y) > 0 $，则 $ f(0,0) = 0 $ 不取极值；\n\n对于点 $ (1,1) $，$ A = 12, B = -5, C = 2, AC - B^2 < 0 $，不是极值点；\n\n对于点 $ \\left( \\dfrac{2}{3}, \\dfrac{10}{27} \\right) $，$ A = \\dfrac{100}{27}, B = \\dfrac{24}{9}, C = 2, AC - B^2 = \\dfrac{24}{81} > 0 $，是极小值点，故存在极小值 $ f\\left( \\dfrac{2}{3}, \\dfrac{10}{27} \\right) = -\\dfrac{4}{729} $。",
+    "topics": [
+      "海森矩阵",
+      "偏导数",
+      "二阶判别法",
+      "多元函数",
+      "极值",
+      "二元函数极值",
+      "驻点"
+    ]
+  },
+  {
+    "year": 2023,
+    "qtype": "解答题",
+    "qno": "19",
+    "content": "设空间有界区域 $\\Omega$ 由柱面 $x^2 + y^2 = 1$ 与平面 $z=0$ 和 $x+z=1$ 围成．$\\Sigma$ 为 $\\Omega$ 的边界曲面的外侧．计算曲面积分\n$$\nI = \\iint_\\Sigma 2xz\\,\\mathrm{d}y\\,\\mathrm{d}z + xz\\cos y\\,\\mathrm{d}z\\,\\mathrm{d}x + 3yz\\sin x\\,\\mathrm{d}x\\,\\mathrm{d}y.\n$$",
+    "answer": "$\\frac{5}{4}\\pi$",
+    "analysis": "由高斯公式有：\n$$\n\\begin{aligned}\nI &= \\iint_{\\Sigma} 2xz\\,\\mathrm{d}y\\,\\mathrm{d}z + xz\\cos y\\,\\mathrm{d}z\\,\\mathrm{d}x + 3yz\\sin x\\,\\mathrm{d}x\\,\\mathrm{d}y \\\\\n&= \\iiint_{\\Omega} (2z - xz\\sin y + 3y\\sin x)\\,\\mathrm{d}x\\,\\mathrm{d}y\\,\\mathrm{d}z = \\iint_{D} \\mathrm{d}x\\,\\mathrm{d}y \\int_0^{1-x} (2z - xz\\sin y + 3y\\sin x)\\,\\mathrm{d}z \\\\\n&= \\iint_{D} \\left[(1 - x)^2 - x\\sin y \\frac{(1 - x)^2}{2} + 3(1 - x)y\\sin x\\right]\\,\\mathrm{d}x\\,\\mathrm{d}y \\\\\n&\\xlongequal{\\text{对称性}} \\iint_{D} (1 + x^2)\\,\\mathrm{d}x\\,\\mathrm{d}y = \\pi + \\frac{1}{2} \\iint_{D} (x^2 + y^2)\\,\\mathrm{d}x\\,\\mathrm{d}y \\\\\n&= \\pi + \\frac{1}{2} \\int_0^{2\\pi} \\mathrm{d}\\theta \\int_0^1 r^3\\,\\mathrm{d}r = \\frac{5}{4}\\pi.\n\\end{aligned}\n$$",
+    "topics": [
+      "曲面积分",
+      "三重积分",
+      "散度",
+      "柱面坐标",
+      "高斯公式",
+      "对称性"
+    ]
+  },
+  {
+    "year": 2023,
+    "qtype": "证明题",
+    "qno": "20",
+    "content": "设函数 $f(x)$ 在 $[-a,a]$ 上具有 2 阶连续导数．证明：\n\n(1) 若 $f(0)=0$，则存在 $\\xi \\in (-a,a)$，使得\n$$\nf''(\\xi) = \\frac{1}{a^2}[f(a)+f(-a)]\n$$\n\n(2) 若 $f(x)$ 在 $(-a,a)$ 内取得极值，则存在 $\\eta \\in (-a,a)$，使得\n$$\n|f''(\\eta)| \\geq \\frac{1}{2a^2}|f(a)-f(-a)|\n$$",
+    "answer": "(1) 存在 $\\xi \\in (-a, a)$，使得 $f''(\\xi) = \\frac{1}{a^2}[f(a) + f(-a)]$；  \n(2) 存在 $\\eta \\in (-a, a)$，使得 $|f''(\\eta)| \\geq \\frac{1}{2a^2}|f(a) - f(-a)|$。",
+    "analysis": "(1) 对 $f(x)$ 在 $x = 0$ 处展开，代入 $x = a$，$x = -a$ 有：\n$$\nf(a) = f(0) + f'(0)a + \\frac{f''(\\xi_1)}{2}a^2, \\xi_1 \\in (0, a),\n$$\n$$\nf(-a) = f(0) - f'(0)a + \\frac{f''(\\xi_2)}{2}a^2, \\xi_2 \\in (-a, 0).\n$$\n\n因为 $f(0) = 0$，所以两式相加有：\n$$\nf(a) + f(-a) = \\frac{1}{2}[f''(\\xi_1) + f''(\\xi_2)]a^2,\n$$\n即\n$$\n\\frac{1}{a^2}[f(a) + f(-a)] = \\frac{1}{2}[f''(\\xi_1) + f''(\\xi_2)].\n$$\n\n又因为函数 $f(x)$ 在 $[-a, a]$ 上具有 2 阶连续导数，所以根据介值定理知：存在 $\\xi \\in (-a, a)$，使得\n$$\n\\frac{1}{2}[f''(\\xi_1) + f''(\\xi_2)] = f''(\\xi),\n$$\n即存在 $\\xi \\in (-a, a)$，使得\n$$\nf''(\\xi) = \\frac{1}{a^2}[f(a) + f(-a)].\n$$\n\n(2) 记 $f(x)$ 在 $x = x_0$ 处取极值，则 $f'(x_0) = 0$，则：\n$$\nf(a) = f(x_0) + f'(x_0)(a - x_0) + \\frac{f''(\\eta_1)}{2}(a - x_0)^2, \\eta_1 \\in (x_0, a),\n$$\n$$\nf(-a) = f(x_0) + f'(x_0)(-a - x_0) + \\frac{f''(\\eta_2)}{2}(-a - x_0)^2, \\eta_2 \\in (-a, x_0).\n$$",
+    "topics": [
+      "中值定理",
+      "介值定理",
+      "不等式证明",
+      "极值",
+      "二阶导数",
+      "泰勒公式"
+    ]
+  },
+  {
+    "year": 2023,
+    "qtype": "解答题",
+    "qno": "21",
+    "content": "已知二次型\n$$\nf(x_1,x_2,x_3) = x_1^2 + 2x_2^2 + 2x_3^2 + 2x_1x_2 - 2x_1x_3,\n$$\n$$\ng(y_1,y_2,y_3) = y_1^2 + y_2^2 + y_3^2 + 2y_2y_3.\n$$\n\n(1) 求可逆变换 $\\boldsymbol{x} = \\boldsymbol{P}\\boldsymbol{y}$ 将 $f(x_1,x_2,x_3)$ 化成 $g(y_1,y_2,y_3)$；\n\n(2) 是否存在正交变换 $\\boldsymbol{x} = \\boldsymbol{Q}\\boldsymbol{y}$ 将 $f(x_1,x_2,x_3)$ 化成 $g(y_1,y_2,y_3)$？",
+    "answer": "(1) $P = \\begin{pmatrix} 1 & -1 & 1 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}$；(2) 不存在。",
+    "analysis": "(1) 由配方法得：\n\n$$\nf(x_1, x_2, x_3) = x_1^2 + 2x_2^2 + 2x_3^2 + 2x_1x_2 - 2x_1x_3 = (x_1 + x_2 - x_3)^2 + (x_2 + x_3)^2\n$$\n\n令\n$$\n\\begin{cases}\nz_1 = x_1 + x_2 - x_3 \\\\\nz_2 = x_2 + x_3 \\\\\nz_3 = x_3\n\\end{cases}\n$$\n，则 $f(x_1, x_2, x_3) = z_1^2 + z_2^2$。再由配方法得：\n\n$$\ng(y_1, y_2, y_3) = y_1^2 + y_2^2 + y_3^2 + 2y_2y_3 = y_1^2 + (y_2 + y_3)^2\n$$\n\n令\n$$\n\\begin{cases}\nz_1 = y_1 \\\\\nz_2 = y_2 + y_3 \\\\\nz_3 = y_3\n\\end{cases}\n$$\n，则 $g(y_1, y_2, y_3) = z_1^2 + z_2^2$。于是\n\n$$\n\\begin{pmatrix}\nz_1 \\\\ z_2 \\\\ z_3\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n1 & 1 & -1 \\\\\n0 & 1 & 1 \\\\\n0 & 0 & 1\n\\end{pmatrix}\n\\begin{pmatrix}\nx_1 \\\\ x_2 \\\\ x_3\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n1 & 0 & 0 \\\\\n0 & 1 & 1 \\\\\n0 & 0 & 1\n\\end{pmatrix}\n\\begin{pmatrix}\ny_1 \\\\ y_2 \\\\ y_3\n\\end{pmatrix}\n$$\n\n从而\n$$\nP =\n\\begin{pmatrix}\n1 & 1 & -1 \\\\\n0 & 1 & 1 \\\\\n0 & 0 & 1\n\\end{pmatrix}^{-1}\n\\begin{pmatrix}\n1 & 0 & 0 \\\\\n0 & 1 & 1 \\\\\n0 & 0 & 1\n\\end{pmatrix}\n=\n\\begin{pmatrix}\n1 & -1 & 1 \\\\\n0 & 1 & 0 \\\\\n0 & 0 & 1\n\\end{pmatrix}.\n$$",
+    "topics": [
+      "合同",
+      "二次型",
+      "正交变换",
+      "可逆线性变换",
+      "特征值",
+      "配方法"
+    ]
+  },
+  {
+    "year": 2023,
+    "qtype": "解答题",
+    "qno": "22",
+    "content": "设二维随机变量 $(X, Y)$ 的概率密度为\n$$\nf(x, y) =\n\\begin{cases}\n\\dfrac{2}{\\pi}(x^2 + y^2), & x^2 + y^2 \\leq 1, \\\\\n0, & \\text{其他}.\n\\end{cases}\n$$\n求\n\n(1) 求 $X$ 与 $Y$ 的协方差；\n\n(2) $X$ 与 $Y$ 是否相互独立？\n\n(3) 求 $Z = X^2 + Y^2$ 的概率密度。",
+    "answer": "(1) $\\operatorname{Cov}(X, Y) = 0$；(2) $X$ 与 $Y$ 不相互独立；(3) $f_Z(z) = \\begin{cases} 2z, & 0 \\leq z \\leq 1 \\\\ 0, & \\text{其他} \\end{cases}$",
+    "analysis": "(1) 根据奇偶性：\n$$\nE(XY) = \\iint\\limits_{x^2 + y^2 \\leq 1} xy \\cdot \\frac{2}{\\pi}(x^2 + y^2) \\,\\mathrm{d}x\\mathrm{d}y = 0,\n$$\n$$\nE(X) = \\iint\\limits_{x^2 + y^2 \\leq 1} x \\cdot \\frac{2}{\\pi}(x^2 + y^2) \\,\\mathrm{d}x\\mathrm{d}y = 0\n$$\n故 $\\operatorname{Cov}(X, Y) = E(XY) - E(X)E(Y) = 0$。\n\n(2) $X$ 的边际分布为：\n$$\nf_X(x) = \\int_{-\\infty}^{+\\infty} f(x, y)\\,\\mathrm{d}y =\n\\begin{cases}\n\\displaystyle \\int_{-\\sqrt{1 - x^2}}^{\\sqrt{1 - x^2}} \\frac{2}{\\pi}(x^2 + y^2)\\,\\mathrm{d}y, & -1 \\leq x \\leq 1 \\\\\n0, & \\text{其他}\n\\end{cases}\n$$\n$$\n=\n\\begin{cases}\n\\displaystyle \\frac{4}{\\pi}x^2\\sqrt{1 - x^2} + \\frac{4}{3\\pi}(1 - x^2)\\sqrt{1 - x^2}, & -1 \\leq x \\leq 1 \\\\\n0, & \\text{其他}\n\\end{cases}\n$$\n由对称性，$Y$ 的边际分布为：\n$$\nf_Y(y) =\n\\begin{cases}\n\\displaystyle \\frac{4}{\\pi}y^2\\sqrt{1 - y^2} + \\frac{4}{3\\pi}(1 - y^2)\\sqrt{1 - y^2}, & -1 \\leq y \\leq 1 \\\\\n0, & \\text{其他}\n\\end{cases}\n$$\n由于 $f_X(x)f_Y(y) \\neq f(x, y)$，故 $X$ 与 $Y$ 不相互独立。\n\n(3) 当 $z < 0$ 时，$F_Z(z) = 0$；当 $z \\geq 1$ 时，$F_Z(z) = 1$；当 $0 \\leq z < 1$ 时，$F_Z(z) = \\iint\\limits_{x^2 + y^2 \\leq z} \\frac{2}{\\pi}(x^2 + y^2) \\,\\mathrm{d}x\\mathrm{d}y = \\int_0^{2\\pi} \\int_0^{\\sqrt{z}} \\frac{2}{\\pi} r^2 \\cdot r \\,\\mathrm{d}r\\mathrm{d}\\theta = z^2$。故 $f_Z(z) = F_Z'(z) = \\begin{cases} 2z, & 0 \\leq z \\leq 1 \\\\ 0, & \\text{其他} \\end{cases}$",
+    "topics": [
+      "随机变量函数",
+      "独立性",
+      "协方差",
+      "概率密度",
+      "二维随机变量",
+      "二重积分"
+    ]
+  },
+  {
+    "year": 2024,
+    "qtype": "选择题",
+    "qno": "1",
+    "content": "已知函数 $ f(x) = \\int_0^x e^{\\cos t} dt $, $ g(x) = \\int_0^{\\sin x} e^{t^2} dt $，则（　　）。\n\nA. $ f(x) $ 是奇函数，$ g(x) $ 是偶函数  \nB. $ f(x) $ 是偶函数，$ g(x) $ 是奇函数  \nC. $ f(x) $ 与 $ g(x) $ 均为奇函数  \nD. $ f(x) $ 与 $ g(x) $ 均为周期函数",
+    "answer": "C",
+    "analysis": "$e^{\\cos t}$ 是关于 $t$ 的偶函数，所以 $\\int_0^x e^{\\cos t} dt$ 是关于 $x$ 的奇函数；$e^{t^2}$ 是关于 $t$ 的偶函数，所以 $G(x) = \\int_0^x e^{t^2} dt$ 是关于 $x$ 的奇函数，从而 $g(x) = G(\\sin x)$ 也是关于 $x$ 的奇函数。故应选 C。",
+    "topics": [
+      "函数性质",
+      "变限积分",
+      "奇偶性",
+      "积分函数",
+      "复合函数"
+    ]
+  },
+  {
+    "year": 2024,
+    "qtype": "选择题",
+    "qno": "2",
+    "content": "设 $ P = P(x, y, z) $, $ Q = Q(x, y, z) $ 均为连续函数，$ \\Sigma $ 为曲面 $ z = \\sqrt{1 - x^2 - y^2} $ ($ x \\geqslant 0, y \\geqslant 0 $) 的上侧，则 $ \\iint_\\Sigma P\\,\\mathrm{d}y\\,\\mathrm{d}z + Q\\,\\mathrm{d}z\\,\\mathrm{d}x = $（　　）。\n\nA. $ \\iint_\\Sigma \\left( \\frac{x}{z}P + \\frac{y}{z}Q \\right)\\mathrm{d}x\\,\\mathrm{d}y $  \nB. $ \\iint_\\Sigma \\left( -\\frac{x}{z}P + \\frac{y}{z}Q \\right)\\mathrm{d}x\\,\\mathrm{d}y $  \nC. $ \\iint_\\Sigma \\left( \\frac{x}{z}P - \\frac{y}{z}Q \\right)\\mathrm{d}x\\,\\mathrm{d}y $  \nD. $ \\iint_\\Sigma \\left( -\\frac{x}{z}P - \\frac{y}{z}Q \\right)\\mathrm{d}x\\,\\mathrm{d}y $",
+    "answer": "A",
+    "analysis": "$\\frac{\\partial z}{\\partial x} = \\frac{-x}{\\sqrt{1 - x^2 - y^2}} = -\\frac{x}{z}, \\frac{\\partial z}{\\partial y} = \\frac{-y}{\\sqrt{1 - x^2 - y^2}} = -\\frac{y}{z}$。\n\n$$\n\\iint_\\Sigma P\\,dy\\,dz + Q\\,dz\\,dx = \\iint_\\Sigma \\left[ P \\cdot \\left( -\\frac{\\partial z}{\\partial x} \\right) + Q \\cdot \\left( -\\frac{\\partial z}{\\partial y} \\right) \\right] dx\\,dy = \\iint_\\Sigma \\left( \\frac{x}{z} \\cdot P + \\frac{y}{z} \\cdot Q \\right) dx\\,dy.\n$$\n\n故应选 A。",
+    "topics": [
+      "投影转换",
+      "第二类曲面积分",
+      "曲面积分",
+      "偏导数",
+      "曲面方程",
+      "投影"
+    ]
+  },
+  {
+    "year": 2024,
+    "qtype": "选择题",
+    "qno": "3",
+    "content": "已知幂级数 $ \\sum_{n=0}^\\infty a_n x^n $ 的和函数为 $ \\ln(2 + x) $，则 $ \\sum_{n=0}^\\infty n a_n = $（　　）。\n\nA. $ -\\frac{1}{6} $  \nB. $ -\\frac{1}{3} $  \nC. $ \\frac{1}{6} $  \nD. $ \\frac{1}{3} $",
+    "answer": "A",
+    "analysis": "由于\n$$\n\\ln(1 + x) = \\sum_{n=1}^\\infty \\frac{(-1)^{n-1}x^n}{n},\\ x \\in (-1,1],\n$$\n$$\n\\ln(2 + x) = \\ln 2\\left(1 + \\frac{x}{2}\\right) = \\ln 2 + \\ln\\left(1 + \\frac{x}{2}\\right) = \\ln 2 + \\sum_{n=1}^\\infty \\frac{(-1)^{n-1}x^n}{2^n \\cdot n},\n$$\n$$\n\\therefore\\ a_n = \n\\begin{cases}\n\\ln 2, & n = 0, \\\\\n\\displaystyle \\frac{(-1)^{n-1}}{2^n \\cdot n}, & n \\geqslant 1,\n\\end{cases}\n\\quad\n\\therefore\\ a_{2n} = \n\\begin{cases}\n\\ln 2, & n = 0, \\\\\n\\displaystyle \\frac{-1}{4^n \\cdot 2n}, & n \\geqslant 1.\n\\end{cases}\n$$\n\n所以\n$$\n\\sum_{n=0}^\\infty n a_{2n} = \\sum_{n=1}^\\infty n a_{2n} = \\sum_{n=1}^\\infty \\frac{-1}{4^n \\cdot 2} = -\\frac{1}{2} \\cdot \\frac{\\frac{1}{4}}{1 - \\frac{1}{4}} = -\\frac{1}{6},\n$$\n\n故应选 A。",
+    "topics": [
+      "级数求和",
+      "泰勒展开",
+      "幂级数",
+      "和函数",
+      "导数与系数"
+    ]
+  },
+  {
+    "year": 2024,
+    "qtype": "选择题",
+    "qno": "4",
+    "content": "设函数 $ f(x) $ 在区间 $ (-1, 1) $ 上有定义，且 $ \\lim_{x \\to 0} f(x) = 0 $，则（　　）。\n\nA. 当 $ \\lim_{x \\to 0} \\frac{f(x)}{x} = m $ 时，$ f'(0) = m $  \nB. 当 $ f'(0) = m $ 时，$ \\lim_{x \\to 0} \\frac{f(x)}{x} = m $  \nC. 当 $ \\lim_{x \\to 0} f'(x) = m $ 时，$ f'(0) = m $  \nD. 当 $ f'(0) = m $ 时，$ \\lim_{x \\to 0} f'(x) = m $",
+    "answer": "B",
+    "analysis": "对于 B 选项，$f'(0) = \\lim_{x \\to 0} \\frac{f(x) - f(0)}{x - 0} = m$，知 $\\lim_{x \\to 0} f(x) = f(0) = 0$。\n$$\n\\therefore\\ \\lim_{x \\to 0} \\frac{f(x)}{x} = m.\\ \\text{故应选 B}.\n$$\n\n取\n$$\nf(x) = \n\\begin{cases}\nmx, & x \\ne 0, \\\\\n1, & x = 0.\n\\end{cases}\n$$\n满足 $\\lim_{x \\to 0} \\frac{f(x)}{x} = m$, $\\lim_{x \\to 0} f'(x) = m$，但 $f(x)$ 在 $x = 0$ 处不可导，排除 A,C。\n\n对于 D 选项，取\n$$\nf(x) = \n\\begin{cases}\nmx + x^2 \\sin \\frac{1}{x}, & x \\ne 0, \\\\\n0, & x = 0.\n\\end{cases}\n$$\n\n$$\nf'(0) = \\lim_{x \\to 0} \\frac{f(x)}{x} = \\lim_{x \\to 0} \\left( \\frac{mx + x^2 \\sin \\frac{1}{x}}{x} \\right) = m.\n$$",
+    "topics": [
+      "连续性",
+      "极限",
+      "可导性",
+      "导数定义"
+    ]
+  },
+  {
+    "year": 2024,
+    "qtype": "选择题",
+    "qno": "5",
+    "content": "在空间直角坐标系 $ O-xyz $ 中，三张平面 $ \\pi_i: a_i x + b_i y + c_i z = d_i $ ($ i = 1, 2, 3 $) 的位置关系如图所示，记 $ \\alpha_i = (a_i, b_i, c_i) $, $ \\beta_i = (a_i, b_i, c_i, d_i) $，若 $ r\\begin{pmatrix} \\alpha_1 \\\\ \\alpha_2 \\\\ \\alpha_3 \\end{pmatrix} = m $, $ r\\begin{pmatrix} \\beta_1 \\\\ \\beta_2 \\\\ \\beta_3 \\end{pmatrix} = n $，则（　　）。\n\nA. $m=1,n=2$  \nB. $m=n=2$  \nC. $m=2,n=3$  \nD. $m=n=3$",
+    "answer": "B",
+    "analysis": "由图可知三张平面交于一条直线，方程组$\\begin{cases}a_1x+b_1y+c_1z=d_1\\\\a_2x+b_2y+c_2z=d_2\\\\a_3x+b_3y+c_3z=d_3\\end{cases}$有无穷多解，所以\n$$r\\begin{pmatrix}\\alpha_1\\\\\\alpha_2\\\\\\alpha_3\\end{pmatrix}=r\\begin{pmatrix}\\beta_1\\\\\\beta_2\\\\\\beta_3\\end{pmatrix}<3,\\text{即 }m=n<3.$$\n\n又三张平面的法向量共面，但任意两个平面的法向量不共线，得$m=n=2$。故应选 B.",
+    "topics": [
+      "线性方程组",
+      "平面方程",
+      "矩阵的秩",
+      "平面位置关系"
+    ]
+  },
+  {
+    "year": 2024,
+    "qtype": "选择题",
+    "qno": "6",
+    "content": "设向量 $\\alpha_1 = \\begin{pmatrix} a \\\\ 1 \\\\ -1 \\\\ 1 \\end{pmatrix}$, $\\alpha_2 = \\begin{pmatrix} 1 \\\\ 1 \\\\ b \\\\ a \\end{pmatrix}$, $\\alpha_3 = \\begin{pmatrix} 1 \\\\ a \\\\ -1 \\\\ 1 \\end{pmatrix}$，若 $\\alpha_1,\\alpha_2,\\alpha_3$ 线性相关，且其中任意两个向量均线性无关，则（　　）。\n\nA. $a=1,b\\neq-1$  \nB. $a=1,b=-1$  \nC. $a\\neq-2,b=2$  \nD. $a=-2,b=2$",
+    "answer": "D",
+    "analysis": "方法 1　观察发现$a=1$时，$\\alpha_1=\\alpha_3$，即$\\alpha_1$与$\\alpha_3$线性相关，排除 A,B,C，故应选 D.\n\n方法 2　$\\alpha_1,\\alpha_2,\\alpha_3$线性相关，则$r(\\alpha_1,\\alpha_2,\\alpha_3)<3$，\n\n矩阵$(\\alpha_1,\\alpha_2,\\alpha_3)$的任一三阶子式均为 0.\n$$\\begin{vmatrix}a&1&1\\\\1&1&a\\\\1&a&1\\end{vmatrix}=-(a+2)(a-1)^2=0,$$\n\n解得$a=1$或$a=-2$，\n\n$a=1$时，$\\alpha_1,\\alpha_3$线性相关，$\\therefore a=-2$. 再由$\\begin{vmatrix}-2&1&1\\\\1&1&-2\\\\-1&b&-1\\end{vmatrix}=0$，得$b=2$. 故应选 D.",
+    "topics": [
+      "行列式",
+      "向量组的线性相关性",
+      "向量线性相关性",
+      "线性无关",
+      "矩阵的秩"
+    ]
+  },
+  {
+    "year": 2024,
+    "qtype": "选择题",
+    "qno": "7",
+    "content": "设 $A$ 是秩为 2 的 3 阶矩阵，非零向量 $\\alpha$ 满足 $A\\alpha=0$，任意向量 $\\beta$，使得 $\\beta^T\\alpha=0$，且 $A\\beta=\\beta$，则下列结论正确的是（　　）。\n\nA. $A^3$ 的迹为 2  \nB. $A^3$ 的迹为 5  \nC. $A^5$ 的迹为 7  \nD. $A^5$ 的迹为 9",
+    "answer": "A",
+    "analysis": "$A\\alpha=0$且$\\alpha\\ne0$得$\\lambda_1=0$为$A$的特征值，\n\n又$r(\\alpha)=r(\\alpha^\\top)=1$知$\\alpha^\\top x=0$的基础解系含 2 个线性无关的解向量，设为$\\beta_1,\\beta_2$，即有\n$$\\alpha^\\top\\beta_1=0,\\alpha^\\top\\beta_2=0,$$\n从而$A\\beta_1=\\beta_1,A\\beta_2=\\beta_2$.\n\n$\\therefore\\lambda_2=\\lambda_3=1$为$A$的 2 重特征值.\n\n$\\therefore A^3$的特征值为$0,1,1$，$A^3$的迹为$0+1+1=2$. 故应选 A.",
+    "topics": [
+      "基础解系",
+      "矩阵的秩",
+      "特征值",
+      "迹",
+      "矩阵的迹"
+    ]
+  },
+  {
+    "year": 2024,
+    "qtype": "选择题",
+    "qno": "8",
+    "content": "设随机变量 $X,Y$ 相互独立，$X$ 服从正态分布 $N(0,2)$，$Y$ 服从正态分布 $N(-2,2)$，若 $P\\{2X+Y<a\\}=P\\{X>Y\\}$，则 $a=$（　　）。\n\nA. $-2-\\sqrt{10}$  \nB. $-2+\\sqrt{10}$  \nC. $-2-\\sqrt{6}$  \nD. $-2+\\sqrt{6}$",
+    "answer": "B",
+    "analysis": "由$X,Y$相互独立，$X\\sim N(0,2),Y\\sim N(-2,2)$，知$2X+Y\\sim N(-2,10),X-Y\\sim N(2,4)$.\n\n$$P\\{2X+Y<a\\}=\\Phi\\left(\\dfrac{a-(-2)}{\\sqrt{10}}\\right)=\\Phi\\left(\\dfrac{a+2}{\\sqrt{10}}\\right).$$\n\n$$P\\{X>Y\\}=P\\{X-Y>0\\}=1-\\Phi\\left(\\dfrac{0-2}{\\sqrt{4}}\\right)=1-\\Phi(-1)=\\Phi(1).$$\n\n由$\\Phi(x)$的单调不减性知$\\dfrac{a+2}{\\sqrt{10}}=1$，$\\therefore a=\\sqrt{10}-2$. 故应选 B.",
+    "topics": [
+      "独立性",
+      "概率等式",
+      "标准正态分布函数",
+      "独立随机变量",
+      "正态分布"
+    ]
+  },
+  {
+    "year": 2024,
+    "qtype": "选择题",
+    "qno": "9",
+    "content": "设随机变量 $X$ 的概率密度为 $f(x)=\\begin{cases} 2(1-x), & 0<x<1, \\\\ 0, & \\text{其他} \\end{cases}$，在 $X=x$ ($0<x<1$) 的条件下，随机变量 $Y$ 服从区间 $(x,1)$ 上的均匀分布，则 $\\operatorname{Cov}(X,Y)=$（　　）。\n\nA. $-\\dfrac{1}{36}$  \nB. $-\\dfrac{1}{72}$  \nC. $\\dfrac{1}{72}$  \nD. $\\dfrac{1}{36}$",
+    "answer": "D",
+    "analysis": "由条件知\n由条件概率密度公式得联合概率密度 $f(x,y) = f_{Y|X}(y|x) f_X(x) = \\begin{cases} 2, & 0 < x < y < 1, \\\\ 0, & \\text{其他}. \\end{cases}$ 计算 $E(XY) = \\iint\\limits_{0 < x < y < 1} 2xy \\, dx \\, dy = \\frac{1}{4}$，$E(X) = \\int_0^1 2x(1-x) \\, dx = \\frac{1}{3}$，$E(Y) = \\iint\\limits_{0 < x < y < 1} 2y \\, dx \\, dy = \\frac{2}{3}$，故 $\\mathrm{Cov}(X,Y) = E(XY) - E(X)E(Y) = \\frac{1}{36}$。",
+    "topics": [
+      "联合概率密度",
+      "协方差",
+      "条件概率密度",
+      "均匀分布",
+      "概率论",
+      "条件分布"
+    ]
+  },
+  {
+    "year": 2024,
+    "qtype": "选择题",
+    "qno": "10",
+    "content": "设随机变量 $X,Y$ 相互独立，且均服从参数为 $\\lambda$ 的指数分布，令 $Z=|X-Y|$，则下列随机变量与 $Z$ 同分布的是（　　）\n\nA. $X+Y$  \nB. $\\dfrac{X+Y}{2}$  \nC. $2X$  \nD. $X$",
+    "answer": "D",
+    "analysis": "由条件知 $X$ 与 $Y$ 的联合概率密度函数为 $f(x,y) = \\begin{cases} \\lambda^2 e^{-\\lambda(x+y)}, & x > 0, y > 0, \\\\ 0, & \\text{其他}. \\end{cases}$ 则 $Z$ 的分布函数为 $F_Z(z) = P\\{Z \\leq z\\} = P\\{|X - Y| \\leq z\\}$，$z \\leq 0$ 时，$F_Z(z) = 0$；$z > 0$ 时，$F_Z(z) = P\\{-z \\leq X - Y \\leq z\\} = \\iint\\limits_{-z \\leq x - y \\leq z} f(x,y) \\, dx \\, dy = \\int_0^z dx \\int_0^{x+z} \\lambda^2 e^{-\\lambda(x+y)} \\, dy + \\int_z^{+\\infty} dx \\int_{x-z}^{x+z} \\lambda^2 e^{-\\lambda(x+y)} \\, dy = 1 - e^{-\\lambda z}$。即 $Z$ 服从参数为 $\\lambda$ 的指数分布。",
+    "topics": [
+      "联合概率密度",
+      "独立性",
+      "随机变量函数的分布",
+      "指数分布",
+      "分布函数"
+    ]
+  },
+  {
+    "year": 2024,
+    "qtype": "填空题",
+    "qno": "11",
+    "content": "若 $\\displaystyle\\lim_{x\\to0}\\frac{(1+ax^2)^{\\sin x}-1}{x^3}=6$，则 $a=$________。",
+    "answer": "6",
+    "analysis": "$\\lim\\limits_{x \\to 0} \\frac{(1 + ax^2)^{\\sin x} - 1}{x^3} = \\lim\\limits_{x \\to 0} \\frac{e^{\\sin x \\ln(1 + ax^2)} - 1}{x^3} = \\lim\\limits_{x \\to 0} \\frac{\\sin x \\ln(1 + ax^2)}{x^3} = \\lim\\limits_{x \\to 0} \\frac{x \\cdot ax^2}{x^3} = a = 6$.",
+    "topics": [
+      "洛必达法则",
+      "泰勒展开",
+      "等价无穷小",
+      "极限"
+    ]
+  },
+  {
+    "year": 2024,
+    "qtype": "填空题",
+    "qno": "12",
+    "content": "$z=f(u,v)$ 有二阶连续导数，$\\left.\\mathrm{d}f\\right|_{(1,1)}=3\\mathrm{d}u+4\\mathrm{d}v$，若 $y=f(\\cos x,1+x^2)$，则 $\\left.\\frac{\\mathrm{d}^2y}{\\mathrm{d}x^2}\\right|_{x=0}=$________。",
+    "answer": "5",
+    "analysis": "$\\frac{dy}{dx} = f_u' \\cdot (-\\sin x) + f_v' \\cdot 2x$，$\\frac{d^2y}{dx^2} = [f_{uu}'' \\cdot (-\\sin x) + f_{uv}'' \\cdot 2x] \\cdot (-\\sin x) + f_u' \\cdot (-\\cos x) + [f_{vu}'' \\cdot (-\\sin x) + f_{vv}'' \\cdot 2x] \\cdot 2x + f_v' \\cdot 2$。$\\left. \\frac{d^2y}{dx^2} \\right|_{x=0} = -f_u' + 2f_v'$，又由 $d f \\big|_{(1,1)} = 3du + 4dv$，知 $f_u'(1,1) = 3, f_v'(1,1) = 4$，故 $\\left. \\frac{d^2y}{dx^2} \\right|_{x=0} = -3 + 8 = 5$。",
+    "topics": [
+      "隐函数求导",
+      "二阶导数",
+      "全微分",
+      "复合函数求导",
+      "二阶偏导数"
+    ]
+  },
+  {
+    "year": 2024,
+    "qtype": "填空题",
+    "qno": "13",
+    "content": "若函数 $f(x)=x+1$，若 $f(x)=\\dfrac{a_0}{2}+\\sum\\limits_{n=1}^\\infty a_n\\cos nx$，$x\\in[0,\\pi]$，则极限 $\\displaystyle\\lim_{n\\to\\infty}n^2\\sin a_{2n-1}=$________。",
+    "answer": "$-\\frac{1}{\\pi}$",
+    "analysis": "将 $f(x)$ 偶延拓，再进行周期延拓，则有\n$$\n\\begin{aligned}\na_{n} & =\\frac{2}{\\pi} \\int_{0}^{\\pi} f(x) \\cos n x \\mathrm{~d} x=\\frac{2}{\\pi} \\int_{0}^{\\pi}(x+1) \\cos n x \\mathrm{~d} x=\\frac{2}{\\pi} \\cdot \\frac{1}{n} \\int_{0}^{\\pi}(x+1) \\mathrm{d} \\sin n x \\\\\n& =\\frac{2}{n \\pi}\\left[(x+1) \\sin n x\\left|_{0}^{\\pi}-\\int_{0}^{\\pi} \\sin n x \\mathrm{~d} x\\right]\\right.=-\\frac{2}{n \\pi} \\int_{0}^{\\pi} \\sin n x \\mathrm{~d} x=\\left.\\frac{2}{n^{2} \\pi} \\cos n x\\right|_{0} ^{\\pi} \\\\\n& =\\frac{2}{n^{2} \\pi}\\left[(-1)^{n}-1\\right].\n\\end{aligned}\n$$\n$$\n\\therefore \\lim _{n \\rightarrow \\infty} n^{2} \\sin a_{2 n-1}=\\lim _{n \\rightarrow \\infty} \\frac{n^{2} 2 \\cdot(-2)}{(2 n-1)^{2} \\pi}=-\\frac{1}{\\pi}.\n$$",
+    "topics": [
+      "余弦级数",
+      "定积分",
+      "傅里叶级数",
+      "极限"
+    ]
+  },
+  {
+    "year": 2024,
+    "qtype": "填空题",
+    "qno": "14",
+    "content": "微分方程 $y'=\\dfrac{1}{(x+y)^2}$ 满足 $y(1)=0$ 的解为________。",
+    "answer": "$y=\\tan\\left(y+\\frac{\\pi}{4}\\right)-x$",
+    "analysis": "令 $u=x+y, y=u-x, \\frac{\\mathrm{d} y}{\\mathrm{~d} x}=\\frac{\\mathrm{d} u}{\\mathrm{~d} x}-1$, 代入原方程得\n$$\n\\frac{\\mathrm{d} u}{\\mathrm{~d} x}=\\frac{1+u^{2}}{u^{2}}, \\text { 即 } \\frac{u^{2}}{1+u^{2}} \\mathrm{~d} u=\\mathrm{d} x,\n$$\n两边积分得\n$$\nu-\\arctan u=x+C,\n$$\n即\n$$\nx+y-\\arctan (x+y)=x+C,\n$$\n由 $y(1)=0$, 得 $C=-\\frac{\\pi}{4}, \\therefore y=\\arctan (x+y)-\\frac{\\pi}{4}$, 即\n$$\nx+y=\\tan \\left(y+\\frac{\\pi}{4}\\right).\n$$",
+    "topics": [
+      "微分方程",
+      "初值问题",
+      "变量代换"
+    ]
+  },
+  {
+    "year": 2024,
+    "qtype": "填空题",
+    "qno": "15",
+    "content": "设实矩阵 $ A = \\begin{pmatrix} a+1 & a \\\\ a & a \\end{pmatrix} $，若对任意实向量 $ \\alpha = \\begin{pmatrix} x_1 \\\\ x_2 \\end{pmatrix} $, $ \\beta = \\begin{pmatrix} y_1 \\\\ y_2 \\end{pmatrix} $，$ (\\alpha^\\top A\\beta)^2 \\leqslant \\alpha^\\top A\\alpha \\beta^\\top A\\beta $ 都成立，则 $ a $ 的取值范围为 ________。",
+    "answer": "$a\\geqslant 0$",
+    "analysis": "由 $\\left(\\alpha^{\\top} A \\beta\\right)^{2} \\leqslant \\alpha^{\\top} A \\alpha \\beta^{\\top} A \\beta$, 得 $\\alpha^{\\top} A\\left(\\beta \\alpha^{\\top}-\\alpha \\beta^{\\top}\\right) A \\beta \\leqslant 0$ 恒成立，\n$$\n\\begin{aligned}\n\\beta \\alpha^{\\top}-\\alpha \\beta^{\\top} & =\\left(\\begin{array}{l}\ny_{1} \\\\\ny_{2}\n\\end{array}\\right)\\left(x_{1} \\quad x_{2}\\right)-\\left(\\begin{array}{l}\nx_{1} \\\\\nx_{2}\n\\end{array}\\right)\\left(y_{1} \\quad y_{2}\\right)=\\left(\\begin{array}{cc}\n0 & x_{2} y_{1}-x_{1} y_{2} \\\\\nx_{1} y_{2}-x_{2} y_{1} & 0\n\\end{array}\\right) \\\\\n& =\\left(x_{2} y_{1}-x_{1} y_{2}\\right)\\left(\\begin{array}{ll}\n0 & 1 \\\\\n-1 & 0\n\\end{array}\\right).\n\\end{aligned}\n$$\n$$\n\\begin{aligned}\nA\\left(\\beta \\alpha^{\\top}-\\alpha \\beta^{\\top}\\right) A & =\\left(x_{2} y_{1}-x_{1} y_{2}\\right)\\left(\\begin{array}{cc}\na+1 & a \\\\\na & a\n\\end{array}\\right)\\left(\\begin{array}{ll}\n0 & 1 \\\\\n-1 & 0\n\\end{array}\\right)\\left(\\begin{array}{cc}\na+1 & a \\\\\na & a\n\\end{array}\\right) \\\\\n& =a\\left(x_{2} y_{1}-x_{1} y_{2}\\right)\\left(\\begin{array}{ll}\n0 & 1 \\\\\n-1 & 0\n\\end{array}\\right).\n\\end{aligned}\n$$\n$$\n\\begin{aligned}\n\\therefore \\alpha^{\\top} A\\left(\\beta \\alpha^{\\top}-\\alpha \\beta^{\\top}\\right) A \\beta & =a\\left(x_{2} y_{1}-x_{1} y_{2}\\right)\\left(x_{1} \\quad x_{2}\\right)\\left(\\begin{array}{ll}\n0 & 1 \\\\\n-1 & 0\n\\end{array}\\right)\\left(\\begin{array}{l}\ny_{1} \\\\\ny_{2}\n\\end{array}\\right) \\\\\n& =-a\\left(x_{1} y_{2}-x_{2} y_{1}\\right)^{2} \\leqslant 0 \\text { 恒成立, }\n\\end{aligned}\n$$\n$$\n\\therefore a \\geqslant 0.\n$$",
+    "topics": [
+      "二次型",
+      "矩阵运算",
+      "正定性",
+      "柯西不等式",
+      "柯西-施瓦茨不等式"
+    ]
+  },
+  {
+    "year": 2024,
+    "qtype": "填空题",
+    "qno": "16",
+    "content": "随机试验每次成功的概率为 $ p $，现进行三次独立重复实验，已知至少成功一次的条件下全部成功的概率为 $ \\dfrac{4}{13} $，则 $ p = $ ________。",
+    "answer": "$\\frac{2}{3}$",
+    "analysis": "设随机变量 $X$ 表示三次独立重复实验中成功的次数，则 $X \\sim B(3, p)$，\n$$\nP\\{X = k\\} = C_3^k p^k (1 - p)^{3-k},\\ k = 0,1,2,3,\n$$\n则 $\\frac{4}{13} = P\\{X = 3 \\mid X \\geqslant 1\\} = \\frac{P\\{X = 3, X \\geqslant 1\\}}{P\\{X \\geqslant 1\\}} = \\frac{P\\{X = 3\\}}{1 - P\\{X = 0\\}} = \\frac{p^3}{1 - (1 - p)^3}$，解得 $p = \\frac{2}{3}$。",
+    "topics": [
+      "条件概率",
+      "独立重复试验",
+      "二项分布"
+    ]
+  },
+  {
+    "year": 2024,
+    "qtype": "解答题",
+    "qno": "17",
+    "content": "已知平面区域 $ D = \\left\\{ (x,y) \\mid \\sqrt{1 - y^2} \\leqslant x \\leqslant 1,\\, -1 \\leqslant y \\leqslant 1 \\right\\} $，  \n计算 $ \\iint_D \\dfrac{x}{\\sqrt{x^2 + y^2}} \\,\\mathrm{d}\\sigma $。",
+    "answer": "$\\sqrt{2} + \\ln(1 + \\sqrt{2}) - 2$",
+    "analysis": "区域 $D$ 关于 $x$ 轴对称，记 $D$ 位于 $x$ 轴上方区域为 $D_1$，\n则\n$$\n\\iint_D \\frac{x}{\\sqrt{x^2 + y^2}} \\,\\mathrm{d}x\\,\\mathrm{d}y = 2\\iint_{D_1} \\frac{x}{\\sqrt{x^2 + y^2}} \\,\\mathrm{d}x\\,\\mathrm{d}y,\n$$\n记\n$$\nD_2 = \\{(x, y) \\mid 0 \\leqslant x \\leqslant 1, 0 \\leqslant y \\leqslant 1\\},\\quad D_3 = \\{(x, y) \\mid x^2 + y^2 \\leqslant 1, x \\geqslant 0, y \\geqslant 0\\},\n$$\n则\n$$\n\\iint_{D_1} \\frac{x}{\\sqrt{x^2 + y^2}} \\,\\mathrm{d}x\\,\\mathrm{d}y = \\iint_{D_2} \\frac{x}{\\sqrt{x^2 + y^2}} \\,\\mathrm{d}x\\,\\mathrm{d}y - \\iint_{D_3} \\frac{x}{\\sqrt{x^2 + y^2}} \\,\\mathrm{d}x\\,\\mathrm{d}y\n$$\n$$\n= \\int_0^1 \\mathrm{d}y \\int_0^1 \\frac{x}{\\sqrt{x^2 + y^2}} \\,\\mathrm{d}x - \\int_0^{\\frac{\\pi}{2}} \\mathrm{d}\\theta \\int_0^1 r\\cos\\theta \\,\\mathrm{d}r\n$$\n$$\n= \\int_0^1 \\sqrt{1 + y^2} \\,\\mathrm{d}y - \\int_0^1 y \\,\\mathrm{d}y - \\frac{1}{2} = \\frac{\\sqrt{2}}{2} + \\frac{1}{2}\\ln(1 + \\sqrt{2}) - \\frac{1}{2} - \\frac{1}{2},\n$$\n$$\n\\therefore \\iint_D \\frac{x}{\\sqrt{x^2 + y^2}} \\,\\mathrm{d}x\\,\\mathrm{d}y = \\sqrt{2} + \\ln(1 + \\sqrt{2}) - 2.\n$$",
+    "topics": [
+      "二重积分",
+      "对称性",
+      "极坐标"
+    ]
+  },
+  {
+    "year": 2024,
+    "qtype": "解答题",
+    "qno": "18",
+    "content": "设 $ f(x,y) = x^3 + y^3 - (x + y)^2 + 3 $，曲面 $ z = f(x,y) $ 在 $ (1,1,1) $ 处的切平面为 $ T $，$ T $ 与三个坐标面所围有界区域在 $ xOy $ 面的投影为 $ D $。  \n(1) 求 $ T $ 的方程；  \n(2) 求 $ f(x,y) $ 在 $ D $ 上的最大值和最小值。",
+    "answer": "（1）$x + y + z - 3 = 0$；（2）最大值为 $21$，最小值为 $\\frac{17}{27}$",
+    "analysis": "（1）$\\left.\\frac{\\partial z}{\\partial x}\\right|_{(1,1)} = \\left[3x^2 - 2(x + y)\\right]\\bigg|_{(1,1)} = -1$，\n$$\n\\left.\\frac{\\partial z}{\\partial y}\\right|_{(1,1)} = \\left[3y^2 - 2(x + y)\\right]\\bigg|_{(1,1)} = -1,\n$$\n$\\therefore$ 曲面 $z = f(x, y)$ 在 $(1,1,1)$ 处的切平面法向量为 $n = (-1, -1, -1)$，\n$\\therefore$ 切平面 $T$ 方程为 $-(x - 1) - (y - 1) - (z - 1) = 0$，即 $x + y + z - 3 = 0$。\n\n（2）区域 $D = \\{(x, y) \\mid x \\geqslant 0, y \\geqslant 0, x + y \\leqslant 3\\}$，由\n$$\n\\begin{cases}\n\\displaystyle \\frac{\\partial z}{\\partial x} = 3x^2 - 2(x + y) = 0, \\\\\n\\displaystyle \\frac{\\partial z}{\\partial y} = 3y^2 - 2(x + y) = 0,\n\\end{cases}\n$$\n得驻点为 $(0,0), \\left(\\frac{4}{3}, \\frac{4}{3}\\right)$，$f(0,0) = 3$，$f\\left(\\frac{4}{3}, \\frac{4}{3}\\right) = \\frac{17}{27}$。\n\n在 $y = 0 (0 \\leqslant x \\leqslant 3)$ 上，$f(x,0) = x^3 - x^2 + 3$，$\\frac{\\mathrm{d}f(x,0)}{\\mathrm{d}x} = 3x^2 - 2x = 0$，得\n$$\nx = 0,\\ x = \\frac{2}{3},\\ f\\left(\\frac{2}{3}, 0\\right) = \\frac{77}{27},\\ f(3,0) = 21.\n$$\n在 $x=0(0\\leqslant y\\leqslant 3)$ 上，$f(0,y)=y^3-y^2+3$，同理得 $f\\left(0,\\dfrac{2}{3}\\right)=\\dfrac{77}{27}$，$f(0,3)=21$。在边界 $x+y=3$ 上，有 $f(x,y)=f(x,3-x)=x^3+(3-x)^3-6$，$0\\leqslant x\\leqslant 3$，$\\dfrac{\\mathrm{d}f(x,3-x)}{\\mathrm{d}x}=3x^2-3(3-x)^2=0$，得驻点 $x=\\dfrac{3}{2}$，$f\\left(\\dfrac{3}{2},\\dfrac{3}{2}\\right)=\\dfrac{3}{4}$。$\\therefore f(x,y)$ 在 $D$ 上的最大值为 $f(0,3)=f(3,0)=21$，最小值为 $f\\left(\\dfrac{4}{3},\\dfrac{4}{3}\\right)=\\dfrac{17}{27}$。",
+    "topics": [
+      "条件极值",
+      "多元函数最值",
+      "切平面",
+      "多元函数极值",
+      "驻点",
+      "边界条件"
+    ]
+  },
+  {
+    "year": 2024,
+    "qtype": "证明题",
+    "qno": "19",
+    "content": "设 $ f(x) $ 二阶可导，$ f'(0) = f'(1) $，$ |f''(x)| \\leqslant 1 $，证：  \n(1) $ x \\in (0,1) $ 时，$ \\left| f(x) - f(0)(1 - x) - f(1)x \\right| \\leqslant \\dfrac{x(1 - x)}{2} $；  \n(2) $ \\left| \\int_0^1 f(x)\\,\\mathrm{d}x - \\dfrac{f(0) + f(1)}{2} \\right| \\leqslant \\dfrac{1}{12} $。",
+    "answer": "证明见解析。",
+    "analysis": "（1）将 $f(x)$ 在 $x=0$ 和 $x=1$ 处泰勒展开得 $f(x)=f(0)+f'(0)x+\\dfrac{f''(\\xi_1)}{2!}x^2$，$\\xi_1$ 介于 $0$ 与 $x$ 之间，$f(x)=f(1)+f'(1)(x-1)+\\dfrac{f''(\\xi_2)}{2!}(x-1)^2$，$\\xi_2$ 介于 $1$ 与 $x$ 之间，$f(x)(1-x)=f(0)(1-x)+f'(0)x(1-x)+\\dfrac{f''(\\xi_1)}{2}x^2(1-x)$ ①，$f(x)x=f(1)x+f'(1)(x-1)x+\\dfrac{f''(\\xi_2)}{2}(x-1)^2x$ ②，注意到 $f'(0)=f'(1)$，① + ② 得 $f(x)=f(0)(1-x)+f(1)x+\\dfrac{f''(\\xi_1)}{2}x^2(1-x)+\\dfrac{f''(\\xi_2)}{2}(x-1)^2x$ ③，当 $x\\in(0,1)$ 时，有 $|f(x)-f(0)(1-x)-f(1)x|=\\left|\\dfrac{f''(\\xi_1)}{2}x^2(1-x)+\\dfrac{f''(\\xi_2)}{2}(x-1)^2x\\right|\\leqslant\\dfrac{1}{2}x^2(1-x)|f''(\\xi_1)|+\\dfrac{1}{2}x(x-1)^2|f''(\\xi_2)|\\leqslant\\dfrac{1}{2}x^2(1-x)+\\dfrac{1}{2}x(x-1)^2=\\dfrac{x(1-x)}{2}$。（2）由（1）得 $\\dfrac{x(x-1)}{2}\\leqslant f(x)-f(0)(1-x)-f(1)x\\leqslant\\dfrac{x(1-x)}{2}$，则有 $\\int_0^1\\dfrac{x(x-1)}{2}\\mathrm{d}x\\leqslant\\int_0^1[f(x)-f(0)(1-x)-f(1)x]\\mathrm{d}x\\leqslant\\int_0^1\\dfrac{x(1-x)}{2}\\mathrm{d}x$，即 $-\\dfrac{1}{12}\\leqslant\\int_0^1f(x)\\mathrm{d}x-\\dfrac{f(0)+f(1)}{2}\\leqslant\\dfrac{1}{12}$，即 $\\left|\\int_0^1f(x)\\mathrm{d}x-\\dfrac{f(0)+f(1)}{2}\\right|\\leqslant\\dfrac{1}{12}$。",
+    "topics": [
+      "中值定理",
+      "泰勒展开",
+      "泰勒公式",
+      "积分不等式"
+    ]
+  },
+  {
+    "year": 2024,
+    "qtype": "解答题",
+    "qno": "20",
+    "content": "已知有向曲线 $ L $ 为球面 $ x^2 + y^2 + z^2 = 2x $ 与平面 $ 2x - z - 1 = 0 $ 的交线，从 $ z $ 轴正向往 $ z $ 轴负向看去为逆时针方向，计算曲线积分  \n$$\n\\int_L (6xyz - yz^2)\\,dx + 2x^2z\\,dy + xyz\\,dz.\n$$",
+    "answer": "结果为 $\\dfrac{1}{\\sqrt{5}}\\iint_\\Sigma\\mathrm{d}s$。",
+    "analysis": "记平面 $2x-z-1=0$ 被球面 $x^2+y^2+z^2=2x$ 所截部分为 $\\Sigma$，方向取上侧，曲面 $\\Sigma$ 的法向量为 $(-2,0,1)$，则 $(\\cos\\alpha,\\cos\\beta,\\cos\\gamma)=\\left\\{\\dfrac{-2}{\\sqrt{5}},0,\\dfrac{1}{\\sqrt{5}}\\right\\}$，由斯托克斯公式又得 $\\oint_L(6xyz-yz^2)\\mathrm{d}x+2x^2z\\mathrm{d}y+xyz\\mathrm{d}z=\\dfrac{1}{\\sqrt{5}}\\iint_\\Sigma\\begin{vmatrix}-2 & 0 & 1 \\\\ \\dfrac{\\partial}{\\partial x} & \\dfrac{\\partial}{\\partial y} & \\dfrac{\\partial}{\\partial z} \\\\ 6xyz-yz^2 & 2x^2z & xyz\\end{vmatrix}\\mathrm{d}s=\\dfrac{1}{\\sqrt{5}}\\iint_\\Sigma\\mathrm{d}s$。\n由 $\\begin{cases} 2x - z - 1 = 0, \\\\ x^2 + y^2 + z^2 = 2x \\end{cases}$ 消去 $z$ 可得 $\\Sigma$ 在 $xOy$ 面的投影曲线方程为\n$$\n5x^2 - 6x + y^2 + 1 = 0,\n$$\n投影区域为\n$$\n\\frac{\\left(x - \\frac{3}{5}\\right)^2}{\\frac{4}{25}} + \\frac{y^2}{\\frac{4}{5}} \\leqslant 1.\n$$\n该投影区域面积为 $A = \\pi \\cdot \\frac{2}{5} \\cdot \\frac{2}{\\sqrt{5}} = \\frac{4\\pi}{5\\sqrt{5}}$，即\n$$\n\\iint_{\\Sigma} \\mathrm{d}s = \\frac{A}{\\cos \\gamma} = \\frac{4\\pi}{5},\n$$\n$$\n\\therefore \\oint_L (6xyz - yz^2)\\,\\mathrm{d}x + 2x^2z\\,\\mathrm{d}y + xyz\\,\\mathrm{d}z = \\frac{4}{25}\\sqrt{5}\\pi.\n$$",
+    "topics": [
+      "空间曲线",
+      "曲面积分",
+      "投影",
+      "曲线积分",
+      "斯托克斯公式"
+    ]
+  },
+  {
+    "year": 2024,
+    "qtype": "解答题",
+    "qno": "21",
+    "content": "已知数列 $ \\{x_n\\}, \\{y_n\\}, \\{z_n\\} $ 满足 $ x_0 = -1, y_0 = 0, z_0 = 2 $，且  \n$$\n\\begin{cases}\nx_n = -2x_{n-1} + 2z_{n-1}, \\\\\ny_n = -2y_{n-1} - 2z_{n-1}, \\\\\nz_n = -6x_{n-1} - 3y_{n-1} + 3z_{n-1}\n\\end{cases},\n$$  \n记 $ \\alpha_n = \\begin{pmatrix} x_n \\\\ y_n \\\\ z_n \\end{pmatrix} $，写出满足 $ \\alpha_n = A\\alpha_{n-1} $ 的矩阵 $ A $，并求 $ A^n $ 及 $ x_n, y_n, z_n \\ (n = 1, 2, \\cdots) $。",
+    "answer": "$x_n = (-2)^n + 8, y_n = (-2)^{n+1} - 8, z_n = 12, (n = 1, 2, \\cdots)$",
+    "analysis": "$\\boldsymbol{\\alpha}_n = \\begin{pmatrix} x_n \\\\ y_n \\\\ z_n \\end{pmatrix} = \\begin{pmatrix} -2x_{n-1} + 2z_{n-1} \\\\ -2y_{n-1} - 2z_{n-1} \\\\ -6x_{n-1} - 3y_{n-1} + 3z_{n-1} \\end{pmatrix} = \\begin{pmatrix} -2 & 0 & 2 \\\\ 0 & -2 & -2 \\\\ -6 & -3 & 3 \\end{pmatrix} \\begin{pmatrix} x_{n-1} \\\\ y_{n-1} \\\\ z_{n-1} \\end{pmatrix} = A\\boldsymbol{\\alpha}_{n-1}$。\n\n则\n$$\nA = \\begin{pmatrix} -2 & 0 & 2 \\\\ 0 & -2 & -2 \\\\ -6 & -3 & 3 \\end{pmatrix},\n$$\n$$\n|\\lambda E - A| = \\begin{vmatrix} \\lambda + 2 & 0 & -2 \\\\ 0 & \\lambda + 2 & 2 \\\\ 6 & 3 & \\lambda - 3 \\end{vmatrix} = \\lambda(\\lambda + 2)(\\lambda - 1) = 0,\n$$\n\n得 $A$ 的特征值为 $\\lambda_1 = 0, \\lambda_2 = -2, \\lambda_3 = 1$。\n\n$\\lambda_1 = 0$ 时，由 $(O E - A)x = 0$，可得基础解系 $\\boldsymbol{\\beta}_1 = (1, -1, 1)^\\top$，\n\n$\\lambda_2 = -2$ 时，由 $(-2E - A)x = 0$，可得基础解系 $\\boldsymbol{\\beta}_2 = (-1, 2, 0)^\\top$，\n\n$\\lambda_3 = 1$ 时，由 $(E - A)x = 0$，可得基础解系 $\\boldsymbol{\\beta}_3 = (2, -2, 3)^\\top$，\n\n令 $P = (\\boldsymbol{\\beta}_1, \\boldsymbol{\\beta}_2, \\boldsymbol{\\beta}_3)$ 则 $P^{-1}AP = \\Lambda = \\begin{pmatrix} 0 & & \\\\ & -2 & \\\\ & & 1 \\end{pmatrix}$。\n\n从而 $A^n = P\\Lambda^n P^{-1} = \\begin{pmatrix} (-1)^{n+1} \\cdot 2^n - 4 & (-1)^{n+1} \\cdot 2^n - 2 & 2 \\\\ (-1)^n \\cdot 2^{n+1} + 4 & (-1)^n \\cdot 2^{n+1} + 2 & -2 \\\\ -6 & -3 & 3 \\end{pmatrix}$。\n\n又\n$$\n\\boldsymbol{\\alpha}_n = A\\boldsymbol{\\alpha}_{n-1} = A \\cdot A\\boldsymbol{\\alpha}_{n-2} = A^2\\boldsymbol{\\alpha}_{n-2} = \\cdots = A^n\\boldsymbol{\\alpha}_0\n$$\n$$\n= \\begin{pmatrix} (-1)^{n+1} \\cdot 2^n - 4 & (-1)^{n+1} \\cdot 2^n - 2 & 2 \\\\ (-1)^n \\cdot 2^{n+1} + 4 & (-1)^n \\cdot 2^{n+1} + 2 & -2 \\\\ -6 & -3 & 3 \\end{pmatrix} \\begin{pmatrix} -1 \\\\ 0 \\\\ 2 \\end{pmatrix}\n$$\n$$\n= \\begin{pmatrix} (-2)^n + 8 \\\\ (-2)^{n+1} - 8 \\\\ 12 \\end{pmatrix}.\n$$\n\n$$\n\\therefore x_n = (-2)^n + 8, y_n = (-2)^{n+1} - 8, z_n = 12, (n = 1, 2, \\cdots).\n$$",
+    "topics": [
+      "矩阵幂",
+      "矩阵递推",
+      "特征值",
+      "矩阵对角化",
+      "特征向量",
+      "递推数列"
+    ]
+  },
+  {
+    "year": 2024,
+    "qtype": "解答题",
+    "qno": "22",
+    "content": "设总体 $ X \\sim U(0, \\theta) $，$ \\theta $ 未知，$ X_1, X_2, \\cdots, X_n $ 为简单随机样本，$ X_{(n)} = \\max\\{X_1, X_2, \\cdots, X_n\\} $，$ T_c = cX_{(n)} $.  \n(1) 求 $ c $ 使得 $ T_c $ 为 $ \\theta $ 的无偏估计。  \n(2) 记 $ h(c) = E(T_c - \\theta)^2 $，求 $ c $ 使得 $ h(c) $ 取最小值。",
+    "answer": "(1) $c=\\dfrac{n+1}{n}$；(2) $c=\\dfrac{n+2}{n+1}$",
+    "analysis": "(1) $X$ 的概率密度函数为 $f(x)=\\begin{cases}\\dfrac{1}{\\theta}, & 0<x<\\theta, \\\\ 0, & \\text{其他},\\end{cases}$ 则 $X$ 的分布函数为\n\n$$\nF(x)=\\begin{cases}0, & x<0, \\\\ \\dfrac{1}{\\theta}x, & 0\\leqslant x<\\theta, \\\\ 1, & x\\geqslant\\theta.\\end{cases}\n$$\n\n$X_{(n)}$ 的分布函数为\n$$\n\\begin{aligned}\nF_{X_{(n)}}(x)&=P\\left\\{\\max\\{X_1,X_2,\\cdots,X_n\\}\\leqslant x\\right\\}=P\\left\\{X_1\\leqslant x,X_2\\leqslant x,\\cdots,X_n\\leqslant x\\right\\} \\\\\n&=F^n(x)=\\begin{cases}0, & x<0, \\\\ \\dfrac{1}{\\theta^n}x^n, & 0\\leqslant x<\\theta, \\\\ 1, & x\\geqslant\\theta.\\end{cases}\n\\end{aligned}\n$$\n\n$X_{(n)}$ 的概率密度函数为\n$$\nf_{X_{(n)}}(x)=\\begin{cases}\\dfrac{n}{\\theta^n}x^{n-1}, & 0<x<\\theta, \\\\ 0, & \\text{其他},\\end{cases}\n$$\n\n$$\n\\therefore E(T_c)=cE(X_{(n)})=c\\int_0^\\theta x\\cdot\\dfrac{n}{\\theta^n}x^{n-1}\\mathrm{d}x=\\dfrac{cn}{n+1}\\theta=\\theta,\\text{得 }c=\\dfrac{n+1}{n}.\n$$\n\n(2) $E(T_c^2)=c^2E(X_{(n)}^2)=c^2\\int_0^\\theta x^2\\cdot\\dfrac{n}{\\theta^n}x^{n-1}\\mathrm{d}x=\\dfrac{c^2n}{n+2}\\theta^2,$\n\n$$\n\\begin{aligned}\nh(c)&=E(T_c-\\theta)^2=E(T_c^2-2\\theta T_c+\\theta^2)=E(T_c^2)-2\\theta E(T_c)+\\theta^2 \\\\\n&=\\dfrac{c^2n}{n+2}\\theta^2-2\\dfrac{cn}{n+1}\\theta^2+\\theta^2,\n\\end{aligned}\n$$\n\n$$\nh'(c)=\\dfrac{2cn}{n+2}\\theta^2-2\\dfrac{n}{n+1}\\theta^2=0,\\text{得 }c=\\dfrac{n+2}{n+1},\\text{而 }h''(c)=\\dfrac{2n}{n+2}\\theta^2>0,\n$$\n\n$$\n\\therefore c=\\dfrac{n+2}{n+1}\\text{ 时},h(c)\\text{ 取最小值}.\n$$",
+    "topics": [
+      "最大值分布",
+      "概率密度",
+      "最大次序统计量",
+      "分布函数",
+      "均匀分布",
+      "无偏估计",
+      "均方误差"
+    ]
+  },
+  {
+    "year": 2025,
+    "qtype": "选择题",
+    "qno": "1",
+    "content": "已知函数 $ f(x) = \\int_0^x e^{t^2} \\sin t \\, dt $, $ g(x) = \\int_0^x e^{t^2} \\, dt \\cdot \\sin^2 x $, 则（　　）。\n\nA. $ x = 0 $ 是 $ f(x) $ 的极值点，也是 $ g(x) $ 的极值点  \nB. $ x = 0 $ 是 $ f(x) $ 的极值点，$ (0,0) $ 是曲线 $ y = g(x) $ 的拐点  \nC. $ x = 0 $ 是 $ f(x) $ 的极值点，$ (0,0) $ 是曲线 $ y = g(x) $ 的拐点  \nD. $ (0,0) $ 是曲线 $ y = f(x) $ 的拐点，也是曲线 $ y = g(x) $ 的拐点",
+    "answer": "B",
+    "analysis": "有题设可知，$f(0) = 0$.\n\n易知 $f(x) > 0 = f(0), \\forall x \\in \\overset{\\circ}{U}(0,\\pi)$，所以由极值的定义可知，$x = 0$ 是 $f(x)$ 的极值点. 因为 $f(x)$ 在 $x = 0$ 可导，于是 $(0,0)$ 不是曲线 $y = f(x)$ 的拐点.\n\n另一方面，$g'(x) = e^{x^2} \\sin^2 x + \\int_0^x e^{t^2} dt \\cdot \\sin 2x$，且 $g'(0) = 0$.\n\n易知 $g'(x) > 0 = g'(0), x \\in \\overset{\\circ}{U}\\left(0,\\dfrac{\\pi}{2}\\right)$，所以由极值的定义可知，$x = 0$ 是 $g'(x)$ 的极值点，进一步 $(0,0)$ 是曲线 $y = g(x)$ 的拐点. 因为 $g(x)$ 在 $x = 0$ 可导，于是 $x = 0$ 不是 $g(x)$ 的极值点.\n\n故答案选 B.\n（1）$P\\{Y>0\\}=P\\{X>100\\}=\\displaystyle\\int_{100}^{+\\infty}\\dfrac{2\\times100^2}{(100+x)^3}\\,\\mathrm{d}x=\\dfrac{1}{4}$．$$EY=\\int_{100}^{+\\infty}(x-100)\\cdot\\dfrac{2\\times100^2}{(100+x)^3}\\,\\mathrm{d}x=50.$$（2）$N$ 的边缘分布律为 $P\\{N=n\\}=\\dfrac{8^n}{n!}\\mathrm{e}^{-8}, n=0,1,2,\\cdots$．在 $N=n(n\\geq1)$ 的条件下，$M$ 的条件分布律为 $P\\{M=m\\mid N=n\\}=\\mathrm{C}_n^mp^m(1-p)^{n-m}, m=0,1,2,\\cdots,n$．所以 $(M,N)$ 的联合分布律 $P\\{M=m,N=n\\}=P\\{N=n\\}\\cdot P\\{M=m\\mid N=n\\}$$$=\\dfrac{8^n}{n!}\\mathrm{e}^{-8}\\cdot\\mathrm{C}_n^mp^m(1-p)^{n-m}, n=0,1,2,\\cdots,m=0,1,2,\\cdots,n,m\\leq n.$$于是 $M$ 的边缘分布律为$$P\\{M=m\\}=\\sum_{n=m}^{\\infty}\\dfrac{8^n}{n!}\\mathrm{e}^{-8}\\cdot\\mathrm{C}_n^mp^m(1-p)^{n-m}=\\dfrac{\\mathrm{e}^{-8}\\cdot8^m\\cdot p^m}{m!}\\sum_{n=m}^{\\infty}\\dfrac{8^{n-m}}{(n-m)!}(1-p)^{n-m}$$$$=\\dfrac{\\mathrm{e}^{-8}\\cdot8^m\\cdot p^m}{m!}\\sum_{n=m}^{\\infty}\\dfrac{6^{n-m}}{(n-m)!}=\\dfrac{\\mathrm{e}^{-8}\\cdot8^m\\cdot\\left(\\dfrac{1}{4}\\right)^m}{m!}\\cdot\\mathrm{e}^6=\\dfrac{2^m}{m!}\\mathrm{e}^{-2}, m=0,1,2,\\cdots,$$即 $M\\sim P(2)$．",
+    "topics": [
+      "边缘分布",
+      "数学期望",
+      "概率密度",
+      "拐点",
+      "二项分布",
+      "极值点",
+      "变限积分",
+      "导数应用",
+      "泊松分布"
+    ]
+  },
+  {
+    "year": 2025,
+    "qtype": "选择题",
+    "qno": "2",
+    "content": "已知级数：① $ \\sum_{n=1}^\\infty \\sin\\left( \\frac{n^3\\pi}{n^2 + 1} \\right) $, ② $ \\sum_{n=1}^\\infty (-1)^n \\left( \\frac{1}{\\sqrt[3]{n^2}} - \\tan\\left( \\frac{1}{\\sqrt[3]{n^2}} \\right) \\right) $, 则（　　）。\n\nA. ① 与 ② 均条件收敛  \nB. ① 条件收敛，② 绝对收敛  \nC. ① 绝对收敛，② 条件收敛  \nD. ① 与 ② 均绝对收敛",
+    "answer": "B",
+    "analysis": "考虑级数 $\\displaystyle\\sum_{n=1}^\\infty \\sin \\dfrac{n^3\\pi}{n^2+1}$. 因为\n$$\\sin\\left(-\\frac{n\\pi}{n^2+1}\\right)=\\sin\\left(\\frac{n^3\\pi}{n^2+1}-n\\pi\\right)=(-1)^n\\sin\\frac{n^3\\pi}{n^2+1},$$\n\n所以$\\sin\\dfrac{n^3\\pi}{n^2+1}=(-1)^{n+1}\\sin\\dfrac{n\\pi}{n^2+1}$.\n\n当$n\\to\\infty$时，$\\left|(-1)^{n+1}\\sin\\dfrac{n\\pi}{n^2+1}\\right|\\sim\\dfrac{\\pi}{n}$，所以$\\sum\\limits_{n=1}^\\infty\\sin\\dfrac{n^3\\pi}{n^2+1}$非绝对收敛.\n\n其次，由 Leibniz 判别法可知，$\\sum\\limits_{n=1}^\\infty(-1)^{n+1}\\sin\\dfrac{n\\pi}{n^2+1}$收敛，故$\\sum\\limits_{n=1}^\\infty\\sin\\dfrac{n^3\\pi}{n^2+1}$条件收敛.\n\n考虑级数 $\\sum\\limits_{n=1}^\\infty(-1)^n\\left(\\dfrac{1}{\\sqrt[3]{n^2}}-\\tan\\dfrac{1}{\\sqrt[3]{n^2}}\\right)$．由 Taylor 公式可知，当 $n\\to\\infty$ 时，\n\n$$\n\\dfrac{1}{\\sqrt[3]{n^2}}-\\tan\\dfrac{1}{\\sqrt[3]{n^2}}\\sim-\\dfrac{1}{3n^2},\n$$\n\n故 $\\sum\\limits_{n=1}^\\infty(-1)^n\\left(\\dfrac{1}{\\sqrt[3]{n^2}}-\\tan\\dfrac{1}{\\sqrt[3]{n^2}}\\right)$ 绝对收敛.\n\n故答案选 B.",
+    "topics": [
+      "条件收敛",
+      "Taylor公式",
+      "Leibniz判别法",
+      "绝对收敛",
+      "比较判别法",
+      "交错级数",
+      "级数收敛性"
+    ]
+  },
+  {
+    "year": 2025,
+    "qtype": "选择题",
+    "qno": "3",
+    "content": "设函数 $ f(x) $ 在区间 $ [0,+\\infty) $ 上可导，则（　　）。\n\nA. 当 $ \\lim_{x \\to +\\infty} f(x) $ 存在时，$ \\lim_{x \\to +\\infty} f'(x) $ 存在  \nB. 当 $ \\lim_{x \\to +\\infty} f'(x) $ 存在时，$ \\lim_{x \\to +\\infty} f(x) $ 存在  \nC. 当 $ \\lim_{x \\to +\\infty} \\frac{\\int_0^x f(t)\\,dt}{x} $ 存在时，$ \\lim_{x \\to +\\infty} f(x) $ 存在  \nD. 当 $ \\lim_{x \\to +\\infty} f(x) $ 存在时，$ \\lim_{x \\to +\\infty} \\frac{\\int_0^x f(t)\\,dt}{x} $ 存在",
+    "answer": "D",
+    "analysis": "当 $\\lim\\limits_{x\\to+\\infty}f(x)$ 存在时，由 L'Hospital 法则可知，$\\lim\\limits_{x\\to+\\infty}\\dfrac{\\int_0^xf(t)\\mathrm{d}t}{x}=\\lim\\limits_{x\\to+\\infty}f(x)$.\n\n故答案选 D.\n\n反例: A 选项，$f(x)=\\sin\\dfrac{1}{x}$; B 选项，$f(x)=x$; C 选项，$f(x)=\\cos x$.",
+    "topics": [
+      "导数",
+      "洛必达法则",
+      "积分上限函数",
+      "积分中值定理",
+      "极限"
+    ]
+  },
+  {
+    "year": 2025,
+    "qtype": "选择题",
+    "qno": "4",
+    "content": "设函数 $ f(x,y) $ 连续，则 $ \\int_{-2}^2 dx \\int_{4-x^2}^4 f(x,y)\\,dy = $ （　　）。\n\nA. $ \\int_0^4 \\left[ \\int_{-2}^{-\\sqrt{4-y}} f(x,y)\\,dx + \\int_{\\sqrt{4-y}}^2 f(x,y)\\,dx \\right] dy $  \nB. $ \\int_0^4 \\left[ \\int_{-2}^{\\sqrt{4-y}} f(x,y)\\,dx + \\int_{\\sqrt{4-y}}^2 f(x,y)\\,dx \\right] dy $  \nC. $ \\int_0^4 \\left[ \\int_{-2}^{-\\sqrt{4-y}} f(x,y)\\,dx + \\int_2^{\\sqrt{4-y}} f(x,y)\\,dx \\right] dy $  \nD. $ 2 \\int_0^4 dy \\int_{\\sqrt{4-y}}^2 f(x,y)\\,dx $",
+    "answer": "A",
+    "analysis": "积分区域 $D=\\{(x,y)\\mid -2\\leq x\\leq 2,4-x^2\\leq y\\leq 4\\}$，如图所示.\n\n所以交换积分次序可得，\n\n$$\n\\int_{-2}^{2}\\mathrm{d}x\\int_{4-x^2}^{4}f(x,y)\\mathrm{d}y=\n$$\n\n$$\n\\int_{0}^{4}\\left[\\int_{-2}^{-\\sqrt{4-y}}f(x,y)\\mathrm{d}x+\\int_{\\sqrt{4-y}}^{2}f(x,y)\\mathrm{d}x\\right]\\mathrm{d}y.\n$$\n\n故答案选 A.",
+    "topics": [
+      "二重积分",
+      "交换积分次序",
+      "积分区域"
+    ]
+  },
+  {
+    "year": 2025,
+    "qtype": "选择题",
+    "qno": "5",
+    "content": "二次型 $ f(x_1,x_2,x_3) = x_1^2 + 2x_1x_2 + 2x_1x_3 $ 的正惯性指数为（　　）。\n\nA. 0  \nB. 1  \nC. 2  \nD. 3",
+    "answer": "B",
+    "analysis": "二次型 $f(x_1,x_2,x_3)$ 的矩阵 $A=\\begin{pmatrix}1&1&1\\\\1&0&0\\\\1&0&0\\end{pmatrix}$.\n\n$$\n|\\lambda E-A|=\\begin{vmatrix}\\lambda-1&-1&-1\\\\-1&\\lambda&0\\\\-1&0&\\lambda\\end{vmatrix}=\\lambda(\\lambda-2)(\\lambda+1),\n$$\n\n所以 $A$ 的特征值为 $0,2,-1$，于是正惯性指数为 1.\n\n故答案选 B.",
+    "topics": [
+      "特征值",
+      "矩阵合同",
+      "正惯性指数",
+      "二次型"
+    ]
+  },
+  {
+    "year": 2025,
+    "qtype": "选择题",
+    "qno": "6",
+    "content": "设 $ a_1,a_2,a_3,a_4 $ 是 $ n $ 维向量，$ a_1,a_2 $ 线性无关，$ a_1,a_2,a_3 $ 线性相关，且 $ a_1 + a_2 + a_4 = 0 $，在空间直角坐标系 $ O-xyz $ 中，关于 $ x,y,z $ 的方程组 $ xa_1 + ya_2 + za_3 = a_4 $ 的几何图形是（　　）。\n\nA. 过原点的一个平面  \nB. 过原点的一条直线  \nC. 不过原点的一个平面  \nD. 不过原点的一条直线",
+    "answer": "D",
+    "analysis": "由于 $\\alpha_1, \\alpha_2$ 线性无关，$\\alpha_1, \\alpha_2, \\alpha_3$ 线性相关，则 $\\alpha_3$ 可由 $\\alpha_1, \\alpha_2$ 线性表示。又因为 $\\alpha_1 + \\alpha_2 + \\alpha_4 = 0$，则 $\\alpha_4$ 可由 $\\alpha_1, \\alpha_2$ 线性表示，于是 $r(\\alpha_1, \\alpha_2, \\alpha_3) = r(\\alpha_1, \\alpha_2, \\alpha_3, \\alpha_4) = 2$，所以方程组 $x\\alpha_1 + y\\alpha_2 + z\\alpha_3 = \\alpha_4$ 表示一条直线。当 $(x, y, z)^\\mathrm{T} = (0, 0, 0)^\\mathrm{T}$ 时，则 $\\alpha_4 = 0$，于是 $\\alpha_1 + \\alpha_2 = 0$，这与 $\\alpha_1, \\alpha_2$ 线性无关矛盾。所以 $(0, 0, 0)^\\mathrm{T}$ 不是方程的解，故方程组 $x\\alpha_1 + y\\alpha_2 + z\\alpha_3 = \\alpha_4$ 不过原点。故答案选 D。",
+    "topics": [
+      "几何图形",
+      "向量线性相关性",
+      "向量组的线性相关性",
+      "矩阵的秩",
+      "向量空间",
+      "线性相关性",
+      "线性方程组"
+    ]
+  },
+  {
+    "year": 2025,
+    "qtype": "选择题",
+    "qno": "7",
+    "content": "设 $n$ 阶矩阵 $A, B, C$ 满足 $r(A) + r(B) + r(B) = r(ABC) + 2n$，给出下列四个结论：① $r(ABC) + n = r(AB) + r(C)$；② $r(AB) + n = r(A) + r(B)$；③ $r(A) = r(B) = r(C) = n$；④ $r(AB) = r(BC) = n$，其中正确的选项是（　　）．  \nA. ①②　　　　　B. ①③　　　　　C. ②④　　　　　D. ③④",
+    "answer": "A",
+    "analysis": "因为 $r(ABC) \\geq r(AB) + r(C) - n$, $r(AB) \\geq r(A) + r(B) - n$，所以 $r(ABC) \\geq r(A) + r(B) + r(C) - 2n$。又因为 $r(A) + r(B) + r(C) = r(ABC) + 2n$，所以 $r(ABC) + n = r(AB) + r(C),\\quad r(AB) + n = r(A) + r(B)$。故答案选 A。",
+    "topics": [
+      "秩的不等式",
+      "矩阵乘积",
+      "矩阵的秩",
+      "矩阵乘积的秩",
+      "矩阵秩"
+    ]
+  },
+  {
+    "year": 2025,
+    "qtype": "选择题",
+    "qno": "8",
+    "content": "设二维随机变量 $(X, Y)$ 服从正态分布 $N(0, 0; 1, 1; P)$，其中 $P \\in (-1, 1)$，若 $a, b$ 为满足 $a^2 + b^2 = 1$ 的任意实数，则 $D(aX + bY)$ 的最大值为（　　）．  \nA. 1　　　　　B. 2　　　　　C. $1 + |P|$　　　　　D. $1 + P^2$",
+    "answer": "C",
+    "analysis": "$D(aX + bY) = a^2 DX + b^2 DY + 2ab \\operatorname{Cov}(X, Y) = a^2 DX + b^2 DY + 2ab\\rho\\sqrt{DX}\\sqrt{DY} = a^2 + b^2 + 2ab\\rho = 1 + 2ab\\rho$。因为 $a^2 + b^2 = 1$，所以 $2|ab| \\leq a^2 + b^2 = 1$，故 $D(aX + bY)$ 的最大值为 $1 + |\\rho|$。故答案选 C。",
+    "topics": [
+      "相关系数",
+      "协方差",
+      "方差",
+      "最值",
+      "二维正态分布"
+    ]
+  },
+  {
+    "year": 2025,
+    "qtype": "选择题",
+    "qno": "9",
+    "content": "设 $X_1, X_2, \\cdots, X_{20}$ 为来自总体 $B(1, 0.1)$ 的简单随机样本，令 $T = \\sum\\limits_{i=1}^{20} X_i$，利用泊松分布近似表示二项分布的方法可得 $P\\{T \\leqslant 1\\} \\approx$（　　）．  \nA. $\\dfrac{1}{e^2}$　　　　　B. $\\dfrac{2}{e^2}$　　　　　C. $\\dfrac{3}{e^2}$　　　　　D. $\\dfrac{4}{e^2}$",
+    "answer": "C",
+    "analysis": "由题设可知 $T \\sim B(20, 0.1)$，$ET = 2$。于是 $T$ 近似服从参数为 2 的 Poisson 分布，所以  \n$$\nP\\{T \\leq 1\\} = P\\{T = 0\\} + P\\{T = 1\\} \\approx e^{-2} + 2e^{-2} = \\frac{3}{e^3}.\n$$\n\n故答案选 C.",
+    "topics": [
+      "泊松近似",
+      "Poisson分布",
+      "二项分布",
+      "近似计算",
+      "概率计算"
+    ]
+  },
+  {
+    "year": 2025,
+    "qtype": "选择题",
+    "qno": "10",
+    "content": "设 $x_1, x_2, \\cdots, x_n$ 为来自正态总体 $N(\\mu, 2)$ 的简单随机样本，记 $\\bar{X} = \\dfrac{1}{n} \\sum\\limits_{i=1}^{n} x_i$，$Z_\\alpha$ 表示标准正态分布的上侧 $\\alpha$ 分位数，假设检验问题：$H_0: \\mu \\leqslant 1$，$H_1: \\mu > 1$ 的显著性水平为 $\\alpha$ 的检验的拒绝域为（　　）．  \nA. $\\left\\{(x_1, x_2, \\cdots, x_n)\\middle|\\bar{X} > 1 + \\dfrac{2}{n}Z_\\alpha\\right\\}$  \nB. $\\left\\{(x_1, x_2, \\cdots, x_n)\\middle|\\bar{X} > 1 + \\dfrac{\\sqrt{2}}{n}Z_\\alpha\\right\\}$  \nC. $\\left\\{(x_1, x_2, \\cdots, x_n)\\middle|\\bar{X} > 1 + \\dfrac{2}{\\sqrt{n}}Z_\\alpha\\right\\}$  \nD. $\\left\\{(x_1, x_2, \\cdots, x_n)\\middle|\\bar{X} > 1 + \\sqrt{\\dfrac{2}{n}}Z_\\alpha\\right\\}$",
+    "answer": "D",
+    "analysis": "检验统计量为 $U = \\frac{\\bar{X} - \\mu}{\\sigma / \\sqrt{n}} \\sim N(0,1)$，拒绝域为 $U > z_\\alpha$。由于 $\\mu_0 = 1$, $\\sigma^2 = 2$，所以  \n$$\n\\bar{X} > 1 + \\sqrt{\\frac{2}{n}} z_\\alpha.\n$$\n\n故答案选 D.",
+    "topics": [
+      "拒绝域",
+      "正态分布",
+      "假设检验",
+      "分位数"
+    ]
+  },
+  {
+    "year": 2025,
+    "qtype": "填空题",
+    "qno": "11",
+    "content": "$\\lim\\limits_{x \\to 0^+} \\dfrac{x^x - 1}{\\ln x \\cdot \\ln(1 - x)} =$ ____________．",
+    "answer": "$-1$",
+    "analysis": "$$\n\\lim_{x \\to 0^+} \\frac{x^x - 1}{\\ln x \\cdot \\ln(1 - x)} = \\lim_{x \\to 0^+} \\frac{e^{x \\ln x} - 1}{-x \\ln x} = \\lim_{x \\to 0^+} \\frac{x \\ln x}{-x \\ln x} = -1.\n$$",
+    "topics": [
+      "洛必达法则",
+      "幂指函数",
+      "等价无穷小",
+      "极限"
+    ]
+  },
+  {
+    "year": 2025,
+    "qtype": "填空题",
+    "qno": "12",
+    "content": "已知函数 $f(x) = \\begin{cases} 0, & 0 \\leqslant x < \\dfrac{1}{2} \\\\ x^2, & \\dfrac{1}{2} \\leqslant x \\leqslant 1 \\end{cases}$ 的傅里叶级数为 $\\sum\\limits_{n=1}^{\\infty} b_n \\sin n\\pi x$，$S(x)$ 为 $\\sum\\limits_{n=1}^{\\infty} b_n \\sin n\\pi x$ 的和函数，则 $S\\left(-\\dfrac{7}{2}\\right) =$ ____________．",
+    "answer": "$\\dfrac{1}{8}$.",
+    "analysis": "$S(x)$ 是以 2 为周期的奇函数，所以由 Dirichlet 收敛定理可知，\n$$\nS\\left(-\\dfrac{7}{2}\\right)=S\\left(\\dfrac{1}{2}\\right)=\\dfrac{1}{2}\\left[f\\left(\\dfrac{1}{2}-0\\right)+f\\left(\\dfrac{1}{2}+0\\right)\\right]=\\dfrac{1}{2}\\left(0+\\dfrac{1}{4}\\right)=\\dfrac{1}{8}.\n$$",
+    "topics": [
+      "Fourier级数",
+      "奇延拓",
+      "Dirichlet收敛定理",
+      "周期奇函数",
+      "收敛定理",
+      "和函数",
+      "傅里叶级数"
+    ]
+  },
+  {
+    "year": 2025,
+    "qtype": "填空题",
+    "qno": "13",
+    "content": "已知函数 $u(x, y, z) = xy^2z^3$，向量 $n = (2, 2, -1)$，则 $\\left.\\dfrac{\\partial u}{\\partial n}\\right|_{(1,1,1)} =$ ____________．",
+    "answer": "1.",
+    "analysis": "向量 $\\boldsymbol{n}$ 的方向余弦为 $\\left(\\dfrac{2}{3},\\dfrac{2}{3},-\\dfrac{1}{3}\\right)$，所以\n$$\n\\left.\\dfrac{\\partial u}{\\partial \\boldsymbol{n}}\\right|_{(1,1,1)}=u'_x(1,1,1)\\cdot\\dfrac{2}{3}+u'_y(1,1,1)\\cdot\\dfrac{2}{3}-u'_z(1,1,1)\\cdot\\dfrac{1}{3}=\\dfrac{2}{3}+\\dfrac{4}{3}-3\\cdot\\dfrac{1}{3}=1.\n$$",
+    "topics": [
+      "偏导数",
+      "梯度",
+      "方向余弦",
+      "多元函数微分",
+      "方向导数"
+    ]
+  },
+  {
+    "year": 2025,
+    "qtype": "填空题",
+    "qno": "14",
+    "content": "已知有向曲线 $L$ 是沿抛物线 $y = 1 - x^2$ 从点 $(1, 0)$ 到 $(-1, 0)$ 的段，则曲线积分 $\\int_L (y + \\cos x)\\,\\mathrm{d}x + (2x + \\cos y)\\,\\mathrm{d}y =$ ____________．",
+    "answer": "$\\dfrac{4}{3}-2\\sin1$.",
+    "analysis": "原式 $=\\int_1^{-1}[1-x^2+\\cos x+(2x+\\cos(1-x^2))\\cdot(-2x)]\\mathrm{d}x$\n$$\n=\\int_1^{-1}[1-5x^2+\\cos x-2x\\cos(1-x^2)]\\mathrm{d}x=-2\\int_0^1(1-5x^2+\\cos x)\\mathrm{d}x=\\dfrac{4}{3}-2\\sin1.\n$$",
+    "topics": [
+      "路径无关",
+      "全微分",
+      "格林公式",
+      "参数化",
+      "第二类曲线积分",
+      "曲线积分"
+    ]
+  },
+  {
+    "year": 2025,
+    "qtype": "填空题",
+    "qno": "15",
+    "content": "设矩阵 $A = \\begin{pmatrix} 4 & 2 & -3 \\\\ a & 3 & -4 \\\\ b & 5 & -7 \\end{pmatrix}$，若方程组 $A^2X = 0$ 与 $AX = 0$ 不同解，则 $a - b =$ ____________．",
+    "answer": "$-4$.",
+    "analysis": "方程组 $A^2\\boldsymbol{x}=\\boldsymbol{0}$ 与 $A\\boldsymbol{x}=\\boldsymbol{0}$ 不同解，所以必有 $r(A^2)<r(A)\\leq3$，于是 $|A|=0$.",
+    "topics": [
+      "行列式",
+      "矩阵方程",
+      "矩阵的秩",
+      "特征值",
+      "线性方程组"
+    ]
+  },
+  {
+    "year": 2025,
+    "qtype": "填空题",
+    "qno": "16",
+    "content": "设 $A, B$ 为两个不同随机事件，且相互独立，已知 $P(A) = 2P(B)$，$P(A \\cup B) = \\dfrac{5}{8}$，则 $A, B$ 中至少有一个发生的条件下，$A, B$ 中恰好有一个发生的概率为 ____________．",
+    "answer": "$\\dfrac{4}{5}$",
+    "analysis": "$\\dfrac{5}{8} = P(A \\cup B) = P(A) + P(B) - P(AB) = 3P(B) - 2[P(B)]^2$，则 $P(B) = \\dfrac{1}{4}$。\n\n于是 $P((A\\overline{B} + \\overline{A}B) \\mid A \\cup B) = \\dfrac{P(A\\overline{B} + \\overline{A}B)}{P(A \\cup B)} = \\dfrac{P(A\\overline{B}) + P(\\overline{A}B)}{P(A \\cup B)}$\n\n$$\n= \\dfrac{P(A)P(\\overline{B}) + P(\\overline{A})P(B)}{P(A \\cup B)} = \\dfrac{\\dfrac{1}{2} \\times \\dfrac{3}{4} + \\dfrac{1}{2} \\times \\dfrac{1}{4}}{\\dfrac{5}{8}} = \\dfrac{4}{5}.\n$$",
+    "topics": [
+      "条件概率",
+      "概率",
+      "概率加法公式",
+      "独立性"
+    ]
+  },
+  {
+    "year": 2025,
+    "qtype": "解答题",
+    "qno": "17",
+    "content": "计算 $\\int_0^1 \\frac{1}{(x+1)(x^2 - 2x + 2)}\\,\\mathrm{d}x$.",
+    "answer": "$\\dfrac{3\\ln 2 + \\pi}{10}$",
+    "analysis": "原式 $= \\displaystyle \\int_0^1 \\left( \\dfrac{\\dfrac{1}{5}}{x+1} + \\dfrac{-\\dfrac{1}{5}x + \\dfrac{3}{5}}{x^2 - 2x + 2} \\right)\\,\\mathrm{d}x = \\dfrac{1}{5}\\ln 2 - \\dfrac{1}{10} \\int_0^1 \\dfrac{(2x - 2) - 4}{x^2 - 2x + 2}\\,\\mathrm{d}x$\n\n$$\n= \\dfrac{1}{5}\\ln 2 - \\dfrac{1}{10} \\ln(x^2 - 2x + 2)\\Big|_0^1 + \\dfrac{2}{5} \\arctan(x - 1)\\Big|_0^1 = \\dfrac{3\\ln 2 + \\pi}{10}.\n$$",
+    "topics": [
+      "换元积分",
+      "部分分式",
+      "定积分",
+      "积分",
+      "有理函数积分"
+    ]
+  },
+  {
+    "year": 2025,
+    "qtype": "解答题",
+    "qno": "18",
+    "content": "已知函数 $f(u)$ 在区间 $(0,+\\infty)$ 内具有二阶导数，记 $g(x,y) = f\\left(\\frac{x}{y}\\right)$，若 $g(x,y)$ 满足\n$$\nx^2\\frac{\\partial^2 g}{\\partial x^2} + xy\\frac{\\partial^2 g}{\\partial x\\partial y} + y^2\\frac{\\partial^2 g}{\\partial y^2} = 1,\n$$\n且 $g(x,x) = 1$，$\\left.\\frac{\\partial g}{\\partial x}\\right|_{(x,x)} = \\frac{2}{x}$，求 $f(u)$.",
+    "answer": "$f(u)=\\frac{1}{2}(\\ln u)^2+2\\ln u+1$",
+    "analysis": "$\\frac{\\partial g}{\\partial x}=f'\\cdot\\frac{1}{y},\\frac{\\partial g}{\\partial y}=f'\\cdot\\left(-\\frac{x}{y^2}\\right)$,\n\n$$\n\\frac{\\partial^2 g}{\\partial x^2}=f''\\cdot\\frac{1}{y^2},\\frac{\\partial^2 g}{\\partial x\\partial y}=f''\\cdot\\left(-\\frac{x}{y^3}\\right)+f'\\cdot\\left(-\\frac{1}{y^2}\\right),\\frac{\\partial^2 g}{\\partial y^2}=f''\\cdot\\frac{x^2}{y^4}+f'\\cdot\\frac{2x}{y^3}.\n$$\n\n代入 $x^2\\frac{\\partial^2 g}{\\partial x^2}+xy\\frac{\\partial^2 g}{\\partial x\\partial y}+y^2\\frac{\\partial^2 g}{\\partial y^2}=1$ 整理可得 $\\left(\\frac{x}{y}\\right)^2f''\\left(\\frac{x}{y}\\right)+\\frac{x}{y}f'\\left(\\frac{x}{y}\\right)=1$，进一步\n\n$$\nf''(u)+\\frac{f'(u)}{u}=\\frac{1}{u^2}.\n$$\n\n又因为 $g(x,x)=1,\\left.\\frac{\\partial g}{\\partial x}\\right|_{(x,x)}=\\frac{2}{x}$，所以 $f(1)=1,f'(1)=2$，可得初值问题\n\n$$\n\\begin{cases}\nf''(u)+\\dfrac{f'(u)}{u}=\\dfrac{1}{u^2},\\\\\nf(1)=1,f'(1)=2\n\\end{cases}\n$$\n\n这是可降阶的二阶微分方程，解得 $f(u)=\\frac{1}{2}(\\ln u)^2+2\\ln u+1$.",
+    "topics": [
+      "可降阶微分方程",
+      "多元函数",
+      "常微分方程",
+      "二阶导数",
+      "多元函数微分法",
+      "偏微分方程",
+      "复合函数求导",
+      "二阶偏导数",
+      "初值问题"
+    ]
+  },
+  {
+    "year": 2025,
+    "qtype": "证明题",
+    "qno": "19",
+    "content": "设函数 $f(x)$ 在区间 $(a,b)$ 内可导，证明导函数 $f'(x)$ 在 $(a,b)$ 内严格单调增加的充分必要条件是：对 $(a,b)$ 内任意的 $x_1,x_2,x_3$，当 $x_1 < x_2 < x_3$ 时，\n$$\n\\frac{f(x_2)-f(x_1)}{x_2-x_1} < \\frac{f(x_3)-f(x_2)}{x_3-x_2}.\n$$",
+    "answer": "",
+    "analysis": "若导函数 $f'(x)$ 在 $(a,b)$ 内严格单调增加。由 Lagrange 中值定理可知，\n\n$$\n\\frac{f(x_2)-f(x_1)}{x_2-x_1}=f'(\\xi_1),\\frac{f(x_3)-f(x_2)}{x_3-x_2}=f'(\\xi_2),x_1<\\xi_1<x_2<\\xi_2<x_3.\n$$\n\n又因为 $f'(x)$ 在 $(a,b)$ 内严格单调增加，所以\n\n$$\n\\frac{f(x_2)-f(x_1)}{x_2-x_1}<\\frac{f(x_3)-f(x_2)}{x_3-x_2}.\n$$\n\n若对 $(a,b)$ 内任意的 $x_1,x_2,x_3$，当 $x_1<x_2<x_3$ 时，\n\n$$\n\\frac{f(x_2)-f(x_1)}{x_2-x_1}<\\frac{f(x_3)-f(x_2)}{x_3-x_2}.\n$$\n\n对任意的 $a<x_1<x_2<b$，存在 $x',x''$，使得 $a<x'<x_1<x''<x_2<b$，则\n\n$$\n\\frac{f(x_1)-f(x')}{x_1-x'}<\\frac{f(x'')-f(x_1)}{x''-x_1}<\\frac{f(x'')-f(x'')}{x''-x''}<\\frac{f(x_2)-f(x'')}{x_2-x''}.\n$$",
+    "topics": [
+      "充分必要条件",
+      "不等式证明",
+      "导数单调性",
+      "拉格朗日中值定理"
+    ]
+  },
+  {
+    "year": 2025,
+    "qtype": "解答题",
+    "qno": "20",
+    "content": "设 $\\Sigma$ 是由直线 $\\begin{cases} x=0, \\\\ y=0 \\end{cases}$ 绕直线 $\\begin{cases} x=t, \\\\ y=t, \\\\ z=t, \\end{cases}$（$t$ 为参数）旋转一周得到的曲面，$\\Sigma_1$ 是 $\\Sigma$ 介于平面 $x+y+z=0$ 与 $x+y+z=1$ 之间部分的外侧，计算曲面积分\n$$\n\\iint_{\\Sigma_1} x\\,\\mathrm{d}y\\,\\mathrm{d}z + (y+1)\\,\\mathrm{d}z\\,\\mathrm{d}x + (z+2)\\,\\mathrm{d}x\\,\\mathrm{d}y.\n$$",
+    "answer": "$-\\dfrac{2}{\\sqrt{3}}\\pi$.",
+    "analysis": "设 $\\Sigma$ 上的点 $(x,y,z)$ 为直线 $\\begin{cases} x = 0 \\\\ y = 0 \\end{cases}$ 上的点 $(x_1,y_1,z_1)$ 绕直线 $\\begin{cases} x = t \\\\ y = t \\\\ z = t \\end{cases}$ 旋转所得，则\n\n$$\n\\begin{cases}\nx - x_1 + y - y_1 + z - z_1 = 0 \\\\\nx^2 + y^2 + z^2 = x_1^2 + y_1^2 + z_1^2 \\\\\nx_1 = 0 \\\\\ny_1 = 0\n\\end{cases},\n$$\n\n消去 $x_1, y_1, z_1$，所以 $\\Sigma$ 的方程为 $x^2 + y^2 + z^2 = (x + y + z)^2$.\n\n补面 $\\Sigma_2: \\begin{cases} x^2 + y^2 + z^2 \\leq (x + y + z)^2 \\\\ x + y + z = 1 \\end{cases}$ 方向为上侧，设 $\\Omega$ 为 $\\Sigma_1$ 与 $\\Sigma_2$ 所围成的封闭区域，则\n\n由 Gauss 公式可知，\n\n$$\n\\iint_{\\Sigma_1} = \\iint_{\\Sigma_1 + \\Sigma_2} - \\iint_{\\Sigma_2} = 3\\iiint_\\Omega \\mathrm{d}x\\,\\mathrm{d}y\\,\\mathrm{d}z - \\iint_{\\Sigma_2}.\n$$\n\n一方面，$(0,0,0)$ 到平面 $x + y + z = 1$ 的距离 $d = \\dfrac{1}{\\sqrt{3}}$，所以圆锥 $\\Omega$ 的底面半径为 $\\sqrt{\\dfrac{2}{3}}$，故\n\n$$\n3\\iiint_\\Omega \\mathrm{d}x\\,\\mathrm{d}y\\,\\mathrm{d}z = 3 \\cdot \\dfrac{1}{3}\\pi \\left(\\sqrt{\\dfrac{2}{3}}\\right)^2 \\cdot \\dfrac{1}{\\sqrt{3}} = \\dfrac{2\\pi}{3\\sqrt{3}}.\n$$",
+    "topics": [
+      "通量",
+      "曲面积分",
+      "Gauss公式",
+      "旋转曲面",
+      "圆锥体积",
+      "高斯公式"
+    ]
+  },
+  {
+    "year": 2025,
+    "qtype": "解答题",
+    "qno": "21",
+    "content": "设矩阵 $A = \\begin{pmatrix} 0 & -1 & 2 \\\\ -1 & 0 & 2 \\\\ -1 & -1 & a \\end{pmatrix}$，已知 1 是 $A$ 的特征多项式的重根。\n(1) 求 $a$ 的值；\n(2) 求所有满足 $A\\alpha = \\alpha + \\beta$，$A^2\\alpha = \\alpha + 2\\beta$ 的非零列向量 $\\alpha,\\beta$.",
+    "answer": "（1）$a = 3$；（2）$\\alpha = \\begin{pmatrix} k_1 \\\\ k_2 \\\\ k_3 \\end{pmatrix}, k_1, k_2, k_3$ 不全为零；$\\beta = k\\begin{pmatrix} 1 \\\\ 1 \\\\ 1 \\end{pmatrix}, k \\ne 0$。",
+    "analysis": "（1）因为 $|\\lambda E - A| = \\begin{vmatrix} \\lambda & 1 & -2 \\\\ 1 & \\lambda & -2 \\\\ 1 & 1 & \\lambda - a \\end{vmatrix} = (\\lambda - 1)(\\lambda + 1)(\\lambda - a) + 4$，且 1 是 $A$ 的特征多项式的重根，所以 $a = 3$。\n\n（2）因为 $A\\alpha = \\alpha + \\beta, A^2\\alpha = \\alpha + 2\\beta$，所以 $(2A - A^2)\\alpha = \\alpha$。\n\n因为 $(2A - A^2) = (2E - A)A = \\begin{pmatrix} 2 & 1 & -2 \\\\ 1 & 2 & -2 \\\\ 1 & 1 & -1 \\end{pmatrix} \\begin{pmatrix} 0 & -1 & 2 \\\\ -1 & 0 & 2 \\\\ -1 & -1 & 3 \\end{pmatrix} = E$，所以 $\\alpha = \\begin{pmatrix} k_1 \\\\ k_2 \\\\ k_3 \\end{pmatrix}, k_1, k_2, k_3$ 不全为零。另一方面，$\\beta = A\\alpha - \\alpha = (A - E)\\alpha = \\begin{pmatrix} -1 & -1 & 2 \\\\ -1 & -1 & 2 \\\\ -1 & -1 & 2 \\end{pmatrix} \\begin{pmatrix} k_1 \\\\ k_2 \\\\ k_3 \\end{pmatrix} = k\\begin{pmatrix} 1 \\\\ 1 \\\\ 1 \\end{pmatrix}, k \\ne 0$。",
+    "topics": [
+      "矩阵方程",
+      "重根",
+      "矩阵",
+      "特征值",
+      "线性方程组",
+      "特征多项式"
+    ]
+  },
+  {
+    "year": 2025,
+    "qtype": "解答题",
+    "qno": "22",
+    "content": "投保人的损失事件发生时，保险公司的赔付额 $ Y $ 与投保人的损失额 $ X $ 的关系为\n$$\nY = \n\\begin{cases}\n0, & X \\leqslant 100, \\\\\nX - 100, & X > 100.\n\\end{cases}\n$$\n设损失事件发生时，投保人的损失额 $ X $ 的概率密度为\n$$\nf(x) = \n\\begin{cases}\n\\dfrac{2 \\times 100^2}{(100 + x)^3}, & x > 0, \\\\\n0, & x \\leqslant 0.\n\\end{cases}\n$$\n(1) 求 $ P\\{Y > 0\\} $ 及 $ E(Y) $;  \n(2) 这种损失事件在一年内发生的次数记为 $ N $, 保险公司在一年内就这种损失事件产生的理赔次数记为 $ M $, 假设 $ N $ 服从参数为 8 的泊松分布, 在 $ N = n (n \\geqslant 1) $ 的条件下, $ M $ 服从二项分布 $ B(n, P) $, 其中 $ P = P\\{y > 0\\} $, 求 $ M $ 的概率分布.",
+    "answer": "",
+    "analysis": "",
+    "topics": [
+      "数学期望",
+      "随机变量函数",
+      "全概率公式",
+      "概率密度",
+      "二项分布",
+      "分段函数",
+      "泊松分布"
+    ]
+  },
+  {
+    "year": 2026,
+    "qtype": "选择题",
+    "qno": "1",
+    "content": "设函数 $ z = z(x, y) $ 由方程 $ x - az = e^{y + az} $ （$ a $ 为非零常数）确定，则\n\nA. $ \\dfrac{\\partial z}{\\partial x} - \\dfrac{\\partial z}{\\partial y} = \\dfrac{1}{a} $  \nB. $ \\dfrac{\\partial z}{\\partial x} + \\dfrac{\\partial z}{\\partial y} = \\dfrac{1}{a} $  \nC. $ \\dfrac{\\partial z}{\\partial x} - \\dfrac{\\partial z}{\\partial y} = -\\dfrac{1}{a} $  \nD. $ \\dfrac{\\partial z}{\\partial x} + \\dfrac{\\partial z}{\\partial y} = -\\dfrac{1}{a} $",
+    "answer": "A",
+    "analysis": "方程两边对 $ x $ 求偏导：  \n$ 1 - a \\cdot \\dfrac{\\partial z}{\\partial x} = e^{y + az} \\left( a \\cdot \\dfrac{\\partial z}{\\partial x} \\right) \\Rightarrow \\dfrac{\\partial z}{\\partial x} = \\dfrac{1}{a} \\cdot \\dfrac{1}{1 + e^{y + az}} $\n\n方程两边对 $ y $ 求偏导：  \n$ -a \\cdot \\dfrac{\\partial z}{\\partial y} = e^{y + az} \\left( 1 + a \\cdot \\dfrac{\\partial z}{\\partial y} \\right) \\Rightarrow \\dfrac{\\partial z}{\\partial y} = -\\dfrac{1}{a} \\cdot \\dfrac{e^{y + az}}{1 + e^{y + az}} $\n\n所以 $ \\dfrac{\\partial z}{\\partial x} - \\dfrac{\\partial z}{\\partial y} = \\dfrac{1}{a} \\cdot \\dfrac{1 + e^{y + az}}{1 + e^{y + az}} = \\dfrac{1}{a} $",
+    "topics": [
+      "偏导数",
+      "多元函数微分学",
+      "链式法则",
+      "隐函数求导"
+    ]
+  },
+  {
+    "year": 2026,
+    "qtype": "选择题",
+    "qno": "2",
+    "content": "幂级数 $ \\sum_{n=1}^{\\infty} \\left[ \\dfrac{3 + (-1)^n}{4} \\right]^n x^{2n} $ 的收敛域为\n\nA. $ [-2, 2] $  \nB. $ (-1, 1) $  \nC. $ (-2, 2) $  \nD. $ [-1, 1] $",
+    "answer": "D",
+    "analysis": "① 求收敛半径 $ R $\n\n$$\n\\rho = \\lim_{n \\to \\infty} \\sqrt[n]{|u_n|} = \\lim_{n \\to \\infty} \\sqrt[n]{\\left[ \\dfrac{3 + (-1)^n}{4} \\right]^n} = \\lim_{n \\to \\infty} \\dfrac{3 + (-1)^n}{4}\n$$\n\n当 $ n $ 为偶数时，$ \\lim_{n \\to \\infty} \\dfrac{3 + 1}{4} = 1 $，即 $ R_1 = \\dfrac{1}{\\rho} = 1 $\n\n当 $ n $ 为奇数时，$ \\lim_{n \\to \\infty} \\dfrac{3 - 1}{4} = \\dfrac{1}{2} $，即 $ R_2 = \\dfrac{1}{\\rho} = 2 $\n\n因此幂级数收敛半径为 $ R = \\min\\{R_1, R_2\\} = 1 $，即 $ |x^2| < 1 \\Rightarrow -1 < x < 1 $\n\n② 讨论端点处的敛散性\n\n当 $ x = \\pm 1 $ 时，原级数 $ \\sum_{n=1}^{\\infty} \\left[ \\dfrac{3 + (-1)^n}{4} \\right]^n \\cdot (\\pm 1)^{2n} = \\sum_{n=1}^{\\infty} \\left[ \\dfrac{3 + (-1)^n}{4} \\right]^n $\n\n当 $ n $ 为偶数时，$ u_n = 1^n = 1 $；当 $ n $ 为奇数时，$ u_n = \\left( \\dfrac{1}{2} \\right)^n \\to 0 $，不满足收敛的必要条件\n\n综上，该幂级数收敛域为 $ (-1, 1) $",
+    "topics": [
+      "收敛域",
+      "根值判别法",
+      "幂级数"
+    ]
+  },
+  {
+    "year": 2026,
+    "qtype": "选择题",
+    "qno": "3",
+    "content": "设函数 $ f(x) $ 在区间 $[-1,1]$ 上有定义，则\n\nA. 当 $ f(x) $ 在 $(-1,0)$ 上单调递减，在 $(0,1)$ 上单调递增时，$ f(0) $ 为极小值  \nB. 当 $ f(0) $ 是极小值时，$ f(x) $ 在 $(-1,0)$ 上单调递减，在 $(0,1)$ 上单调递增  \nC. 当 $ f(x) $ 的图形在 $[-1,1]$ 上是凹的时，$ \\dfrac{f(x) - f(1)}{x - 1} $ 在 $[-1,1)$ 上单调递增  \nD. 当 $ \\dfrac{f(x) - f(1)}{x - 1} $ 在 $[-1,1)$ 上单调递增时，$ f(x) $ 的图形在 $[-1,1]$ 上是凹的",
+    "answer": "C",
+    "analysis": "选项 A：因 $f(x)$ 在 $x=0$ 处不一定连续，故 $f(x)$ 在 $x=0$ 处不一定取得极小值，A 错\n\n选项 B：$f(x)$ 在 $x=0$ 处取极值不是 $f(x)$ 在 $x=0$ 两侧分别且有单调性的充分条件，B 错\n\n选项 C：因为 $f(x)$ 是 $[-1,1]$ 上凹函数，所以对 $[-1,1]$ 上任意 3 个点 $x_1,x_2,x_3$，若 $x_1<x_2<x_3$，则\n$$\n\\dfrac{f(x_1)-f(x_3)}{x_1-x_3}<\\dfrac{f(x_2)-f(x_3)}{x_2-x_3}\n$$\n取 $x_3=1$，则区间 $[-1,1)$ 上任意 2 点 $x_1,x_2$，若 $x_1<x_2$，则\n$$\n\\dfrac{f(x_1)-f(1)}{x_1-1}<\\dfrac{f(x_2)-f(1)}{x_2-1}\n$$\n故 $\\dfrac{f(x)-f(1)}{x-1}$ 在 $[-1,1)$ 上递增\n\n选项 D：$f(x)$ 在 $[-1,1]$ 上凹函数的充分必要条件为区间 $[-1,1]$ 上任意 3 个点 $x_1,x_2,x_3$，且 $x_1<x_2<x_3$ 有\n$$\n\\dfrac{f(x_1)-f(x_2)}{x_1-x_2}<\\dfrac{f(x_2)-f(x_3)}{x_2-x_3}\n$$\n恒成立\n\n显然 $\\dfrac{f(x)-f(1)}{x-1}$ 在 $[-1,1)$ 上递增，推不出 $f(x)$ 在 $[-1,1]$ 上凹函数\n\n综上，故选 C",
+    "topics": [
+      "函数性质",
+      "凹函数",
+      "单调性",
+      "极值",
+      "函数不等式",
+      "凹凸性",
+      "导数应用"
+    ]
+  },
+  {
+    "year": 2026,
+    "qtype": "选择题",
+    "qno": "4",
+    "content": "设空间区域 $ \\Omega $ 由 $ z = \\sqrt{4 - x^2 - y^2} $ 和 $ z = \\sqrt{x^2 + y^2} $ 围成，函数 $ f(u) $ 连续，则\n\n$$\n\\iiint_{\\Omega} f(x^2 + y^2 + z^2) \\, dx dy dz =\n$$\n\nA. $ \\displaystyle \\int_0^{2\\pi} d\\theta \\int_0^2 dr \\int_r^{\\sqrt{4 - r^2}} f(r^2 + z^2) r dz $  \nB. $ \\displaystyle \\int_0^{2\\pi} d\\theta \\int_0^{\\sqrt{2}} dr \\int_0^{\\sqrt{4 - r^2}} f(r^2 + z^2) r dz $  \nC. $ \\displaystyle \\int_0^{2\\pi} d\\theta \\int_0^{\\frac{\\pi}{4}} d\\varphi \\int_0^2 f(r^2) r^2 \\sin\\varphi dr $  \nD. $ \\displaystyle \\int_0^{2\\pi} d\\theta \\int_0^{\\frac{\\pi}{2}} d\\varphi \\int_0^2 f(r^2) r^2 \\sin\\varphi dr $",
+    "answer": "C",
+    "analysis": "容易得到化为柱坐标的结果是 $\\displaystyle\\int_0^{2\\pi}\\mathrm{d}\\theta\\int_0^{\\sqrt{2}}\\mathrm{d}r\\int_r^{\\sqrt{4-r^2}}f(r^2+z^2)\\,\\mathrm{d}z$\n\n化为球坐标的结果为 $\\displaystyle\\int_0^{2\\pi}\\mathrm{d}\\theta\\int_0^{\\frac{\\pi}{4}}\\mathrm{d}\\varphi\\int_0^2f(r^2)r^2\\sin\\varphi\\,\\mathrm{d}r$，故选 C",
+    "topics": [
+      "球坐标",
+      "三重积分",
+      "坐标变换",
+      "积分区域",
+      "柱坐标"
+    ]
+  },
+  {
+    "year": 2026,
+    "qtype": "选择题",
+    "qno": "5",
+    "content": "设单位矩阵经过若干次初等行变换得到的矩阵称为置换矩阵。若 $ A $ 是置换矩阵，则\n\nA. $ A^T $ 是置换矩阵  \nB. $ A^{-1} $ 是置换矩阵  \nC. $ A^T = A^{-1} $  \nD. $ A^T = -A^{-1} $",
+    "answer": "B",
+    "analysis": "不妨设 $A = E_{12}^n$，$E_{12}$ 表示交换 $E$ 的 1,2 两行，注意到 $E_{12}E_{12} = E, |E_{12}| = -1$，于是\n$$\nA =\n\\begin{cases}\nE & n = 2k \\\\\nE_{12} & n = 2k - 1\n\\end{cases}\n\\quad (k = 1,2,\\cdots), \\quad\nA^{-1} =\n\\begin{cases}\nE & n = 2k \\\\\nE_{12} & n = 2k - 1\n\\end{cases}\n$$\n故 $A^{-1}$ 为置换矩阵，$A^* = |A|A^{-1} =\n\\begin{cases}\nE & n = 2k \\\\\n-E_{12} & n = 2k - 1\n\\end{cases}$，故选 B",
+    "topics": [
+      "初等行变换",
+      "矩阵运算",
+      "逆矩阵",
+      "转置矩阵",
+      "伴随矩阵",
+      "置换矩阵"
+    ]
+  },
+  {
+    "year": 2026,
+    "qtype": "选择题",
+    "qno": "6",
+    "content": "设 $A$，$B$ 为 $n$ 阶矩阵，$\\beta$ 为 $n$ 维列向量。若 $A$ 的列向量均可由 $B$ 的列向量线性表示，则\n\nA. 若 $Ax = \\beta$ 有解，则 $Bx = \\beta$ 有解  \nB. 若 $A^Tx = \\beta$ 有解，则 $B^Tx = \\beta$ 有解  \nC. 若 $Bx = \\beta$ 有解，则 $Ax = \\beta$ 有解  \nD. 若 $B^Tx = \\beta$ 有解，则 $A^Tx = \\beta$ 有解",
+    "answer": "A",
+    "analysis": "$A$ 的列向量组可由 $B$ 的列向量组线性表示，即 $\\exists C$，使得 $A = BC$\n\n方法一：选项 A：$Ax = \\beta$ 有解 $\\Rightarrow \\beta$ 可由 $A$ 列向量表示，而 $\\beta$ 都能被 $A$ 表示，更可以被 $B$ 的列表示，即 $Bx = \\beta$ 有解\n\n选项 BD：题目给的列向量的关系推不出行向量关系\n\n选项 C：大范围推不出小范围\n\n方法二：举反例\n\n① $A =\n\\begin{pmatrix}\n0 & 0 \\\\\n0 & 0\n\\end{pmatrix},\nB =\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}$，取 $\\beta =\n\\begin{pmatrix}\n1 \\\\\n1\n\\end{pmatrix}$，排除 C 选项\n\n② $A =\n\\begin{pmatrix}\n0 & 1 \\\\\n0 & 0\n\\end{pmatrix},\nB =\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 0\n\\end{pmatrix}$，$A^T =\n\\begin{pmatrix}\n0 & 0 \\\\\n1 & 0\n\\end{pmatrix},\nB^T =\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 0\n\\end{pmatrix}$\n\n取 $\\beta =\n\\begin{pmatrix}\n0 \\\\\n1\n\\end{pmatrix}$，排除 B 选项；取 $\\beta =\n\\begin{pmatrix}\n1 \\\\\n0\n\\end{pmatrix}$，排除 D 选项",
+    "topics": [
+      "列空间",
+      "列向量组",
+      "线性表示",
+      "线性方程组",
+      "矩阵秩"
+    ]
+  },
+  {
+    "year": 2026,
+    "qtype": "选择题",
+    "qno": "7",
+    "content": "设二次型 $f(x_1, x_2, x_3) = a(x_1^2 + x_2^2 + x_3^2) + 4x_1x_2 + 4x_1x_3 + 4x_2x_3$，若方程 $f(x_1, x_2, x_3) = -1$ 表示的曲面为圆柱面，则\n\nA. $a = -4$，且 $f(x_1, x_2, x_3)$ 的规范形为 $-y_1^2 - y_2^2 - y_3^2$  \nB. $a = -4$，且 $f(x_1, x_2, x_3)$ 在正交变换下标准型为 $-6y_1^2 - 6y_2^2$  \nC. $a = 2$，且 $f(x_1, x_2, x_3)$ 的规范形为 $-y_1^2 - y_2^2 - y_3^2$  \nD. $a = 2$，且 $f(x_1, x_2, x_3)$ 在正交变换下标准型为 $-6y_1^2 - 6y_2^2$",
+    "answer": "B",
+    "analysis": "二次型矩阵 $ A = \\begin{pmatrix} a & 2 & 2 \\\\ 2 & a & 2 \\\\ 2 & 2 & a \\end{pmatrix} $\n\n$$\n|\\lambda E - A| = 0 \\Rightarrow \\lambda_1 = a + 4 \\text{ 对应特征向量为 } \\begin{pmatrix} 1 \\\\ 1 \\\\ 1 \\end{pmatrix},\\ \\lambda_2 = \\lambda_3 = a - 2\n$$\n\n由 $ f(x_1, x_2, x_3) = -1 $ 可得为圆柱面，即经正交变换后有 0 特征值，才可能表示柱面\n\n而圆柱面必须满足：①有一个 0 特征值；②另两个特征值非 0 且符号相同\n\n分析：case1. $ \\lambda_1 = 0 \\Rightarrow a = -4 $，此时 $ \\lambda_2 = \\lambda_3 = -6 $\n\nCase2. $ \\lambda_2 = 0 $，此时 $ \\lambda_1 = -6, \\lambda_3 = 0 $\n\n因此 $ a = -4 $，则 $ f = 0y_3^2 - 6y_1^2 - 6y_2^2 = -6y_1^2 - 6y_2^2 $",
+    "topics": [
+      "二次型",
+      "曲面",
+      "正交变换",
+      "规范形",
+      "秩",
+      "特征值",
+      "规范性",
+      "圆柱面",
+      "矩阵特征值"
+    ]
+  },
+  {
+    "year": 2026,
+    "qtype": "选择题",
+    "qno": "8",
+    "content": "设随机变量 $X \\sim N(1, 2)$，令 $f(t) = E(X + t)^2$，则 $f(t)$ 的最小值点和最小值分别为\n\nA. $1,\\ 2$  B. $1,\\ 4$  C. $-1,\\ 2$  D. $-1,\\ 4$",
+    "answer": "C",
+    "analysis": "① $ X \\sim N(1, 2) \\Rightarrow E(X) = 1, D(X) = 2 $\n\n② $ E(X^2) = D(X) + E^2(X) = 2 + 1 = 3 $\n\n③ $ f(t) = E(X^2 + 2tX + t^2) = E(X^2) + 2tE(X) + t^2 = t^2 + 2t + 3 = (t + 1)^2 + 2 $\n\n当 $ t = -1 $ 时取得最小值，最小值为 2",
+    "topics": [
+      "正态分布",
+      "方差",
+      "数学期望",
+      "二次函数最值"
+    ]
+  },
+  {
+    "year": 2026,
+    "qtype": "选择题",
+    "qno": "9",
+    "content": "设连续型随机变量 $X$ 的分布函数为 $F(x)$，随机变量 $Y$ 的分布函数为 $F(ay + b)$，$X$ 的数学期望为 $\\mu$，方差为 $\\sigma^2 (\\sigma > 0)$。若 $Y$ 的期望和方差为 $0$ 和 $1$，则\n\nA. $a = \\sigma,\\ b = \\mu$      B. $a = \\sigma,\\ b = -\\mu$  \nC. $a = \\dfrac{1}{\\sigma},\\ b = \\mu$     D. $a = \\dfrac{1}{\\sigma},\\ b = -\\mu$",
+    "answer": "A",
+    "analysis": "① 令 $ Y = \\dfrac{X - \\mu}{\\sigma} $\n\n② $ F_Y(y) = P\\{Y \\leqslant y\\} = P\\left\\{\\dfrac{X - \\mu}{\\sigma} \\leqslant y\\right\\} = P\\{X \\leqslant \\sigma y + \\mu\\} $\n\n即 $ F_Y(y) = F(\\sigma y + \\mu) $ 与题目中 $ F(a y + b) $ 对应，则 $ a = \\sigma, b = \\mu $",
+    "topics": [
+      "数学期望",
+      "方差",
+      "标准化",
+      "分布函数"
+    ]
+  },
+  {
+    "year": 2026,
+    "qtype": "选择题",
+    "qno": "10",
+    "content": "设随机变量 $X$ 的概率分布为 $P(X = k) = \\dfrac{1}{2^{k+1}} + \\dfrac{1}{3^k} (k = 1, 2, \\cdots)$，则对于正整数 $m$，$n$ 有\n\nA. $P(X > m+n \\mid X > m) = P(X > m)$  \nB. $P(X > m+n \\mid X > m) = P(X > n)$  \nC. $P(X > m+n \\mid X > m) > P(X > m)$  \nD. $P(X > m+n \\mid X > m) > P(X > n)$",
+    "answer": "C",
+    "analysis": "首先对于 AC 选项，固定 $m$，令 $n\\to\\infty$ 时，左边是趋于 0 的，因此 AC 都不成立，正确答案是 D  \n下面证明这个不等式\n\n$$\n\\begin{aligned}\n&P\\{X>m+n\\mid X>m\\}>P\\{X>n\\} \\\\\n&\\Leftrightarrow P\\{X>m+n\\}>P\\{X>m\\}P\\{X>n\\} \\\\\n&\\Leftrightarrow \\sum_{k=m+n+1}^{\\infty}\\left(\\dfrac{1}{2^{k+1}}+\\dfrac{1}{3^k}\\right)>\\sum_{k=m+1}^{\\infty}\\left(\\dfrac{1}{2^{k+1}}+\\dfrac{1}{3^k}\\right)\\sum_{k=n+1}^{\\infty}\\left(\\dfrac{1}{2^{k+1}}+\\dfrac{1}{3^k}\\right) \\\\\n&\\Leftrightarrow \\dfrac{1}{2^{m+n+1}}+\\dfrac{1}{2}\\cdot\\dfrac{1}{3^{m+n}}>\\left(\\dfrac{1}{2^{m+1}}+\\dfrac{1}{2}\\cdot\\dfrac{1}{3^m}\\right)\\left(\\dfrac{1}{2^{n+1}}+\\dfrac{1}{2}\\cdot\\dfrac{1}{3^n}\\right) \\\\\n&\\Leftrightarrow \\dfrac{1}{2^{m+n+1}}+\\dfrac{1}{2}\\cdot\\dfrac{1}{3^{m+n}}>\\dfrac{1}{2^{m+n+2}}+\\dfrac{1}{4}\\cdot\\dfrac{1}{2^n}\\cdot\\dfrac{1}{3^m}+\\dfrac{1}{4}\\cdot\\dfrac{1}{2^m}\\cdot\\dfrac{1}{3^n}+\\dfrac{1}{4}\\cdot\\dfrac{1}{3^{m+n}} \\\\\n&\\Leftrightarrow \\dfrac{1}{2^{m+n+2}}+\\dfrac{1}{4}\\cdot\\dfrac{1}{3^{m+n}}>\\dfrac{1}{4}\\cdot\\dfrac{1}{2^n}\\cdot\\dfrac{1}{3^m}+\\dfrac{1}{4}\\cdot\\dfrac{1}{2^m}\\cdot\\dfrac{1}{3^n} \\\\\n&\\Leftrightarrow \\dfrac{1}{4}\\left(\\dfrac{1}{2^n}-\\dfrac{1}{3^n}\\right)\\left(\\dfrac{1}{2^m}-\\dfrac{1}{3^m}\\right)>0\n\\end{aligned}\n$$\n\n这是显然成立的",
+    "topics": [
+      "条件概率",
+      "概率分布",
+      "不等式证明",
+      "无记忆性",
+      "分布律"
+    ]
+  },
+  {
+    "year": 2026,
+    "qtype": "填空题",
+    "qno": "11",
+    "content": "设 $\\boldsymbol{v}_1 = (0, x, z)$，$\\boldsymbol{v}_2 = (y, 0, 1)$，$F(x, y, z) = \\boldsymbol{v}_1 \\times \\boldsymbol{v}_2$，则 $\\operatorname{div} F =$ _________。",
+    "answer": "$1+z$",
+    "analysis": "直接计算可得 $F(x,y,z)=(x,yz,-xy)$，所以 $\\operatorname{div}F=1+z$",
+    "topics": [
+      "散度",
+      "向量场",
+      "向量积"
+    ]
+  },
+  {
+    "year": 2026,
+    "qtype": "填空题",
+    "qno": "12",
+    "content": "$\\lim_{x \\to 0} \\left[ \\frac{1}{x} - \\frac{\\ln(1 + x)}{x \\sin x} \\right] =$ _________。",
+    "answer": "$\\dfrac{1}{2}$",
+    "analysis": "$$\n\\lim_{x\\to0}\\left[\\dfrac{1}{x}-\\dfrac{\\ln(1+x)}{x\\sin x}\\right]=\\lim_{x\\to0}\\dfrac{\\sin x-\\ln(1+x)}{x\\sin x}=\\lim_{x\\to0}\\dfrac{\\sin x-x+x-\\ln(1+x)}{x^2}=\\dfrac{1}{2}\n$$",
+    "topics": [
+      "洛必达法则",
+      "泰勒展开",
+      "泰勒公式",
+      "极限"
+    ]
+  },
+  {
+    "year": 2026,
+    "qtype": "填空题",
+    "qno": "13",
+    "content": "设 $y = y(x)$ 由参数方程\n$$\n\\begin{cases}\nx = 2\\sin^2 t, \\\\\ny = t + \\cos t\n\\end{cases}\n\\quad (0 < t < \\frac{\\pi}{2})\n$$\n确定，则 $\\left. \\frac{\\mathrm{d}^2 y}{\\mathrm{d}x^2} \\right|_{t = \\frac{\\pi}{4}} =$ _________。",
+    "answer": "$-\\dfrac{\\sqrt{2}}{8}$",
+    "analysis": "直接求导可得\n$$\\dfrac{dy}{dx} = \\dfrac{dy/dt}{dx/dt} = \\dfrac{1 - \\sin t}{4\\sin t\\cos t} = \\dfrac{1 - \\sin t}{2\\sin 2t}$$\n$$\\dfrac{d^2y}{dx^2} = \\dfrac{d}{dt}\\left(\\dfrac{dy}{dx}\\right)\\bigg/\\dfrac{dx}{dt} = \\dfrac{-\\cos t\\sin 2t - 2\\cos 2t(1 - \\sin t)}{4\\sin^3 2t}$$\n于是$\\left.\\dfrac{d^2y}{dx^2}\\right|_{t=\\frac{\\pi}{4}} = -\\dfrac{\\sqrt{2}}{8}$",
+    "topics": [
+      "三角函数",
+      "二阶导数",
+      "参数方程",
+      "参数方程求导",
+      "复合函数求导"
+    ]
+  },
+  {
+    "year": 2026,
+    "qtype": "填空题",
+    "qno": "14",
+    "content": "$\\int_1^{+\\infty} \\frac{\\ln(1 + x)}{x^2} \\,\\mathrm{d}x =$ _________。",
+    "answer": "$2\\ln 2$",
+    "analysis": "分部积分可得\n$$\\int_1^{+\\infty}\\dfrac{\\ln(x+1)}{x^2}dx = -\\int_1^{+\\infty}\\ln(x+1)d\\left(\\dfrac{1}{x}\\right) = -\\left.\\dfrac{\\ln(x+1)}{x}\\right|_1^{+\\infty} + \\int_1^{+\\infty}\\dfrac{1}{x(x+1)}dx = \\ln 2 + \\left.\\ln\\dfrac{x}{x+1}\\right|_1^{+\\infty} = 2\\ln 2$$",
+    "topics": [
+      "对数函数",
+      "反常积分",
+      "分部积分法"
+    ]
+  },
+  {
+    "year": 2026,
+    "qtype": "填空题",
+    "qno": "15",
+    "content": "设 $A = \\begin{pmatrix} 1 & 0 & 0 \\\\ 2 & a & 2 \\\\ 0 & 2 & a \\end{pmatrix}$，$B = \\begin{pmatrix} a & -1 & -1 \\\\ -1 & 2 & 1 \\\\ -1 & -1 & a \\end{pmatrix}$，若 $m(X)$ 为 3 阶矩阵 $X$ 的实特征值中的最大值，且 $m(A) < m(B)$，则 $a$ 的取值范围为 _________。",
+    "answer": "$a < 0$",
+    "analysis": "$$\\begin{vmatrix}\n\\lambda - 1 & 0 & 0 \\\\\n-2 & \\lambda - a & -2 \\\\\n0 & -2 & \\lambda - a\n\\end{vmatrix}\n= (\\lambda - 1)\\left[(\\lambda - a)^2 - 4\\right] = (\\lambda - 1)(\\lambda - a - 2)(\\lambda - a + 2)$$\n$$\\therefore \\lambda_1 = 1,\\, \\lambda_2 = a + 2,\\, \\lambda_3 = a - 2$$\n$$\\begin{vmatrix}\n\\lambda - a & 1 & 1 \\\\\n1 & \\lambda - 2 & -1 \\\\\n1 & 1 & \\lambda - a\n\\end{vmatrix}\n\\overset{r_1 \\to r_1 - r_3}{=}\n\\begin{vmatrix}\n\\lambda - a - 1 & 0 & 1 - \\lambda + a \\\\\n1 & \\lambda - 2 & -1 \\\\\n1 & 1 & \\lambda - a\n\\end{vmatrix}\n\\overset{c_3 \\to c_3 + c_1}{=}\n\\begin{vmatrix}\n\\lambda - a - 1 & 0 & 0 \\\\\n1 & \\lambda - 2 & 0 \\\\\n1 & 1 & \\lambda - a + 1\n\\end{vmatrix}$$\n$$= (\\lambda - a - 1)(\\lambda - a + 1)(\\lambda - 2)$$\n$$\\therefore \\lambda_1 = 2,\\, \\lambda_2 = a + 1,\\, \\lambda_3 = a - 1$$\n① 当 $a + 2 > 1$ 时，$m(A) = a + 2$，此时 $a > -1$，$a + 1 > 0$\n又 $a + 2 > a + 1 > a - 1$，要使 $m(A) < m(B)$，$m(B) = 2$，此时 $2 > a + 2 \\Rightarrow a < 0$ 矛盾",
+    "topics": [
+      "最大特征值",
+      "行列式",
+      "矩阵",
+      "特征值",
+      "不等式",
+      "矩阵特征值"
+    ]
+  },
+  {
+    "year": 2026,
+    "qtype": "填空题",
+    "qno": "16",
+    "content": "设随机变量 $X$ 服从参数为 1 的泊松分布，随机变量 $Y$ 服从参数为 3 的泊松分布，若 $X$ 与 $Y - X$ 相互独立，则 $E(XY) =$ _________。",
+    "answer": "4",
+    "analysis": "因为 $X$ 与 $Y - X$ 独立，所以\n$$\n\\operatorname{Cov}(X, Y - X) = \\operatorname{Cov}(Y - X) - D(X) = E(XY) - E(X)E(Y) - D(X) = 0\n$$\n则\n$$\nE(XY) = E(X)E(Y) + D(X)\n$$\n因为 $X \\sim P(1), Y \\sim P(3)$，所以 $E(X) = D(X) = 1$，$E(Y) = 3$，故 $E(XY) = 1 \\cdot 3 + 1 = 4$",
+    "topics": [
+      "数学期望",
+      "独立性",
+      "协方差",
+      "泊松分布"
+    ]
+  },
+  {
+    "year": 2026,
+    "qtype": "解答题",
+    "qno": "17",
+    "content": "求 $f(x, y) = (2x^2 - y^2)e^x$ 的极值。",
+    "answer": "极大值为 $\\frac{8}{e^2}$",
+    "analysis": "① 求偏导\n\n对 $x$ 求偏导\n$$\n\\begin{aligned}\nf'_x &= \\frac{\\partial}{\\partial x}\\left[\\left(2x^2 - y^2\\right)e^x\\right] \\\\\n&= \\left(2x^2 - y^2\\right)e^x + (4x)e^x = e^x\\left(2x^2 - y^2 + 4x\\right)\n\\end{aligned}\n\\quad \\text{——1 分}\n$$\n\n对 $y$ 求偏导\n$$\nf'_y = \\frac{\\partial}{\\partial y}\\left[\\left(2x^2 - y^2\\right)e^x\\right] = -2ye^x \\quad \\text{——2 分}\n$$\n\n② 求驻点\n\n令 $f'_y = 0$ 得 $-2ye^x = 0 \\Rightarrow y = 0$（因为 $e^x \\ne 0$）\n\n将 $y = 0$ 代入 $f'_x = 0$ 得 $e^x\\left(2x^2 - 0 + 4x\\right) = 0$，解得 $x = 0$ 或者 $x = -2$\n\n因此驻点为 $(0, 0)$ 和 $(-2, 0)$ ——3 分\n\n③ 计算二阶偏导数\n$$\n\\begin{aligned}\nf''_{xx} &= \\frac{\\partial}{\\partial x}\\left[e^x\\left(2x^2 - y^2 + 4x\\right)\\right] \\\\\n&= e^x\\left(2x^2 - y^2 + 4x\\right) + e^x(4x + 4) = e^x\\left[2x^2 - y^2 + 8x + 4\\right]\n\\end{aligned}\n\\quad \\text{——4 分}\n$$\n计算二阶偏导数：$f_{xy}'' = \\frac{\\partial}{\\partial y}\\left[e^x\\left(2x^2 - y^2 + 4x\\right)\\right] = -2ye^x$，$f_{yy}'' = \\frac{\\partial}{\\partial y}\\left(-2ye^x\\right) = -2e^x$。在驻点 $(0,0)$ 和 $(-2,0)$ 分别判别：在 $(0,0)$，$A = f_{xx}''(0,0) = 4$，$B = f_{xy}''(0,0) = 0$，$C = f_{yy}''(0,0) = -2$，$\\Delta = AC - B^2 = -8 < 0$，不是极值点。在 $(-2,0)$，$A = f_{xx}''(-2,0) = -\\frac{4}{e^2}$，$B = 0$，$C = -\\frac{2}{e^2}$，$\\Delta = \\frac{8}{e^4} > 0$ 且 $A < 0$，是极大值点，极大值为 $f(-2,0) = \\frac{8}{e^2}$。",
+    "topics": [
+      "黑塞矩阵",
+      "偏导数",
+      "判别式",
+      "多元函数极值",
+      "二元函数极值",
+      "驻点",
+      "二阶偏导数"
+    ]
+  },
+  {
+    "year": 2026,
+    "qtype": "解答题",
+    "qno": "18",
+    "content": "设函数 $f(u)$ 在 $(0, +\\infty)$ 上有 3 阶连续导数，且存在可微函数 $F(x, y)$ 使得\n$$\n\\mathrm{d}F(x, y) = \\frac{f(xy)}{x^2 y} \\,\\mathrm{d}x + \\frac{f''(xy)}{xy^2} \\,\\mathrm{d}y \\quad (xy > 0).\n$$\n\n（1）证明：$\\frac{f''(u)}{u} - \\frac{f(u)}{u} = C$ （$C$ 为任意常数）；\n\n（2）若 $f(1) = 1$，$f'(1) = 1$，$f''(1) = 0$，求 $f(u)$ 的表达式。",
+    "answer": "",
+    "analysis": "",
+    "topics": [
+      "偏导数",
+      "可微函数",
+      "微分方程",
+      "全微分",
+      "偏导数相等"
+    ]
+  },
+  {
+    "year": 2026,
+    "qtype": "解答题",
+    "qno": "19",
+    "content": "设 $L$ 为曲线 $x^2 + 3y^2 = 1$ 上沿逆时针自点 $A\\left(-\\frac{1}{2}, -\\frac{1}{2}\\right)$ 至点 $B\\left(\\frac{1}{2}, \\frac{1}{2}\\right)$ 的部分，计算\n$$\nI = \\int_L (e^x \\sin x - 2xy)\\,\\mathrm{d}x + (6 - x^2 + y\\cos y^4)\\,\\mathrm{d}y.\n$$",
+    "answer": "$\\sqrt{3}\\pi - \\frac{1}{4}$",
+    "analysis": "由对称性知\n\n$$\n\\int_L e^{x^2}\\sin x dx=0\n$$\n\n$$\n\\int_L y\\cos^4 y dy=0\n$$\n\n则\n将积分拆分为 $\\int_L -2xy\\,dx - x^2\\,dy + \\int_L 6x\\,dy$。其中 $-2xy\\,dx - x^2\\,dy = d(-x^2y)$ 为全微分，故 $\\int_L -2xy\\,dx - x^2\\,dy = -\\left(x^2y\\right)\\bigg|_{\\left(-\\frac{1}{2},-\\frac{1}{2}\\right)}^{\\left(\\frac{1}{2},\\frac{1}{2}\\right)} = -\\frac{1}{4}$。记弧 $AB$ 与直线段 $AB$ 围成区域为 $D$，取直线 $L_1: y = x\\left(-\\frac{1}{2} \\leqslant x \\leqslant \\frac{1}{2}\\right)$，由 $A$ 指向 $B$，则 $I = \\left( \\oint_{L+L_1} + \\int_{L_1} \\right) 6x\\,dy - \\frac{1}{4}$。由格林公式 $\\oint_{L+L_1} 6x\\,dy = \\iint_D 6\\,d\\sigma$，而 $\\int_{L_1} 6x\\,dy = \\int_{-\\frac{1}{2}}^{\\frac{1}{2}} 6x\\,dx = 0$。区域 $D$ 为扇形，面积为 $\\frac{1}{2} \\cdot \\pi \\cdot \\frac{\\sqrt{3}}{3}$，故 $I = 6 \\cdot \\frac{1}{2} \\cdot \\pi \\cdot \\frac{\\sqrt{3}}{3} - \\frac{1}{4} = \\sqrt{3}\\pi - \\frac{1}{4}$。",
+    "topics": [
+      "路径无关",
+      "扇形面积",
+      "椭圆",
+      "全微分",
+      "格林公式",
+      "对称性",
+      "曲线积分"
+    ]
+  },
+  {
+    "year": 2026,
+    "qtype": "证明题",
+    "qno": "20",
+    "content": "可导函数 $f(x)$ 严格单调递增，且 $\\int_{-1}^{1} f(x) \\, dx = 0$，记 $a = \\int_{0}^{1} f(x) \\, dx$。\n\n（1）证明 $a > 0$；\n\n（2）设 $F(x) = a(1 - x^2) + \\int_{1}^{x} f(t) \\, dt$，证明存在 $\\xi \\in (-1,1)$，使得 $F''(\\xi) = 0$。",
+    "answer": "（1）$a > 0$；（2）存在 $\\xi \\in (-1,1)$，使得 $F''(\\xi) = 0$。",
+    "analysis": "（1）设 $F(x) = \\int_{-1}^{x} f(t)\\,dt$，则 $F(-1) = F(1) = 0$，$F'(x) = f(x)$。由 $f(x)$ 递增知 $F(x)$ 为凹函数，即对任意 $x_1, x_2 \\in [-1,1], \\lambda \\in (0,1)$，有 $F\\left[\\lambda x_1 + (1 - \\lambda)x_2\\right] < \\lambda F(x_1) + (1 - \\lambda)F(x_2)$。取 $x_1 = -1, x_2 = 1$，则 $F(1 - 2\\lambda) < 0$。由 $1 - 2\\lambda \\in (-1,1)$ 知，$\\forall x \\in (-1,1)$，$F(x) < 0$ 恒成立。于是 $a = \\int_{0}^{1} f(x)\\,dx = F(1) - F(0) = -F(0) > 0$。\n（2）$F(x) = (1 - x^2)\\int_{0}^{1} f(x)\\,dx + \\int_{1}^{x} f(t)\\,dt$。计算得 $F(1) = 0$，$F(-1) = -\\int_{-1}^{1} f(t)\\,dt = 0$，$F(0) = \\int_{0}^{1} f(x)\\,dx + \\int_{1}^{0} f(t)\\,dt = 0$。由罗尔定理，存在 $\\eta_1 \\in (-1,0), \\eta_2 \\in (0,1)$，使 $F'(\\eta_1) = F'(\\eta_2) = 0$。再次应用罗尔定理，存在 $\\xi \\in (\\eta_1, \\eta_2) \\subset (-1,1)$，使得 $F''(\\xi) = 0$。",
+    "topics": [
+      "罗尔定理",
+      "中值定理",
+      "定积分",
+      "凹函数",
+      "单调性",
+      "积分中值定理"
+    ]
+  },
+  {
+    "year": 2026,
+    "qtype": "解答题",
+    "qno": "21",
+    "content": "设 $\\alpha_1 = \\begin{pmatrix} 1 \\\\ 0 \\\\ -1 \\\\ -1 \\end{pmatrix}$，$\\alpha_2 = \\begin{pmatrix} 1 \\\\ -1 \\\\ 0 \\\\ -2 \\end{pmatrix}$，$\\alpha_3 = \\begin{pmatrix} 0 \\\\ -1 \\\\ 1 \\\\ -1 \\end{pmatrix}$，$\\alpha_4 = \\begin{pmatrix} 0 \\\\ 1 \\\\ -1 \\\\ 1 \\end{pmatrix}$，记 $A = (\\alpha_1, \\alpha_2, \\alpha_3, \\alpha_4)$，$G = (\\alpha_1, \\alpha_2)$，$H$ 满足 $A = GH$。\n\n（1）证明：$\\alpha_1$，$\\alpha_2$ 为 $\\alpha_1$，$\\alpha_2$，$\\alpha_3$，$\\alpha_4$ 的极大线性无关组；\n\n（2）求 $H$ 及 $A^{10}$。",
+    "answer": "",
+    "analysis": "",
+    "topics": [
+      "极大线性无关组",
+      "矩阵分解",
+      "矩阵幂",
+      "线性表示"
+    ]
+  },
+  {
+    "year": 2026,
+    "qtype": "解答题",
+    "qno": "22",
+    "content": "某种元件的寿命分布服从均值为 $\\theta$ 的指数分布，其中 $\\theta$ 为未知参数。为了估计 $\\theta$，从这批元件当中任取 $n$ 只同时投入寿命试验，当 $k (1 \\leq k \\leq n)$ 只失效时停止实验。\n\n（1）当 $k=1$ 时，设失效元件的寿命为 $T$。\n\n（ⅰ）求 $T$ 的概率密度；\n\n（ⅱ）当 $a$ 为何值时，$\\hat{\\theta} = aT$ 为 $\\theta$ 的无偏估计，并求此时 $D(\\hat{\\theta})$ 的值；\n\n（2）设 $k$ 只失效元件的寿命分别为 $t_1, t_2, \\cdots, t_k$，且 $t_1 \\leq t_2 \\leq \\cdots \\leq t_k$，若 $\\theta$ 的最大似然函数为\n$$\nL(\\theta) = \\frac{1}{\\theta^k} \\mathrm{e}^{-\\frac{1}{\\theta} \\sum_{i=1}^{k} t_i + (n-k)t_k},\n$$\n求 $\\theta$ 的最大似然估计值。",
+    "answer": "（1）$f_T(t) = \\begin{cases} \\frac{n}{\\theta} e^{-\\frac{nt}{\\theta}}, & t \\geq 0 \\\\ 0, & t < 0 \\end{cases}$；$a = n$；$D(\\theta) = \\theta^2$。（2）$\\theta$ 的最大似然估计值为 $\\frac{\\sum_{i=1}^{k} t_i + (n-k)t_k}{k}$。",
+    "analysis": "（1）①\n$$\nf_T(t) = \n\\begin{cases}\n\\frac{n}{\\theta} e^{-\\frac{nt}{\\theta}}, & t \\geq 0 \\\\\n0, & t < 0\n\\end{cases}\n\\quad \\text{——2 分}\n$$\n\n$$\nE(\\theta) = \\frac{a\\theta}{n} = \\theta \\Rightarrow a = n \\quad \\text{——4 分}\n$$\n\n② 所以 $D(\\theta) = \\theta^2$ ——6 分\n\n（2）\n$$\n\\ln L(\\theta) = -k \\ln \\theta - \\frac{1}{\\theta} \\left[ \\sum_{i=1}^{k} t_i + (n-k)t_k \\right] \\quad \\text{——7 分}\n$$\n\n所以\n$$\n\\frac{\\mathrm{d} \\ln L(\\theta)}{\\mathrm{d} \\theta} = -\\frac{k}{\\theta} + \\frac{1}{\\theta^2} \\left[ \\sum_{i=1}^{k} t_i + (n-k)t_k \\right] = 0 \\quad \\text{——9 分}\n$$\n\n则\n$$\n\\theta = \\frac{\\sum_{i=1}^{k} t_i + (n-k)t_k}{k} \\quad \\text{——11 分}\n$$\n\n所以 $\\theta$ 的最大似然估计值为 $\\frac{\\sum_{i=1}^{k} t_i + (n-k)t_k}{k}$ ——12 分",
+    "topics": [
+      "概率密度",
+      "指数分布",
+      "方差",
+      "无偏估计",
+      "最大似然估计"
+    ]
+  },
+  {
+    "year": 2026,
+    "qtype": "证明题",
+    "qno": "18(1)",
+    "content": "证明：$\\dfrac{f''(u)}{u}-\\dfrac{f(u)}{u}=C$；",
+    "answer": "",
+    "analysis": "依题意令$P=\\dfrac{f(xy)}{x^2y}$，$Q=\\dfrac{f''(xy)}{xy^2}$，则$\\dfrac{\\partial P}{\\partial y}=\\dfrac{\\partial Q}{\\partial x}$，即\n\n$$\n\\dfrac{1}{x^2}\\left[-\\dfrac{1}{y^2}f(xy)+\\dfrac{x}{y}f'(xy)\\right]=\\dfrac{1}{y^2}\\left[-\\dfrac{1}{x^2}f''(xy)+\\dfrac{y}{x}f'''(xy)\\right]\n$$\n\n令$xy=u$化简得$uf'''(u)-f''(u)+f(u)-uf'(u)=0$\n\n于是$\\left(\\dfrac{f''(u)-f(u)}{u}\\right)'=\\dfrac{uf'''(u)-uf'(u)-f''(u)+f(u)}{u^2}=0$\n\n故$\\dfrac{f''(u)}{u}-\\dfrac{f(u)}{u}=C$",
+    "topics": [
+      "偏导数",
+      "全微分",
+      "常微分方程"
+    ]
+  },
+  {
+    "year": 2026,
+    "qtype": "解答题",
+    "qno": "18(2)",
+    "content": "已知$f(1)=1,f'(1)=-1,f''(1)=0$，求$f(u)$的表达式。",
+    "answer": "$f(u)=-e^{u-1}+e^{1-u}+u$",
+    "analysis": "由（1）有$f''(u)-f(u)=Cu$，代入$f(1)=1,f''(1)=0$，得$C=-1$\n\n于是方程变为$f''(u)-f(u)=-u$，这是一个二阶常系数非齐次线性微分方程\n\n通解为$f(u)=C_1e^u+C_2e^{-u}+u$\n\n于是$f(1)=C_1e+C_2e^{-1}+1=1$，$f'(1)=C_1e-C_2e^{-1}+1=-1$\n\n可得$C_1=-e^{-1},C_2=e$\n\n于是$f(u)=-e^{u-1}+e^{1-u}+u$",
+    "topics": [
+      "二阶常系数非齐次线性微分方程",
+      "初始条件",
+      "通解"
+    ]
+  }
+]

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>考研数学模拟卷生成</title>
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] },
+    svg: { fontCache: 'global' },
+    startup: { typeset: false }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", sans-serif; background: #f0f2f5; color: #333; line-height: 1.8; }
+
+  /* 顶部栏 */
+  .topbar { background: linear-gradient(135deg, #1a237e, #283593); color: #fff; padding: 18px 0; text-align: center; }
+  .topbar h1 { font-size: 1.5em; }
+  .topbar p { font-size: 0.85em; opacity: 0.7; margin-top: 4px; }
+
+  /* 输入区 */
+  .input-area { max-width: 700px; margin: -25px auto 0; background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); position: relative; z-index: 1; }
+  .input-area label { font-weight: bold; display: block; margin-bottom: 8px; color: #1a237e; }
+  .input-row { display: flex; gap: 10px; }
+  .input-row input { flex: 1; padding: 12px 16px; font-size: 15px; border: 2px solid #e0e0e0; border-radius: 8px; outline: none; transition: border 0.2s; }
+  .input-row input:focus { border-color: #1a237e; }
+  .input-row button { padding: 12px 28px; font-size: 15px; border: none; border-radius: 8px; background: #1a237e; color: #fff; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+  .input-row button:hover { background: #283593; }
+  .input-row button:disabled { background: #9fa8da; cursor: not-allowed; }
+
+  /* 快捷标签 */
+  .tags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .tags span { font-size: 0.8em; padding: 4px 12px; background: #e8eaf6; color: #1a237e; border-radius: 12px; cursor: pointer; transition: all 0.15s; }
+  .tags span:hover { background: #c5cae9; }
+
+  /* 加载状态 */
+  .loading { text-align: center; padding: 40px; color: #666; }
+  .loading .dots { font-size: 1.5em; }
+  .loading .dots span { display: inline-block; animation: bounce 1.4s infinite; }
+  .loading .dots span:nth-child(2) { animation-delay: 0.2s; }
+  .loading .dots span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes bounce { 0%,60%,100% { transform: translateY(0); } 30% { transform: translateY(-10px); } }
+
+  /* 试卷区 */
+  .paper { max-width: 800px; margin: 20px auto; background: #fff; border-radius: 12px; padding: 40px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); display: none; }
+  .paper h2 { text-align: center; border-bottom: 2px solid #333; padding-bottom: 12px; margin-bottom: 25px; }
+  .qtype-header { font-weight: bold; font-size: 1.1em; margin: 25px 0 12px; color: #1a237e; border-left: 4px solid #1a237e; padding-left: 10px; }
+  .question { margin: 18px 0; padding-bottom: 18px; border-bottom: 1px dashed #ddd; }
+  .qno { font-weight: bold; font-size: 1.05em; }
+  .answer { color: #c62828; margin-top: 10px; font-weight: 500; }
+  .answer::before { content: "【答案】"; font-weight: bold; }
+  .analysis { margin-top: 8px; padding: 10px 16px; background: #f5f5f5; border-left: 3px solid #4a90d9; border-radius: 0 6px 6px 0; color: #444; }
+  .analysis::before { content: "【解析】"; font-weight: bold; color: #4a90d9; }
+
+  /* 参考来源 */
+  .refs { max-width: 800px; margin: 0 auto 10px; font-size: 0.8em; color: #888; }
+  .refs .tag { display: inline-block; background: #e8eaf6; color: #3949ab; padding: 2px 8px; border-radius: 4px; margin: 2px; }
+
+  /* 操作按钮 */
+  .actions { text-align: center; margin: 20px 0; }
+  .actions a { display: inline-block; padding: 8px 20px; border: 2px solid #1a237e; border-radius: 8px; text-decoration: none; color: #1a237e; margin: 0 5px; font-size: 0.9em; transition: all 0.2s; }
+  .actions a:hover { background: #1a237e; color: #fff; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>考研数学（一）模拟卷生成系统</h1>
+  <p>输入知识点，AI 自动检索历年真题风格，新编一套含答案解析的模拟卷</p>
+</div>
+
+<div class="input-area">
+  <label>输入知识点</label>
+  <div class="input-row">
+    <input type="text" id="topic" placeholder="如：多元函数极值、傅里叶级数、矩阵特征值…" />
+    <button id="btn" onclick="generate()">生成模拟卷</button>
+  </div>
+  <div class="tags">
+    <span onclick="quickSet('极限与连续')">极限与连续</span>
+    <span onclick="quickSet('多元函数极值')">多元函数极值</span>
+    <span onclick="quickSet('傅里叶级数')">傅里叶级数</span>
+    <span onclick="quickSet('曲线积分与曲面积分')">曲线积分与曲面积分</span>
+    <span onclick="quickSet('矩阵特征值与对角化')">矩阵特征值与对角化</span>
+    <span onclick="quickSet('概率分布与数字特征')">概率分布与数字特征</span>
+    <span onclick="quickSet('微分方程')">微分方程</span>
+    <span onclick="quickSet('级数收敛判别')">级数收敛判别</span>
+  </div>
+</div>
+
+<div class="loading" id="loading" style="display:none">
+  <div class="dots"><span>.</span><span>.</span><span>.</span></div>
+  <p>正在检索真题范文并生成模拟卷，约需 30-60 秒</p>
+</div>
+
+<div class="paper" id="paper">
+  <h2 id="paperTitle"></h2>
+  <div id="paperBody"></div>
+  <div class="actions">
+    <a href="javascript:window.print()">打印 / 导出PDF</a>
+    <a href="javascript:saveDocx()">导出 Word</a>
+    <a href="javascript:location.reload()">再出一套</a>
+  </div>
+</div>
+
+<script>
+let currentPaper = null;
+
+function quickSet(t) {
+  document.getElementById('topic').value = t;
+  generate();
+}
+
+async function generate() {
+  const topic = document.getElementById('topic').value.trim();
+  if (!topic) { alert('请输入知识点'); return; }
+
+  const btn = document.getElementById('btn');
+  btn.disabled = true;
+  btn.textContent = '生成中...';
+  document.getElementById('loading').style.display = 'block';
+  document.getElementById('paper').style.display = 'none';
+
+  try {
+    const resp = await fetch('/api/generate', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({topic})
+    });
+    const data = await resp.json();
+    if (data.error) { alert(data.error); return; }
+    currentPaper = data;
+    renderPaper(data);
+  } catch (e) {
+    alert('生成失败：' + e.message);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '生成模拟卷';
+    document.getElementById('loading').style.display = 'none';
+  }
+}
+
+const TYPE_ORDER = {'选择题':0, '填空题':1, '解答题':2, '证明题':3};
+
+function renderPaper(data) {
+  document.getElementById('paperTitle').textContent = data.title;
+
+  // 参考来源
+  let refsHtml = '<div class="refs">参考真题：';
+  (data.examples || []).forEach(e => {
+    refsHtml += `<span class="tag">${e.year}年${e.qtype}第${e.qno}题</span>`;
+  });
+  refsHtml += '</div>';
+
+  // 按题型排序
+  const qs = (data.questions || []).slice().sort((a, b) => {
+    return (TYPE_ORDER[a.qtype] ?? 9) - (TYPE_ORDER[b.qtype] ?? 9);
+  });
+
+  let body = refsHtml;
+  let curType = '';
+  qs.forEach(q => {
+    if (q.qtype !== curType) {
+      curType = q.qtype;
+      body += `<div class="qtype-header">${curType}</div>`;
+    }
+    body += `<div class="question">`;
+    body += `<div class="qno">${q.qno || ''}.</div>`;
+    body += `<div>${q.content || ''}</div>`;
+    if (q.answer) body += `<div class="answer">${q.answer}</div>`;
+    if (q.analysis) body += `<div class="analysis">${q.analysis}</div>`;
+    body += `</div>`;
+  });
+
+  document.getElementById('paperBody').innerHTML = body;
+  document.getElementById('paper').style.display = 'block';
+
+  // 重新渲染公式
+  if (window.MathJax && window.MathJax.typesetPromise) {
+    window.MathJax.typesetPromise([document.getElementById('paper')]);
+  }
+}
+
+function saveDocx() {
+  if (!currentPaper) return;
+  const topic = currentPaper.title.replace(/^.*[：—-]/, '').slice(0, 10);
+  // 触发后端生成 docx 并下载
+  fetch('/api/docx', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(currentPaper)
+  }).then(r => r.blob()).then(blob => {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `模拟卷_${topic}.docx`;
+    a.click();
+  });
+}
+
+// 回车提交
+document.getElementById('topic').addEventListener('keydown', e => {
+  if (e.key === 'Enter') generate();
+});
+</script>
+</body>
+</html>
