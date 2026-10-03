@@ -63,7 +63,7 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 ### 第四步：申请 API Key
 
-本项目需要两个 API Key，会产生少量费用（见下方费用说明）：
+本项目需要两个 API Key：
 
 #### 4.1 阿里云百炼（用于题目检索）
 
@@ -80,21 +80,6 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 3. 左侧菜单找到 **"API keys"**
 4. 点击 **"创建 API key"**
 5. 复制生成的 Key（格式：`sk-xxxxxxxx`）
-
-#### 4.3 费用说明
-
-| 服务 | 费用 | 预估每次生成 |
-|------|------|------------|
-| 阿里云百炼 text-embedding-v3 | ¥0.0005/千 tokens | 约 ¥0.01-0.02 |
-| DeepSeek Chat | ¥0.001/千 tokens（输入）<br>¥0.002/千 tokens（输出） | 约 ¥0.05-0.15 |
-
-**生成一套试卷总成本：约 ¥0.1-0.2**
-
-新用户通常有免费额度：
-- 阿里云百炼：新用户送 100 万 tokens
-- DeepSeek：新用户送 ¥10 余额
-
-建议先充值少量金额（如 ¥10）测试，确认可用后再正常使用。
 
 ---
 
