@@ -162,11 +162,15 @@ def api_docx():
         if q.get("qtype") != cur:
             cur = q.get("qtype", "")
             doc.add_heading(cur, level=1)
-        doc.add_paragraph(f'{q.get("qno","")}. {q.get("content","")}')
+        # 转换 LaTeX 为 Word 可读格式
+        content = _latex_to_text(q.get("content", ""))
+        doc.add_paragraph(f'{q.get("qno","")}. {content}')
         if q.get("answer"):
-            doc.add_paragraph(f'【答案】{q["answer"]}')
+            answer = _latex_to_text(q["answer"])
+            doc.add_paragraph(f'【答案】{answer}')
         if q.get("analysis"):
-            doc.add_paragraph(f'【解析】{q["analysis"]}')
+            analysis = _latex_to_text(q["analysis"])
+            doc.add_paragraph(f'【解析】{analysis}')
 
     buf = io.BytesIO()
     doc.save(buf)
@@ -181,6 +185,71 @@ def api_docx():
 def __send_buf(buf, name):
     from flask import send_file
     return send_file(buf, as_attachment=True, download_name=f"模拟卷_{name}.docx")
+
+
+def _latex_to_text(text):
+    """把 LaTeX 公式转换成 Word 能显示的纯文本格式"""
+    import re
+    # 行内公式 $...$ -> 保留内容
+    text = re.sub(r'\$([^\$]+)\$', r'\1', text)
+    # 独立公式 $$...$$ -> 保留内容
+    text = re.sub(r'\$\$([^\$]+)\$\$', r'\1', text)
+    # 常见 LaTeX 命令替换
+    replacements = {
+        r'\lim\limits': 'lim',
+        r'\lim': 'lim',
+        r'\sin': 'sin',
+        r'\cos': 'cos',
+        r'\tan': 'tan',
+        r'\dfrac': '',
+        r'\frac': '',
+        r'\to': '→',
+        r'\infty': '∞',
+        r'\alpha': 'α',
+        r'\beta': 'β',
+        r'\gamma': 'γ',
+        r'\delta': 'δ',
+        r'\epsilon': 'ε',
+        r'\theta': 'θ',
+        r'\lambda': 'λ',
+        r'\mu': 'μ',
+        r'\pi': 'π',
+        r'\sigma': 'σ',
+        r'\phi': 'φ',
+        r'\omega': 'ω',
+        r'\Delta': 'Δ',
+        r'\Sigma': 'Σ',
+        r'\Omega': 'Ω',
+        r'\in': '∈',
+        r'\subset': '⊂',
+        r'\cup': '∪',
+        r'\cap': '∩',
+        r'\leq': '≤',
+        r'\geq': '≥',
+        r'\neq': '≠',
+        r'\approx': '≈',
+        r'\equiv': '≡',
+        r'\times': '×',
+        r'\div': '÷',
+        r'\pm': '±',
+        r'\cdot': '·',
+        r'\circ': '°',
+        r'\prime': '′',
+        r'\partial': '∂',
+        r'\nabla': '∇',
+        r'\int': '∫',
+        r'\oint': '∮',
+        r'\sum': '∑',
+        r'\prod': '∏',
+        r'\sqrt': '√',
+        r'\{': '(',
+        r'\}': ')',
+    }
+    for old, new in replacements.items():
+        text = text.replace(old, new)
+    # 清理多余的花括号
+    text = re.sub(r'[{}]', '', text)
+    return text
 
 
 if __name__ == "__main__":
